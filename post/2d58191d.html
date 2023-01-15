@@ -1,0 +1,837 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>HCIA | 陈天在睡觉</title><meta name="author" content="陈天在睡觉"><meta name="copyright" content="陈天在睡觉"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="HCIADay1HCIA是什么?HCIA(华为认证的初级网络工程师)分为网络安全，Route switch，硬件安全三类方向 HCIP(华为认证的高级网络工程师) HCIE(华为认证的专家级网络工程师) 计算机网络 云技术分为云存储和云计算 云存储：因为普通的电脑存储空间小，所以用户可以把数据存储在服务器中。如：百度网盘 云计算源于分布式计算，分布式计算可以理解为一台电脑处理不了的信息使用多台电脑">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HCIA">
+<meta property="og:url" content="http://example.com/post/2d58191d.html">
+<meta property="og:site_name" content="陈天在睡觉">
+<meta property="og:description" content="HCIADay1HCIA是什么?HCIA(华为认证的初级网络工程师)分为网络安全，Route switch，硬件安全三类方向 HCIP(华为认证的高级网络工程师) HCIE(华为认证的专家级网络工程师) 计算机网络 云技术分为云存储和云计算 云存储：因为普通的电脑存储空间小，所以用户可以把数据存储在服务器中。如：百度网盘 云计算源于分布式计算，分布式计算可以理解为一台电脑处理不了的信息使用多台电脑">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/%E5%8D%9A%E5%AE%A22.png">
+<meta property="article:published_time" content="2023-01-14T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-01-15T00:15:04.948Z">
+<meta property="article:author" content="陈天在睡觉">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/%E5%8D%9A%E5%AE%A22.png"><link rel="shortcut icon" href="/img/%E6%9F%BF%E5%AD%90.png"><link rel="canonical" href="http://example.com/post/2d58191d"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 陈天在睡觉","link":"链接: ","source":"来源: 陈天在睡觉","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-right"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'HCIA',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2023-01-15 08:15:04'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/font.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/%E5%A4%B4%E5%83%8F.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/%E5%8D%9A%E5%AE%A22.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">陈天在睡觉</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">HCIA</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-01-14T16:00:00.000Z" title="发表于 2023-01-15 00:00:00">2023-01-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-01-15T00:15:04.948Z" title="更新于 2023-01-15 08:15:04">2023-01-15</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">14k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>49分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="HCIA"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="HCIA"><a href="#HCIA" class="headerlink" title="HCIA"></a>HCIA</h1><h2 id="Day1"><a href="#Day1" class="headerlink" title="Day1"></a>Day1</h2><h3 id="HCIA是什么"><a href="#HCIA是什么" class="headerlink" title="HCIA是什么?"></a>HCIA是什么?</h3><p>HCIA(华为认证的初级网络工程师)分为网络安全，Route switch，硬件安全三类方向</p>
+<p>HCIP(华为认证的高级网络工程师)</p>
+<p>HCIE(华为认证的专家级网络工程师)</p>
+<h3 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/2d58191d/Users\84750\AppData\Roaming\Typora\typora-user-images\image-20211024203057031.png" alt="image-20211024203057031"></p>
+<p>云技术分为云存储和云计算</p>
+<p>云存储：因为普通的电脑存储空间小，所以用户可以把数据存储在服务器中。如：百度网盘</p>
+<p>云计算源于分布式计算，分布式计算可以理解为一台电脑处理不了的信息使用多台电脑进行处理</p>
+<p>网络安全中有种攻击叫DOS (拒绝服务攻击 ),意思是攻击一台电脑时可以向它一直发送垃圾信息，这台电脑就会一直在处理这些垃圾信息，消耗了计算机处理数据的资源也占用了带宽资源，导致其无法工作。还有种升级版攻击DDOS (分布式拒绝服务攻击)因为一台电脑很难发送垃圾信息使服务器瘫痪，所以黑客会通过控制多台电脑，来一起攻击服务器，从而使服务器瘫痪。</p>
+<p>计算机技术</p>
+<p>计算机的首要工作是将抽象语言转换为电信号</p>
+<p>1.抽象语言—-编码           应用层</p>
+<p>2.编码        —- 二进制      表示层</p>
+<p>3.二进制    —- 电信号      介质（硬件）访问控制层</p>
+<p>4.处理电信号                    物理层</p>
+<p>通信技术</p>
+<p>在计算机技术出现之前通信技术就已经出现了，1876年，贝尔获得了电话专利，当时出现了通信网络叫公共交换电话网，也出现了 电路交换，1888年实现了机器代替人工。到1946年2月14日 第一台电子计算机诞生，美国国防部用它来进行弹道计算。</p>
+<p>互联网前身叫阿帕网，由于当时算力有限，所以美国人使用多台计算机，就组成了阿帕网 。后来美国人发现计算机还可以用在民用，就把阿帕网分开了，一部分用于军事，另一部分用于民用，逐渐变成Internet。</p>
+<h3 id="如何把对等网扩大称互联网？"><a href="#如何把对等网扩大称互联网？" class="headerlink" title="如何把对等网扩大称互联网？"></a>如何把对等网扩大称互联网？</h3><p>最早的网络称之为对等网</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/2d58191d/Users\84750\AppData\Roaming\Typora\typora-user-images\image-20211026212830824.png" alt="image-20211026212830824"></p>
+<h4 id="1，延长传输距离"><a href="#1，延长传输距离" class="headerlink" title="1，延长传输距离"></a>1，延长传输距离</h4><p>延长传输距离 —- 中继器（放大器） —- 物理层设备</p>
+<p>可以延长5倍的传输距离</p>
+<h5 id="双绞线"><a href="#双绞线" class="headerlink" title="双绞线"></a>双绞线</h5><p>RJ-45双绞线，RJ-45是指头的型号，由8根铜丝构成，分为4组，两两相绞。目的是为了抵消电磁干扰。</p>
+<p>选用铜的原因是，铜的导电性好而且便宜，没有银那么贵，导电性比铝和金好，但市面上的双绞线用的也不是纯铜，商家为了降低成本会在里面加入铝</p>
+<p>传输介质：铜丝     传输信号：电信号</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img0.baidu.com/it/u=863443218,3301767168&fm=253&fmt=auto&app=138&f=PNG?w=500&h=500" alt="img"></p>
+<p>屏蔽双绞线有屏蔽壳，可以减少干扰，在外界强干扰的情况下会使用</p>
+<p>非屏蔽双绞线日常使用比较多</p>
+<p>目前最常用的是超5类线 (1000Mbps)，线类越高，铜丝会越粗，而且绞得越紧, 传输距离100米，延长会使信号衰弱</p>
+<p>速率计算公式：100MB的宽带100 &#x2F; 8 * 0.85 &#x3D; 10.625 MB</p>
+<p>通常运营商承诺的是 100Mbps，指的是宽带一秒传输100M的bit</p>
+<h5 id="光纤"><a href="#光纤" class="headerlink" title="光纤"></a>光纤</h5><p>传输介质：光导纤维（玻璃纤维） 传输的信号：光信号</p>
+<p>电信号 — 光信号：发光二极管，注入式激光二极管</p>
+<p>光信号 — 电信号：光电二极管</p>
+<p>单模光纤：注入式激光二极管 — 信号畸变小</p>
+<p>多模光纤：发光二极管</p>
+<h4 id="2，增加网络节点数量"><a href="#2，增加网络节点数量" class="headerlink" title="2，增加网络节点数量"></a>2，增加网络节点数量</h4><h5 id="网络拓扑结构"><a href="#网络拓扑结构" class="headerlink" title="网络拓扑结构"></a>网络拓扑结构</h5><p>1，直线型拓扑</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/2d58191d/Users\84750\AppData\Roaming\Typora\typora-user-images\image-20211026221521443.png" alt="image-20211026221521443"></p>
+<p>优点：连接简单</p>
+<p>缺点：不能跨机接触，容错率低，不安全，延迟高</p>
+<p>2，环形拓扑</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/2d58191d/Users\84750\AppData\Roaming\Typora\typora-user-images\image-20211026222459533.png" alt="image-20211026222459533"></p>
+<p>优点：连接简单，一个断了还能传，容错率比直线型高</p>
+<p>缺点：不能跨机接触，容错率低，不安全，延迟高</p>
+<p>3，星型拓扑</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/2d58191d/Users\84750\AppData\Roaming\Typora\typora-user-images\image-20211024203606494.png" alt="image-20211024203606494"></p>
+<p>优点：容错率高，性价比高</p>
+<p>缺点：对中间设备要求高，</p>
+<p>4，网状型拓扑</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/2d58191d/Users\84750\AppData\Roaming\Typora\typora-user-images\image-20211024203644737.png" alt="image-20211024203644737"></p>
+<p>优点：传输效率高，每个节点都有网线连接：容错率高，安全</p>
+<p>缺点：太复杂，成本高</p>
+<p>5，混合型 —- 多环型拓扑</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/2d58191d/Users\84750\AppData\Roaming\Typora\typora-user-images\image-20211026223030427.png" alt="image-20211026223030427"></p>
+<p>优点：容错率高，安全</p>
+<p>缺点：对中间设备要求高，复杂，成本高</p>
+<p>性价比最高的拓扑 —- 星型拓扑</p>
+<p>衍生出树形拓扑，企业规模大会用到</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/2d58191d/Users\84750\AppData\Roaming\Typora\typora-user-images\image-20211026223207825.png" alt="image-20211026223207825"></p>
+<h5 id="集线器（hub）-—-物理层设备"><a href="#集线器（hub）-—-物理层设备" class="headerlink" title="集线器（hub） —- 物理层设备"></a>集线器（hub） —- 物理层设备</h5><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/2d58191d/Users\84750\AppData\Roaming\Typora\typora-user-images\image-20211026223405240.png" alt="image-20211026223405240"></p>
+<p>1，地址</p>
+<p>地址是全球唯一且格式统一，使用MAC地址。</p>
+<p>MAC地址：所有芯片出厂时厂家烧录的一个串号，全球唯一。由48位二进制构成。前24位为厂商标识，后24位位厂商分配的串号用来区分不同的芯片。 —- 二层地址（介质访问控制层地址）</p>
+<p>例物理地址: 20-1E-88-AF-F2-71</p>
+<p>使用ipconfig &#x2F;all 可以在CMD命令行界面查看MAC地址</p>
+<p>介质访问控制层在将二进制转化为电信号之前需要先给里面添加两个地</p>
+<p>址，一个SMAC(源MAC)，一个DMAC(目标MAC)。</p>
+<p>2，冲突  使用CSMA&#x2F;CD(载波侦听多路访问技术&#x2F;冲突检测),通俗讲就是排队</p>
+<p>3，安全</p>
+<p>4，延迟</p>
+<p>因为集线器还有一些问题解决不了，所以提出了新要求：</p>
+<p>1，无限延长传输距离</p>
+<p>2，完全没有冲突 — 所有节点可以同时收发数据</p>
+<p>3，实现单播 — 一对一的通讯</p>
+<h5 id="交换机-—-二层设备"><a href="#交换机-—-二层设备" class="headerlink" title="交换机 — 二层设备"></a>交换机 — 二层设备</h5><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/2d58191d/Users\84750\AppData\Roaming\Typora\typora-user-images\image-20211026224057113.png" alt="image-20211026224057113"></p>
+<p>交换机的转发原理：数据由电信号进入到交换机，交换机转换为二进制，交换机先看源MAC地址，将源MAC地址和进入接口的映射关系记录在MAC地址表中；然后看目标MAC地址，根据目标MAC地址查看MAC地址表。如果存在对应的记录，则按记录从对应的接口转发出去，实现单播。若没有记录，则进行泛洪。(除了进入的接口外，将数据转发给其他所有接口)。</p>
+<p>交换机的一个接口可以对应多个MAC地址，一个MAC地址只能对应一个接口。</p>
+<p>MAC地址泛洪攻击:黑客可以不停的发送虚拟的源MAC地址，填满交换机MAC地址表，使所有消息只能泛洪，泛洪的消息就会被黑客获取，而且可能会造成网络瘫痪</p>
+<p>MAC地址表的老化时间为300S：为了防止交换机MAC地址表被填满，每个MAC地址300s后会被删除。</p>
+<p>一个交换机最多只能连200台计算机，因为有泛洪，过多的计算机会导致网络瘫痪</p>
+<h5 id="路由器"><a href="#路由器" class="headerlink" title="路由器"></a>路由器</h5><p>应用层</p>
+<p>表示层</p>
+<p>网络层</p>
+<p>介质访问控制层</p>
+<p>物理层</p>
+<p>路由器相当于网络设备，作用于网络层</p>
+<p>路由器的作用</p>
+<p>1，隔离泛洪范围 —- 路由器的一个接口对应一个泛洪范围</p>
+<p>2，转发</p>
+<p>逻辑地址</p>
+<p>IP — 互联网协议</p>
+<p>IPV4 — 32位二进制构成的 — 43亿</p>
+<p>IPV6 — 128位二进制构成的</p>
+<h2 id="Day2"><a href="#Day2" class="headerlink" title="Day2"></a>Day2</h2><h3 id="路由器-1"><a href="#路由器-1" class="headerlink" title="路由器"></a>路由器</h3><p>应用层</p>
+<p>表示层</p>
+<p>网络层</p>
+<p>介质访问控制层</p>
+<p>物理层</p>
+<p>三层设备</p>
+<p>1.隔离泛洪范围(广播域，一个接口对应一个广播域)</p>
+<p>2.转发</p>
+<h3 id="IP-互联网协议"><a href="#IP-互联网协议" class="headerlink" title="IP(互联网协议)"></a>IP(互联网协议)</h3><p>IPV4是32位二进制构成 —- 点分十进制</p>
+<p>IPV6是128位二进制构成 —- 冒分16进制</p>
+<p>例:IPv4 地址: 192.168.43.105</p>
+<h4 id="二进制与十进制的转换"><a href="#二进制与十进制的转换" class="headerlink" title="二进制与十进制的转换"></a>二进制与十进制的转换</h4><p>次方轴:</p>
+<p>00000001 &#x3D;&#x3D; 1</p>
+<p>00000010 &#x3D;&#x3D; 2</p>
+<p>00000100 &#x3D;&#x3D; 4</p>
+<p>00001000 &#x3D;&#x3D; 8</p>
+<p>00010000 &#x3D;&#x3D; 16</p>
+<p>00100000 &#x3D;&#x3D; 32</p>
+<p>01000000 &#x3D;&#x3D; 64</p>
+<p>10000000 &#x3D;&#x3D; 128</p>
+<p>十进制转二进制 — 凑</p>
+<p>128 64 32 16 8 4 2 1</p>
+<p>例:</p>
+<p>192</p>
+<p>11000000</p>
+<p>168</p>
+<p>10101000</p>
+<p>43</p>
+<p>00101011</p>
+<p>105</p>
+<p>01101001</p>
+<p>二进制转十进制—加</p>
+<p>128 64 32 16 8 4 2 1</p>
+<p>例:</p>
+<p>11001110，11110010，11100101，10101010</p>
+<p>128+64+8+4+2&#x3D;206</p>
+<p>128+64+32+16+2&#x3D;242</p>
+<p>128+64+32+4+1&#x3D;229</p>
+<p>128+32+8+2&#x3D;170</p>
+<p>206.242.229.170</p>
+<p>练习：</p>
+<p>十进制转换为二进制</p>
+<p>11100011.11111110.10101001.01001010</p>
+<p>227.254.169.74</p>
+<h4 id="网络位和主机位"><a href="#网络位和主机位" class="headerlink" title="网络位和主机位"></a>网络位和主机位</h4><p>网络位 —- 网络位不同表示不同的泛洪范围(相当于区号)</p>
+<p>主机位 —- 在同一个泛洪范围内区分不同的主机(相当于个人标识)</p>
+<p>11100011.11111110.10101001.01001010</p>
+<p>11111111.11111111.00000000.00000000 —- 1代表网络位，0代表主机位</p>
+<p>子网掩码：由连续的0和连续的1组成，用来区分网络位和主机位，其中，1代表网络位；0代表主机位</p>
+<p>Ping —- 检测网络联通性的工具。实际是发送一个ICMP协议的数据包，其特点是可以强制要求对方回包。</p>
+<h3 id="ARP协议"><a href="#ARP协议" class="headerlink" title="ARP协议"></a>ARP协议</h3><p>ARP协议(地址解析协议)</p>
+<p>可以通过一种地址获取另一种地址</p>
+<p>48位二进制全1 — 12位16进制全F — 广播地址</p>
+<p>广播:逼交换机泛洪  但广播不等于泛洪(广播属于主动,泛洪是被动)</p>
+<p>广播域 &#x3D; 泛洪范围</p>
+<p>ARP的工作原理：</p>
+<p>ARP先通过广播发送请求包，所有收到广播包的设备都将将源IP和源MAC的映射关系记录在本地的<strong>ARP缓存表</strong>中，然后再看请求的IP，如果不是自己本地的IP地址，则将数据包丢弃；若是自己本地的IP地址，则将以单播的形式进行ARP应答。在之后的传输中，将优先查看本地的ARP缓存表，若本地有缓存记录，则直接按照缓存记录发包；若没有，则再发送ARP请求。</p>
+<p>ARP缓存表的老化时间 — 180S</p>
+<p>ARP欺骗:发送假的数据包(回包回的比真的慢，覆盖真的地址)，继承目标地址，从而窃听信息</p>
+<p>ARP分类</p>
+<p>正向ARP — 通过IP地址获取MAC地址</p>
+<p>反向ARP — 通过MAC地址获取IP地址</p>
+<p>免费ARP — 利用正向ARP的工作原理请求自己的IP地址</p>
+<p>​                    1，自我介绍；2，检测地址冲突。</p>
+<h3 id="IP地址的分类"><a href="#IP地址的分类" class="headerlink" title="IP地址的分类"></a>IP地址的分类</h3><p>分为A，B，C，D，E </p>
+<p>A：0xxx xxxx 以0开头，其他任意。取值范围（0-127） 1-126（0和127为特殊IP）<br>B：10xx xxxx以10开头，其他任意。取值范围128-191<br>C：110x xxxx以110开头，其他任意。取值范围192-223<br>D：1110 xxxx以1110开头，其他任意。取值范围224-239<br>E：1111 xxxx以1111开头，其他任意。取值范围240-255</p>
+<p>A，B，C三类为单播地址：既可以做源IP地址也可以做目标IP地址</p>
+<p>D为组播地址：只能做为目标IP的使用</p>
+<p>E为保留地址</p>
+<p>通信方式</p>
+<p>单播：一对一关系，主机会发很多次数据包<br>组播：前提需要将电脑放在组中，而且每台电脑都需要配置组播环境将单播和广播组合，一对多关系(同一个组播组)<br>广播：前提在同一广播域，在同一广播域下不能出现多余的电脑，否则会出现安全问题，一对多关系</p>
+<p>A,B,C的区别</p>
+<p>A — 对应大型网络</p>
+<p>255.0.0.0</p>
+<p>B — 对应中型网络</p>
+<p>255.255.0.0</p>
+<p>C — 对用小型网咯</p>
+<p>255.255.255.0</p>
+<h3 id="特殊IP地址"><a href="#特殊IP地址" class="headerlink" title="特殊IP地址"></a>特殊IP地址</h3><p>1，127.0.0.1 - 127.255.255.254 — 环回地址 用于检查，排错，可以通过ping环回地址127.0.0.1，如果ping不通，则物理网卡出错，ping自己的ip地址也ping不通，则主机有错。</p>
+<p>2，255.255.255.255 —- 受限（受路由器的限制）广播地址 — 只能作为目标IP来使用</p>
+<p>3，主机位全1 —- 192.168.1.X&#x2F;24(192.168.1.255) —- 直接广播地址 —- 只能作为目标IP来使用</p>
+<p>4，主机位全0 —- 192.168.1.X&#x2F;24(192.168.1.0&#x2F;24) —- 网段 &#x2F; 网络号中可使用的192.168.1.1 -192.168.1.254</p>
+<p>5，0.0.0.0 —- 1，可以表示为没有IP；2，可以代表所有IP</p>
+<p>6，169.254.0.0&#x2F;16 本地链路地址&#x2F;自动私有地址，在多次发送数据包请求其他主机分配IP地址时无反应，则自己配IP地址</p>
+<h3 id="关于IP的技术"><a href="#关于IP的技术" class="headerlink" title="关于IP的技术"></a>关于IP的技术</h3><h4 id="VLSM-—-可变长子网掩码（子网划分）"><a href="#VLSM-—-可变长子网掩码（子网划分）" class="headerlink" title="VLSM — 可变长子网掩码（子网划分）"></a>VLSM — 可变长子网掩码（子网划分）</h4><p>例：</p>
+<p>192.168.1.0&#x2F;24转化为二进制（加粗为网络位）</p>
+<p><strong>11000000.10101000.00000001</strong>.0 0000000  24</p>
+<p>借一位变成网络位，借过来可能为1或0</p>
+<p><strong>11000000.10101000.00000001.0</strong> 0000000 </p>
+<p>192.168.1.0&#x2F;25     1-126</p>
+<p><strong>11000000.10101000.00000001.1</strong> 0000000 </p>
+<p>192.168.1.128&#x2F;25  129-254</p>
+<p><strong>11111111.11111111.11111111.1</strong> 0000000 (子网掩码)</p>
+<p>255.255.255.128（子网掩码）</p>
+<p>练习:</p>
+<p>172.16.0.0&#x2F;16 —- 划分8个网段，并且写出每个网段的取值范围</p>
+<p><strong>172.16</strong>.00000000.00000000</p>
+<p><strong>172.16.000</strong> 00000.000000000 —- 172.16.0.0&#x2F;19</p>
+<p>172.16.0.1 – 172.16.31.254</p>
+<p><strong>172.16.001</strong> 00000.000000000 —- 172.16.32.0&#x2F;19</p>
+<p>172.16.32.1 – 172.16.63.254</p>
+<p><strong>172.16.010</strong> 00000.000000000 —- 172.16.64.0&#x2F;19</p>
+<p>172.16.64.1 – 172.16.95.254</p>
+<p><strong>172.16.011</strong> 00000.000000000 —- 172.16.96.0&#x2F;19</p>
+<p>172.16.96.1 – 172.16.127.254</p>
+<p><strong>172.16.100</strong> 00000.000000000 —- 172.16.128.0&#x2F;19</p>
+<p>172.16.128.1 – 172.16.159.254</p>
+<p><strong>172.16.101</strong> 00000.000000000 —- 172.16.160.0&#x2F;19</p>
+<p>172.16.160.1 – 172.16.191.254</p>
+<p><strong>172.16.110</strong> 00000.000000000 —- 172.16.192.0&#x2F;19</p>
+<p>172.16.192.1 – 172.16.223.254</p>
+<p><strong>172.16.111</strong> 00000.000000000 —- 172.16.224.0&#x2F;19</p>
+<p>172.16.224.1 – 172.16.255.254</p>
+<h4 id="CIDR-—-无类域间路由-—-汇总"><a href="#CIDR-—-无类域间路由-—-汇总" class="headerlink" title="CIDR — 无类域间路由 — 汇总"></a>CIDR — 无类域间路由 — 汇总</h4><p>“取相同，去不同” </p>
+<p>例:</p>
+<p>192.168.0.0&#x2F;24</p>
+<p>192.168.1.0&#x2F;24</p>
+<p><strong>192.168.00000000</strong>.00000000·</p>
+<p><strong>192.168.00000001</strong>.00000000</p>
+<p><strong>192.168.0000000 0</strong>.00000000 192.168.0.0&#x2F;23</p>
+<p>192.168.1.0&#x2F;24</p>
+<p>192.168.2.0&#x2F;24</p>
+<p>192.168.3.0&#x2F;24</p>
+<p><strong>192.168.00000000</strong>.00000000</p>
+<p><strong>192.168.00000001</strong>.00000000</p>
+<p><strong>192.168.00000010</strong>.00000000</p>
+<p><strong>192.168.00000011</strong>.00000000</p>
+<p><strong>192.168.000000 00</strong>.00000000</p>
+<p>192.168.0.0&#x2F;22 —– 超网(超越C类)</p>
+<p>172.16.0.0&#x2F;24</p>
+<p>172.16.1.0&#x2F;24</p>
+<p>172.16.2.0&#x2F;24</p>
+<p>172.16.3.0&#x2F;24</p>
+<p>172.16.0.0&#x2F;22 —- 子网汇总</p>
+<h2 id="Day3"><a href="#Day3" class="headerlink" title="Day3"></a>Day3</h2><h3 id="OSI七层参考模型"><a href="#OSI七层参考模型" class="headerlink" title="OSI七层参考模型"></a>OSI七层参考模型</h3><p>OSI&#x2F;RM —- 开放式系统互联参考模型</p>
+<p>1979年iso(国际标准化组织) 提出</p>
+<p>OSI的核心思想 — 分层</p>
+<p>属于同一层面的不同功能，其目的和作用是相似或者相近的；属于不同层面的不同功能，其目的和作用存在明显的差异。每一层都在下层的基础上提供增值服务，最上层提供的是人机交互的应用服务。</p>
+<p>作用：</p>
+<p>1，更易标准化</p>
+<p>2，降低层次之间的关联性，层次之间可以独立发展</p>
+<p>3，更易学习或理解</p>
+<p>应用层</p>
+<p>表示层</p>
+<p><strong>会话层</strong> —- 保持网络应用和网络服务器之间的会话连接。会话层地址</p>
+<p><strong>传输层</strong> —- 实现端到端的传输，应用到应用的传输。端口号（传输层地址 — 区分和标定不同应用的） — 0 - 65535 （16位二进制构成）0号为保留端口号 1 - 65535。1- 1023 知名端口号</p>
+<p>网络层</p>
+<p><strong>数据链路层</strong> — MAC（介质访问控制层），LLC（逻辑链路控制层） —- FCS（帧校验序列)用于验数据完整性的，依靠CRC(循环冗余算法)，只能检验出物理的破坏，如果被黑客篡改过很难检验出来 </p>
+<p>物理层</p>
+<h3 id="TCP-x2F-IP模型"><a href="#TCP-x2F-IP模型" class="headerlink" title="TCP&#x2F;IP模型"></a>TCP&#x2F;IP模型</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/2d58191d/Users\84750\AppData\Roaming\Typora\typora-user-images\image-20211104112452442.png" alt="image-20211104112452442"></p>
+<p>OSI分的太细，分配不均衡，所以TCP&#x2F;IP模型用的较多</p>
+<p>TCP&#x2F;IP协议族（协议簇）</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/2d58191d/Users\84750\AppData\Roaming\Typora\typora-user-images\image-20211101213655689.png" alt="image-20211101213655689"></p>
+<p>TCP&#x2F;IP四层模型 — TCP&#x2F;IP标准模型</p>
+<p>​				认为数据链路层和物理层不可分割应该合成一层</p>
+<p>TCP&#x2F;IP五层模型 — TCP&#x2F;IP对等模型</p>
+<p>​				数据链路层和物理层的原理上差异较大</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/2d58191d/Users\84750\AppData\Roaming\Typora\typora-user-images\image-20211101213714015.png" alt="image-20211101213714015"></p>
+<p><strong>PDU — 协议数据单元(也就是单位)</strong></p>
+<p>在OSI模型中:</p>
+<p>L1PDU(第一层的单位)</p>
+<p>L2PDU </p>
+<p>…</p>
+<p>L7PDU</p>
+<p>在TCP&#x2F;IP模型中:</p>
+<p><strong>应用层</strong> —- 报文</p>
+<p><strong>传输层</strong> —- 段</p>
+<p><strong>网络层</strong> —- 包</p>
+<p><strong>数据链路层</strong> —- 帧</p>
+<p><strong>物理层</strong> —- 比特流</p>
+<h3 id="封装和解封装"><a href="#封装和解封装" class="headerlink" title="封装和解封装"></a>封装和解封装</h3><p>封装:每一层添加数据的过程</p>
+<p>解封装:还原原始数据</p>
+<p><strong>应用层</strong>—有封装但取决于具体的应用</p>
+<p><strong>传输层</strong> —- 端口号 — TCP&#x2F;UDP</p>
+<p><strong>网络层</strong> —- Ip地址 — IP</p>
+<p><strong>数据链路层</strong> —- MAC地址 — 以太网：早期局域网的解决方案，依靠MAC地址进行寻址的网络。现在也应用于广域网当中。工作在1，2层的网络。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/2d58191d/Users\84750\AppData\Roaming\Typora\typora-user-images\image-20211101213729466.png" alt="image-20211101213729466"></p>
+<p>以太网Ⅱ型帧</p>
+<p>DestinationAdress—Dmac</p>
+<p>SourceAdress—Smac</p>
+<p>Type —- 表示上层所使用的协议类型</p>
+<p>Preamble—前导符</p>
+<p><strong>物理层</strong></p>
+<h4 id="应用层的协议-有端口号的一定是应用层协议"><a href="#应用层的协议-有端口号的一定是应用层协议" class="headerlink" title="应用层的协议 (有端口号的一定是应用层协议)"></a>应用层的协议 (有端口号的一定是应用层协议)</h4><p>HTTP tcp 80 — 超文本传输协议 — 提供浏览网页服务的</p>
+<p>HTTPS TCP 443 — HTTP + SSL（TLS）（安全传输协议）</p>
+<p>FTP TCP 20&#x2F;21 — 文件传输协议 — 提供互联网文件资源共享服务</p>
+<p>TFTP UDP 69 —- 简单文件传输协议 </p>
+<p>Telnet TCP 23 —- 远程登录标准协议 — 提供远程管理服务</p>
+<p>SSH TCP 22</p>
+<p>Dns UDP&#x2F;TCP 53 —- 域名解析协议</p>
+<p>DHCP UDP 67&#x2F;68 — 动态主机配置协议</p>
+<h4 id="TCP和UDP协议："><a href="#TCP和UDP协议：" class="headerlink" title="TCP和UDP协议："></a>TCP和UDP协议：</h4><h5 id="TCP和UDP的区别"><a href="#TCP和UDP的区别" class="headerlink" title="TCP和UDP的区别"></a>TCP和UDP的区别</h5><p>1，TCP是面向连接的协议，而UDP是无连接的协议</p>
+<p>面向连接：在数据传输之前，先使用预备的协议建立点到点的连接，然后再传输数据的过程</p>
+<p>2，TCP协议传输是可靠的，而UDP协议传输是“尽力而为”</p>
+<p>3，TCP可以进行流控，而UDP不行</p>
+<p>4，TCP可以进行数据分段，而UDP不行</p>
+<p>5，TCP耗费资源比较大，传输速度比较慢；UDP耗费资源比较小，传输速度快</p>
+<p>TCP和UDP的应用场景：TCP适用于效率要求较低，但是对准确性要求较高的场景；UDP适用于对效率要求较高，但是对准确性要求较低的场景（即时类通讯软件）</p>
+<h5 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h5><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/2d58191d/Users\84750\AppData\Roaming\Typora\typora-user-images\image-20211101213749149.png" alt="image-20211101213749149"></p>
+<p>TCP — 可变长头部</p>
+<p>URG—紧急位(激活紧急指针)	ACK—确认位(激活确认信号)	PSH	RST—断开位	SYN—请求位	 FIN—结束位</p>
+<p>校验和 — 确保数据的完整性 — 伪头部校验 — 将网络层封装的12个字节的内容一起进行校验：32位源IP地址，32目标IP地址，8位协议号，8位保留，16位的报文长度</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/2d58191d/Users\84750\AppData\Roaming\Typora\typora-user-images\image-20211101213810372.png" alt="image-20211101213810372"></p>
+<p>TCP建立连接的过程 — 三次握手</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/2d58191d/Users\84750\AppData\Roaming\Typora\typora-user-images\image-20211101213831479.png" alt="image-20211101213831479"></p>
+<p>TCP断开连接的过程 — 四次挥手</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/2d58191d/Users\84750\AppData\Roaming\Typora\typora-user-images\image-20211101213843275.png" alt="image-20211101213843275"></p>
+<p>TCP的传输是可靠的 —- 确认，重传，排序，流控 — 滑动窗口机制</p>
+<h5 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h5><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/2d58191d/Users\84750\AppData\Roaming\Typora\typora-user-images\image-20211101213820906.png" alt="image-20211101213820906"></p>
+<p>UDP校验和可有可无</p>
+<h4 id="IP协议"><a href="#IP协议" class="headerlink" title="IP协议"></a>IP协议</h4><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/2d58191d/Users\84750\AppData\Roaming\Typora\typora-user-images\image-20211101213855881.png" alt="image-20211101213855881"></p>
+<p>IPV4 — 也是可变长头部</p>
+<p>TTL —- 生存时间 —- 数据包每经过一个路由器，TTL值将减一。当TTL值减到0时，数据包将不会被路由器转发，将直接丢弃。</p>
+<p>协议号(上层使用的协议)：</p>
+<p>ICMP — 1</p>
+<p>TCP — 6</p>
+<p>UDP — 17</p>
+<p>IP分片</p>
+<p>MTU(限制IP分片) — 最大传输单元 — 1500字节</p>
+<p>MSS(限制TCP分段) — 最大段长度 — 1460 — 需要协商，当两方不同时，将按照小的一方执行（在三次握手中的前两次SYN包中进行协商）</p>
+<p>为什么要分:因为MTU最大传输单元为1500字节</p>
+<h2 id="Day4"><a href="#Day4" class="headerlink" title="Day4"></a>Day4</h2><h3 id="接口的区别"><a href="#接口的区别" class="headerlink" title="接口的区别"></a>接口的区别</h3><p>GE—- 1000Mbps&#x3D;1Gbps</p>
+<p>Ethernet—- 100Mbps</p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>先配路由器的IP地址，再配pc的</p>
+<p>华为根据配置权限的不同，将CLI界面分成了不同的视图</p>
+<h4 id="用户视图"><a href="#用户视图" class="headerlink" title="用户视图"></a>用户视图</h4><p><Huawei> —- 用户视图 —- 仅具有查看配置的操作权限，不能进行配置操作 — &lt; &gt;</Huawei></p>
+<p><Huawei>display ip interface brief —- 查看端口IP地址配置情况</Huawei></p>
+<p>Physical — 如果UP — 代表该接口具备物理层面的通信条件</p>
+<p>Protocol —- 如果UP —- 代表该接口具备协议层面的通信条件</p>
+<p>只有一个接口双UP，才代表该接口可以完成通信。</p>
+<h4 id="系统视图"><a href="#系统视图" class="headerlink" title="系统视图"></a>系统视图</h4><p><Huawei>system-view —- 进入到系统视图</Huawei></p>
+<p>[Huawei] — 系统视图 —- 可以进行一些全局类的配置 — [ ]</p>
+<p>[Huawei]sysname aa —- 修改路由器名称</p>
+<p>[aa]</p>
+<p>[aa]quit — 退回到上一个视图</p>
+<p>​			q —- 华为支持简写模式</p>
+<p>Ctrl + Z —- 直接回到用户视图</p>
+<h4 id="接口试图"><a href="#接口试图" class="headerlink" title="接口试图"></a>接口试图</h4><p>[aa]interface GigabitEthernet 0&#x2F;0&#x2F;0 —- 进入接口视图，没有提高权限，只是更精准了—- [ - ]</p>
+<p>[aa-GigabitEthernet0&#x2F;0&#x2F;0]ip address 192.168.1.1 255.255.255.0 — 给接口配置IP地址的命令</p>
+<p>[aa-GigabitEthernet0&#x2F;0&#x2F;1]ip address 192.168.2.1 24—简写</p>
+<p>[aa-GigabitEthernet0&#x2F;0&#x2F;1]undo ip address 192.168.2.1 24 — 删除命令 — 在命令前面加undo即可</p>
+<p>[aa-GigabitEthernet0&#x2F;0&#x2F;0]display this — 展示当前视图所作的所有配置</p>
+<p>[aa]display current-configuration — 查看当前的配置操作 — 查看缓存中的配置 — 缓存的特点是断电丢失</p>
+<p>闪存 — FLASH</p>
+<p><aa>display saved-configuration — 查看闪存中的配置内容 </aa></p>
+<p>为什么跨网络传输的第一个包会丢失？—因为ARP缓存表的存在</p>
+<p>帮助系统：</p>
+<p>Tab —- 可以补全命令</p>
+<p>？ — 可以查看后续命令或者是后续可以跟的参数</p>
+<p>访问网络中的服务器</p>
+<p>1，通过IP地址访问</p>
+<p>2，通过域名来访问</p>
+<p>3，通过应用程序或APP来访问</p>
+<h3 id="DNS协议"><a href="#DNS协议" class="headerlink" title="DNS协议"></a>DNS协议</h3><p>DNS — 域名解析协议 — 基于UDP&#x2F;TCP协议的53号端口传输数据</p>
+<p>典型的C&#x2F;S架构的协议 —- DNS客户端 — 通过域名上网的电脑</p>
+<p>​                                      —- DNS服务器 — 完成域名解析的服务器 — 记录IP地址和域名的映射关系</p>
+<p>DNS的工作原理：上网前先根据域名去找DNS服务器查对应的IP地址，之后再根据IP地址访问服务器。</p>
+<p><a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a> — 从右往左，一个点号分隔一个域名层次，层次逐渐降低，范围逐渐精准。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/2d58191d/Users\84750\AppData\Roaming\Typora\typora-user-images\image-20211106205745226.png" alt="image-20211106205745226"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/2d58191d/Users\84750\AppData\Roaming\Typora\typora-user-images\image-20211106205801845.png" alt="image-20211106205801845">为配合这种层次化的域名结构，我们DNS服务器按照联机分布式数据库系统来部署</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/2d58191d/Users\84750\AppData\Roaming\Typora\typora-user-images\image-20211106205816197.png" alt="image-20211106205816197">DNS服务器支持的查询方式 —- 递归查询</p>
+<p>​                                                     迭代查询</p>
+<p>电脑 –（递归查询 – UDP 53）– 本地DNS服务器 –（迭代查询 — TCP 53）– 根服务器</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/2d58191d/Users\84750\AppData\Roaming\Typora\typora-user-images\image-20211106205826180.png" alt="image-20211106205826180"></p>
+<h3 id="DHCP协议"><a href="#DHCP协议" class="headerlink" title="DHCP协议"></a>DHCP协议</h3><p>DHCP — 动态主机配置协议 — 使用的是UDP的67和68端口进行通信</p>
+<p>典型的C&#x2F;S架构协议 —- DHCP客户端 — 需要获取IP地址的设备 — 68端口</p>
+<p>​								  —- D HCP服务器 — 提供IP地址的设备 — 67端口</p>
+<h4 id="第一种场景：PC首次获取IP地址"><a href="#第一种场景：PC首次获取IP地址" class="headerlink" title="第一种场景：PC首次获取IP地址"></a>第一种场景：PC首次获取IP地址</h4><p>1，DHCP客户端 — DHCP服务器 ：DHCP - Discover —- 以广播的形式发送  </p>
+<p>2，DHCP服务器 — DHCP客户端：DHCP - offer —- 单播&#x2F;广播</p>
+<p>​		offer包中会携带一个有效的IP地址，并暂时为DHCP客户端保留</p>
+<p>3，DHCP客户端 — DHCP服务器 ：DHCP - request包 — 广播（当DHCP客户端获得多个DHCP-OFFER包时，将会选择第一个获取到的offer包中的IP地址作为请求IP。）</p>
+<p>4，DHCP服务器 — DHCP客户端：DHCP-ACK —- 单播&#x2F;广播</p>
+<h4 id="第二种场景：PC再次获取IP地址"><a href="#第二种场景：PC再次获取IP地址" class="headerlink" title="第二种场景：PC再次获取IP地址"></a>第二种场景：PC再次获取IP地址</h4><p>1，DHCP客户端 — DHCP服务器 ：DHCP - request包 — 广播</p>
+<p>2，DHCP服务器 — DHCP客户端：DHCP - ACK&#x2F;DHCP - NAK (同意&#x2F;不同意)</p>
+<p>​	DHCP-Release — DHCP客户端主动释放IP地址</p>
+<h4 id="租期-—-24H"><a href="#租期-—-24H" class="headerlink" title="租期 — 24H"></a>租期 — 24H</h4><p>T1 — 租期的50% — 12H — DHCP客户端 — DHCP服务器 ：DHCP - request包 —- 单播</p>
+<p>T2 — 租期的87.5% — 21H — DHCP客户端 — DHCP服务器 ：DHCP - request包 —- 广播</p>
+<h4 id="DHCP服务器的配置"><a href="#DHCP服务器的配置" class="headerlink" title="DHCP服务器的配置"></a>DHCP服务器的配置</h4><p>1，开启DHCP服务</p>
+<p>​	[aa]dhcp enable </p>
+<p>2，创建一个地址池</p>
+<p>​	[aa]ip pool aa</p>
+<p>​	Info: It’s successful to create an IP address pool.</p>
+<p>​	[aa-ip-pool-aa]</p>
+<p>3，配置地址池</p>
+<p>​	[aa-ip-pool-aa]network 192.168.1.0 mask 24 —- 写入IP地址池中所有的网段</p>
+<p>​	[aa-ip-pool-aa]gateway-list 192.168.1.1 — 配置网关</p>
+<p>​	[aa-ip-pool-aa]dns-list 114.114.114.114 8.8.8.8 — 配置DNS服务器信息</p>
+<p>4，去接口选择全局配置</p>
+<p>​	[aa-GigabitEthernet0&#x2F;0&#x2F;0]dhcp select global </p>
+<h3 id="路由器-2"><a href="#路由器-2" class="headerlink" title="路由器"></a>路由器</h3><p>路由器的作用</p>
+<p>1，隔离广播域</p>
+<p>2，转发</p>
+<p>路由表</p>
+<p>路由器的转发：当一个数据包来到路由器，路由器将基于数据包中的目标IP地址查询本地<strong>路由表</strong>，若表中存在记录，则将<strong>无条件</strong>按记录转发；若没有记录，则将直接丢弃该数据包。</p>
+<p><aa>display ip routing-table — 查看路由表</aa></p>
+<p>Destination&#x2F;Mask —- 目标网段和掩码 — 目的地</p>
+<p>Proto — 协议的意思，可以理解为该路由的类型</p>
+<p>Direct — 直连路由</p>
+<p>​				路由器接口直接通过网线连接形成的网段 — 直连网段 — 直连网段对应的路由 — 直连路由</p>
+<p>NextHop — 下一跳 — （经过路由器的一次转发称为一跳）数据下一个需要经过的路由器的入接口的IP地址。</p>
+<p>Interface — 出接口 — 数据包发出的接口</p>
+<p>直连路由：自动生成</p>
+<p>​					条件：1，接口具备IP地址</p>
+<p>​								 2，接口双UP</p>
+<h2 id="Day5"><a href="#Day5" class="headerlink" title="Day5"></a>Day5</h2><p>路由器和路由器之间的链路 — 骨干链路（总线链路） — 骨干链路一般不放用户</p>
+<h3 id="路由器获取未知网段路由条目的方法："><a href="#路由器获取未知网段路由条目的方法：" class="headerlink" title="路由器获取未知网段路由条目的方法："></a>路由器获取未知网段路由条目的方法：</h3><p>静态路由：由网络管理员手写的路由条目。</p>
+<p>动态路由：所有路由器上运行相同的一种动态路由协议，之后通过路由器之间的沟通，协商最终计算生成的路由条目。</p>
+<h4 id="静态路由"><a href="#静态路由" class="headerlink" title="静态路由"></a>静态路由</h4><p>[r1]ip route-static 192.168.3.0 24 192.168.2.2 — 静态路由添加命令</p>
+<p>192.168.3.0&#x2F;24 Static 60 0 RD 192.168.2.2 GigabitEthernet0&#x2F;0&#x2F;1</p>
+<p>PRE — 优先级 — 当两条路由条目的目标网段相同时，仅加载优先级高的路由条目到路由表中。</p>
+<p>​			注意：优先级数值越小，优先级反而越高。优先级的取值范围 0 - 255</p>
+<p>​			华为设备：直连路由优先级默认为0，静态路由优先级默认为60。</p>
+<p>RD —- 该路由条目需要递归查找出接口</p>
+<p>[r1]ip route-static 192.168.3.0 24 GigabitEthernet 0&#x2F;0&#x2F;1 192.168.2.2 —- 加上出接口添加静态路由</p>
+<p>配置拓扑的流程：</p>
+<p>1.数广播域</p>
+<p>2.分配网段</p>
+<p>3.配IP，先给路由器配看，再给PC</p>
+<p>4.写路由</p>
+<p>路由环路会导致路由器崩溃</p>
+<h3 id="拓展配置"><a href="#拓展配置" class="headerlink" title="拓展配置"></a>拓展配置</h3><p>1，负载均衡：当路由器访问同一个目标具有<strong>多条开销相似</strong>的路径时，可以让设备将流量拆分后延多条路径同时传输，达到叠加带宽的效果。</p>
+<p>192.168.6.0&#x2F;24 Static 60 0 RD 192.168.2.2 GigabitEthernet0&#x2F;0&#x2F;1</p>
+<p>​							Static 60 0 RD 192.168.3.2 GigabitEthernet0&#x2F;0&#x2F;2</p>
+<p>2，环回接口：路由器配置的虚拟接口。一般用在虚拟实验，不受设备的限制(实的不行来虚的)</p>
+<p>[r1]interface LoopBack 0 — 创建环回接口</p>
+<p>[r1-LoopBack0]</p>
+<p>[r1]ping -a 192.168.1.1 192.168.3.1 —- 指定源IP发送Ping包</p>
+<p>3，手工汇总：当路由器可以访问多个连续的子网时，若均通过相同的下一跳，可以将这些网段进行汇总计算，之后仅编辑到达汇总网段的静态路由即可，以达成减少路由条目，提高转发效率的目的。</p>
+<p>4，路由黑洞：在汇总中，若包含网络内实际不存在的网段时，可能使流量又去无回，造成链路资源的浪费。</p>
+<p>​	合理的子网划分和汇总可以减少黑洞的产生。</p>
+<p>5，缺省路由：一条不限定目标的路由条目；查表时，若本地所有路由均未匹配，则将匹配缺省路由。</p>
+<p>​	一旦路由黑洞和缺省路由相遇，将100%出环</p>
+<p>6，空接口路由：在黑洞路由器上，配置一条到达汇总网段指向空接口的路由。</p>
+<p>​		1，空接口：null0口，路由器的一个虚拟接口，如果一条路由的出接口为空接口则代表将该流量丢弃。</p>
+<p>​		2，路由表的匹配原则：最长匹配原则（精准匹配原则）</p>
+<p>​				[r1]ip route-static 192.168.0.0 22 NULL 0</p>
+<p>7，浮动静态路由：通过修改静态路由的默认优先级，实现静态路由的备份效果</p>
+<p>​			[r1]ip route-static 192.168.2.0 24 21.0.0.2 preference 61</p>
+<p>​			[r1]display ip routing-table protocol static </p>
+<h2 id="Day6"><a href="#Day6" class="headerlink" title="Day6"></a>Day6</h2><p>静态路由:由网络管理员手写的路由条目。</p>
+<p>动态路由:所有路由器上运行相同的一种动态路由协议，之后通过路由器之间的沟通，协商最终计算生成的路由条目。</p>
+<h3 id="静态路由-1"><a href="#静态路由-1" class="headerlink" title="静态路由"></a>静态路由</h3><p>​		优点:</p>
+<p>​		1，选录由由管理员选择，相对更容易掌控</p>
+<p>​		2，不需要占用额外的资源</p>
+<p>​		3，更加安全</p>
+<p>​		缺点：</p>
+<p>​		1，在复杂的网络环境中，配置量较大</p>
+<p>​		2，一旦网络结构发生变化，静态路由不能基于拓扑的变化而变化（收敛—<strong>不能基于拓扑的变化而自动收敛）</strong></p>
+<h3 id="动态路由"><a href="#动态路由" class="headerlink" title="动态路由"></a>动态路由</h3><p>​		优点:</p>
+<p>​		1，可以基于拓扑的变化而自动收敛</p>
+<p>​		2，部署简单，仅需在所有路由器上运行相同的路由协议即可</p>
+<p>​		缺点：</p>
+<p>​		1，路径由单一算法得出，不一定是最优路径，甚至可能出现环路</p>
+<p>​		2，会额外占用路由器硬件资源和链路带宽资源</p>
+<p>​		3，因为设备之间存在信息传递，所以，比较容易被利用产生安全问题</p>
+<p>总结：</p>
+<p>​		1，静态路由适合小型简单的网络环境</p>
+<p>​		2，动态路由设用于复杂的网络环境中</p>
+<h3 id="AS"><a href="#AS" class="headerlink" title="AS"></a>AS</h3><p>AS—自治系统—将网路分块管理—由单一的机构或组织所管理的一系列IP网络及其设备所构成的集合</p>
+<p>AS的管理—-AS存在编号—由16位二进制构成(0-65535)—现在也有拓展版的AS编号—32位二进制构成</p>
+<p>AS的通信:</p>
+<p>​		AS内部通信所使用的协议—IGP(内部网关协议) —RIP,OSPF,is-is，eigrp等</p>
+<p>​		AS之间的通信协议—EGP(外部网关协议)—BGP</p>
+<p>IGP根据算法进行分类</p>
+<p>​		距离矢量型协议(DV) — 路由器之间直接发送路由条目信息。 —使用的算法：贝尔曼-福特算法(Bellman-Ford算法) — “依据传闻的理由协议” — RIP</p>
+<p>​		链路状态型协议(LS) —链路状态信息(LSA — 链路状态通告) —使用的算法：SPF算法 —将图形结构转换为树形结构 — OSPF，IS-IS</p>
+<h4 id="RIP-—路由信息协议"><a href="#RIP-—路由信息协议" class="headerlink" title="RIP —路由信息协议"></a>RIP —路由信息协议</h4><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/2d58191d/Users\84750\AppData\Roaming\Typora\typora-user-images\image-20211117102131179.png" alt="image-20211117102131179"></p>
+<p>邻居 —相邻的两个路由器，可以直接通过网段进行通信</p>
+<p>Destination&#x2F;Mask，度量值(Metric)在华为体系中叫 开销值(Cost) —动态路由重要的选路依据</p>
+<p>开销值：当动态路由计算出多条到达相同网段的路径时，将比较他们的开销值，会选择开销值最小的加入到路由表中。</p>
+<p>不同协议之间，比较优先级；相同 协议之间，比较开销值。</p>
+<p>不同路由协议之间，他们的开销值的度量标准是不一样的，不同协议的开销值没有可比性。</p>
+<p>RIP是以跳数作为开销度量的</p>
+<p>RIP支持等开销负载均衡</p>
+<p>RIP的默认优先级 — 100 (华为中定义的)</p>
+<p>RIP存在一个工作半径 — 15跳。当RIP收到一个目标网段路由的开销值为16跳的时候，则认为该网段不可达。</p>
+<p>RIP在传递路由条目的数据包中所携带的cost &#x3D; 本地路由表中该网段的开销值 + 1.</p>
+<h5 id="Bellman-Ford算法"><a href="#Bellman-Ford算法" class="headerlink" title="Bellman-Ford算法"></a>Bellman-Ford算法</h5><p>1.AR1收到AR2发送的2.2.2.0&#x2F;24网段的路由信息，但是，AR1本地路由表中没有这条网段的路由信息；则直接将该路由<strong>刷新</strong>到AR1的路由表中。</p>
+<p>Destination&#x2F;Mask	Proto	Pre	Cost	Flags	NextHop	Interface</p>
+<p>2.2.2.0&#x2F;24				  RIP		100	1			D	    12.0.0.2	 G 0&#x2F;0&#x2F;0</p>
+<p>2.AR1收到AR2发送的2.2.2.0&#x2F;24 网段的路由信息，但是，AR1本地路由表中有这条网段的路由信息；则看下一跳，本地路由表中的下一跳就是AR2，这种情况下将直接将R2发送的路由信息<strong>刷新</strong>到路由表中。</p>
+<p>3.AR1收到AR2发送的2.2.2.0&#x2F;24网段的路由信息，但是，AR1本地路由表中有这条网段的路由信息；则看下一跳，本地路由表中的下一跳不是AR2，则比较开销值。若本地的开销值大于AR2发来的路由的开销值；则将AR2发的路由信息<strong>刷新</strong>到路由表中。</p>
+<p>4.AR1收到AR2发送的2.2.2.0&#x2F;24网段的路由信息，但是，AR1本地路由表中有这条网段的路由信息；则看下一跳，本地路由表中的下一跳不是AR2，则比较开销值。若本地的开销值小于AR2发来的路由的开销值；则<strong>不刷新</strong>AR2发送的路由信息。</p>
+<h5 id="RIP的版本"><a href="#RIP的版本" class="headerlink" title="RIP的版本"></a>RIP的版本</h5><p>​	一共存在3个版本—RIPV1,RIPV2,RIPNG</p>
+<p>​	RIPV1,RIPV2 — IPV4</p>
+<p>​	RIPNG — IPV6</p>
+<p>RIPV1和RIPV2的区别</p>
+<ol>
+<li>v1是有类别的路由协议，v2是无类别的路由协议</li>
+</ol>
+<p>​	v1在发送目标网段信息时，不携带子网掩码；</p>
+<p>​	v2在发送目标网段信息时，携带子网掩码。</p>
+<ol start="2">
+<li><p>v1不支持手工认证，v2支持手工认证 — 通过相同的口令完成身份认证</p>
+</li>
+<li><p>v1采用广播的形式发送信息；v2是通过组播的形式发送信息；—224.0.0.9</p>
+<p>RIP传输层使用的是UDP协议，通信端口为520端口。</p>
+</li>
+</ol>
+<h5 id="RIP的数据包"><a href="#RIP的数据包" class="headerlink" title="RIP的数据包"></a>RIP的数据包</h5><p>​	request — 请求包</p>
+<p>​	response — 响应包（包含路由信息）— 更新包</p>
+<p>​		RIP在收敛完成之后，依然会每隔30s发送一个response —RIP的周期更新</p>
+<p>​		1.弥补RIP自身没有确认机制</p>
+<p>​		2.弥补RIP自身没有保活机制</p>
+<p>RIP的周期更新 –异步周期更新</p>
+<p> </p>
+<p>##### RIP的计时器 </p>
+<p>1，周期更新计时器 – 30S </p>
+<p>2，无效计时器—180S—路由条目刷新后将启动一个180S的无效计时器，若计时器结束路由未刷新，则认为路由不可达。则将该路由从全局路由表中删除掉，并将该路由条目的开销值改为16。并且将其存放在缓存当中，之后周期更新的时候依然会携带。 —-带毒传输 </p>
+<p>3，垃圾回收计时器 —120S—无效计时器归0后，开始计时，120S时间到则将彻底删除该路由。更新时也不再发送。 </p>
+<h5 id="RIP的破环机制"><a href="#RIP的破环机制" class="headerlink" title="RIP的破环机制"></a>RIP的破环机制</h5><p>1，触发更新 —当网络拓扑结构发生变化时，第一时间将变化信息传递出去</p>
+<p>2，水平分割—从哪个接口学来的不再从哪个接口发出去<br>3，毒性逆转 —从哪个接口学来的还从哪个接口发出去，但是要带毒。</p>
+<p>​        因为毒性逆转和水平分割做法矛盾，所以只能二选其一。华为设备默认开启水平分割，但如果水平分割和毒性逆转同时开启，华为设备将按照毒性逆转的规则来执行。</p>
+<h5 id="RIP的配置"><a href="#RIP的配置" class="headerlink" title="RIP的配置"></a>RIP的配置</h5><p>1，启动RIP进程<br>[r1]rip1 —- 仅具有本地意义，区分多个RIP进程使用（如果不带进程号，默认进入进程1）</p>
+<p>[r1-rip-1]</p>
+<p>2，选择RIP的版本</p>
+<p>[r1-rip-1]version 1 </p>
+<p>3，宣告<br>        宣告的要求∶1，所有直连网段都需要宣告<br>                                2，必须按照主类宣告<br>        [r1-rip-1]network 1.0.0.0 </p>
+<p>宣告的目的<br>1，激活接口— 只有激活的接口才可以收发RIP的数据包<br>2，发布路由—只有激活的接口所对应的网段的路由信息才能发布出去</p>
+<p>[r1]display rip 1 route —查看RIP的路由表</p>
+<h5 id="RIP的拓展配置"><a href="#RIP的拓展配置" class="headerlink" title="RIP的拓展配置"></a><strong>RIP的拓展配置</strong></h5><p>1，RIPV2的手工认证<br>[r1-GigabitEthernet0&#x2F;0&#x2F;0]rip authentication-mode md5 usual plain 123456 (前两个要一样，最后一个都可以)</p>
+<p>2，RIPV2的手工汇总<br>[r1-GigabitEthernet0&#x2F;0&#x2F;0]rip summary-address 192.168.0.0255.255.254.0 </p>
+<p>3，沉默接口<br>[r1-rip-1]silent-interface GigabitEthernet 0&#x2F;O&#x2F;1 </p>
+<p>4，加快收敛—修改计时器<br>[r1-rip-1]timers rip 30 180120 —-修改计时器时不能修改他们的倍数关系</p>
+<p>5，缺省路由<br>[r3-rip-1]default-route originate</p>
+<h3 id="ACL"><a href="#ACL" class="headerlink" title="ACL"></a>ACL</h3><p>ACL—访问控制列表—策略<br>        配置了ACL的网络设备根据事先设定好的报文匹配规则，对经过该设备的流量按照规则进行匹配.对匹配.上的流量执行设定好的动作。</p>
+<p><strong>ACL的功能</strong></p>
+<p>1，访问控制∶在路由器流量流入或者流出的接口上，匹配流量，然后执行设定好的动作。- permit （允许）;deny（拒绝）<br>2，抓取感兴趣流∶ACL和其他服务结合使用，ACL负责匹配对应的流量，而其他的服务对匹配到的流量执行相应的动作。（流量控制 —- ACL和Qos–服务质量技术）</p>
+<p>ACL控制列表的匹配规则<br>自上而下逐一匹配，匹配上，则按照对应的动作执行，不再向下匹配。<br>思科体系的设备，在ACL访问列表的末尾隐含了一条拒绝所有的规则</p>
+<p>华为体系的设备，在ACL访问列表的末尾隐含了一条允许所有的规则</p>
+<p><strong>ACL的分类</strong><br>基本ACL∶仅关注数据包中的源IP。（只看你是谁）<br>高级ACL∶除了关注数据包中的源IP以外，还会关注数据包中的目标IP，及协议和端口号。（不光看你是谁，还要看你去哪，去干嘛）</p>
+<p>二层ACL </p>
+<p>用户自定义ACL</p>
+<p>例：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/2d58191d/Users\84750\AppData\Roaming\Typora\typora-user-images\image-20211118210854732.png" alt="image-20211118210854732"></p>
+<p>需求一∶PC1可以可以访问3.0网段，但是PC2不行<br>基础ACL的位置原则∶由于基础ACL仅关注数据包中的源IP地址，故调用时应尽量靠近目标，避免对其他地址访问误伤</p>
+<p>1，创建 ACL列表</p>
+<p>[r2]acl ?<br>INTEGER&lt;2000-2999&gt; Basic access-list（add to current using rules） -— 基础ACL编号范围<br>INTEGER&lt;3000-3999&gt; Advanced access-list(add to current using rules)—高级ACL编号范围</p>
+<p>INTEGER&lt;4000-4999&gt; Speci fy a L2 acl group —- 二层ACL编号范围<br>ipv6								ACL IPv6 </p>
+<p>name							 Speci fy a named ACL<br>number						 Speci fy a numbered ACL<br>[r2]acl 2000 </p>
+<p>2，在ACL列表中添加规则<br>[r2-acl-basic-2000]rule deny source 192.168.1.3 0.0.0.0—通配符– 0对应位不可变，1对应位可变。0和1可以穿插使用<br>[r2-acl-basic-2000]rule permit source any – 允许所有</p>
+<p>[r2]display acl 2000 – 查看ACL列表<br>[r2-acl-basic-2000]rule 6 deny source 192.168.1.2 0.0.0.0 —– 通过序号来添加规则<br>[r2-acl-basic-2000]undo rule 6 — 按照序号删除规则<br>华为默认以5为步调自动添加规则序号，其目的时为了方便在中间插入规则。</p>
+<p>3，接口上调用ACL列表<br>[r2-GigabitEthernet0&#x2F;0&#x2F;0]traffic-filter outbound acl 2000<br>切记∶一个接口的一个方向上只能调用一张ACL列表。</p>
+<p> 需求二∶要求PC1可以ping通PC3，但是不能ping通PC4。<br>高级ACL的位置原则;由于高级ACL对流量进行精确匹配，可以避免误伤，所以，调用时应尽量靠近源，减少链路资源的浪费。<br>[r1]aclname xuqiu2 3000 —- 通过重命名的方式创建ACL列表</p>
+<p>[r1-acl-adv-xuqiu2]<br>[r1-acl-adv-xuqiu2]rule deny icmp source 192.168.1.2 0.0.0.0 destination 192.168.3.2 0.0.0.0<br>[r1-GigabitEthernet0&#x2F;0&#x2F;0]traffic-filter inbound acl name xuqiu2 –通过重命名的方式调用ACL列表</p>
+<p>需求三∶要求PC1可以ping通R2，但是不能telnet R2</p>
+<p>telnet – 远程登录协议</p>
+<p>带内管理 — 通过网络对设备进行管理控制<br>        通过telnet&#x2F;SSH管理设备</p>
+<p>​		通过web进行设备管理</p>
+<p>​		通过SNMP协议进行设备管理<br>带外管理 — 不需要通过网络对设备进行管理控制<br>​		通过console口进行管理</p>
+<p>​		通过AUX接口进行管理</p>
+<p>telnet实现远程登录的两个必要条件<br>        1，登陆设备和被登录设备网络可达</p>
+<p>​		2，被登录设备必须开启telnet服务</p>
+<p>telnet -— 典型C&#x2F;S架构的协议。登录设备扮演telnet客户端的角色，被登录设备扮演telnet服务器的角色。 — TCP 23</p>
+<p>路由器开启telnet服务的方法</p>
+<p>1，进入aaa服务</p>
+<p>[r2]asa—- 专门存储和管理账号的地方</p>
+<p>[r2-aaa]<br>2，创建登录用的用 户名和密码<br>[r2-aaa]local-user admin privilege level 15 password cipher 123456 </p>
+<p>[r2-aa]<br>3，定义该用户所对应的服务<br>[r2-aaa]local-user admin service-type telnet </p>
+<p>4，开启虚拟的登录端口<br>[2]user-interface vty 0 4 -—– 同时开启5个虚拟的登录端口</p>
+<p>[r2-ui-vty0-4]</p>
+<p>5，定义登录认证模式<br>[r2-ui-vtyO-4]authentication-mode aaa</p>
+<p>[r1-acl-adv-3000]rule deny tcp source 192.168.1.10 0.0.0.0 destination 192.168.2.2 0.0.0.0 destination-port eq 23 </p>
+<p>[r1-GigabitEthernetO&#x2F;0&#x2F;0]traffic-filter inbound acl 3000</p>
+<h2 id="Day7"><a href="#Day7" class="headerlink" title="Day7"></a>Day7</h2><h3 id="OSPF"><a href="#OSPF" class="headerlink" title="OSPF"></a>OSPF</h3><p>1，选路的好坏</p>
+<p>2，收敛速度</p>
+<p>3，占用资源大小</p>
+<p>选路佳，收敛快，占用资源小<br>0SPF —- 开放式最短路径优先协议 —– 典型的链路状态型协议<br>RIP — RIPV1, RIPV2 – IPV4 </p>
+<p>​			RIPNG — IPV6<br>ospf —- OSPFV1（在实验室阶段夭折了），0SPFV2 — IPV4<br>​				OSPFV3 – IPV6</p>
+<h4 id="RIPV2和0SPFV2的相同点和不同点"><a href="#RIPV2和0SPFV2的相同点和不同点" class="headerlink" title="RIPV2和0SPFV2的相同点和不同点"></a>RIPV2和0SPFV2的相同点和不同点</h4><p><strong>相同点</strong>∶</p>
+<p>1，0SPFV2和RIPV2都是无类别的路由协议，都支持VLSM和CIDR<br>传递路由信息时携带子网掩码<br>2，OSPFV2和RIPV2都是以组播的形式发送。<br>RIPV2 —224.0.0.9<br>ospfv2 -—- 224.0.0.5和224.0.0.6<br>3，ospfv2和RIPV2一样都支持等开销负载均衡</p>
+<p><strong>不同点</strong>∶<br>RIP只能应用在小型的网络环境当中，但是OSPF可以应用在中大型网络环境当中。</p>
+<h4 id="区域划分"><a href="#区域划分" class="headerlink" title="区域划分"></a>区域划分</h4><p>0SPF为了适应中大型的网络环境，需要进行<strong>结构化部署</strong>。– 区域划分<br>如果一个网络中只包含一个0OSPF区域，则我们将这样的网络称为单区域0SPF网络。<br>如果一个网络中只包含多个0SPF区域，则我们将这样的网络称为多区域0SPF网络。</p>
+<p><strong>划分区域的主要目的</strong>∶区域内部传递拓扑信息，区域之间传递路由信息</p>
+<p>区域边界路由器（ABR）;同时属于两个区域，一个接口属于一个区域，而且至少有一个接口在区域0。<br>区域之间可以存在多个ABR，一个ABR可以属于多个区域</p>
+<p><strong>区域划分的要求</strong>∶</p>
+<p>1，区域之间必须存在ABR </p>
+<p>2，区域划分必须按照星型拓扑结构划分 — 所有区域都需要围绕骨干区域进行划分<br>为了方便管理，我们给0SPF的区域增加了编号标识 — 区域ID（area ID） —– 由32位二进制构成 — 我们规定，骨干区域的编号必须是区域0。</p>
+<h4 id="工作过程"><a href="#工作过程" class="headerlink" title="工作过程"></a>工作过程</h4><h5 id="1，OSPF的数据包类型"><a href="#1，OSPF的数据包类型" class="headerlink" title="1，OSPF的数据包类型"></a><strong>1，OSPF的数据包类型</strong></h5><p>0SPF一共有5种数据包<br>1，hello包 —- 用来周期发现，建立和保活邻居关系的。<br>        0SPF的hello包默认是以10S为周期发送一个<br>        OSPF的失效判定时间为4倍的hello时间 —– 死亡时间（dead tme)</p>
+<p>RID – 用来区分和标识0SPF网络中的路由器<br>            1，全网唯一（0SPF网络）;2，格式统一（统一按照IP地址的格式来定义） </p>
+<p>RID的获取方法∶<br>        1，手动配置 —符合上述两个要求即可<br>        2，自动生成 — 先从环回地址中取最大的IP作为RID，若没有环回地址，则取物理接口中最大的IP作为RID。</p>
+<p>hello包中会携带RID。</p>
+<p>2，DBD包 — 数据库描述报文 -— lsdb（链路状态数据库） -—–菜单<br>3，LSR包 -— 链路状态请求报文 -— 基于DBD包请求未知的LSA信息<br>4，LSU包 — 链路状态更新报文 — 真正携带LSA信息的报文<br>5，LSACK包 —– 链路状态确认报文</p>
+<p>0SPF存在每30Min一次的周期更新。</p>
+<h5 id="2，OSPF的状态机"><a href="#2，OSPF的状态机" class="headerlink" title="2，OSPF的状态机"></a><strong>2，OSPF的状态机</strong></h5><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/2d58191d/Users\84750\AppData\Roaming\Typora\typora-user-images\image-20211119093820817.png" alt="image-20211119093820817"></p>
+<p>two - way -—- 双向通讯 –—— 标志着邻居关系的建立（条件匹配）–— 条件匹配成功，则进入下一个状态，如果匹配失败则停留在邻居关系，使用hello包进行保活</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/2d58191d/Users\84750\AppData\Roaming\Typora\typora-user-images\image-20211119094556200.png" alt="image-20211119094556200"></p>
+<p>EXSTART状态 — 使用未携带数据的DBD包（为了和之前的邻居关系进行区分），进行主从关系选举 -— 通过比较RID，RID大的为主，可以优先进入下一个状态 </p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/2d58191d/Users\84750\AppData\Roaming\Typora\typora-user-images\image-20211119095212306.png" alt="image-20211119095212306"></p>
+<p>full — 转发状态 — 标志着邻接关系的建立。<br>            邻接状态 — 主要目的是为了和前面邻居状态进行区分。邻接关系之间才能真正的进行LSA信息的交换。而邻居之间仅使用hello包进行保活。</p>
+<p><strong>总结</strong></p>
+<p>1.down状态 –— 启动0SPF，发出hello包，进入下一个状态</p>
+<p>2.init(初始化)状态 -—– 收到hello包中包含本地的RID，进入下一个状态<br>3.two-way(双向通讯)状态 — 标志着邻居关系的建立</p>
+<p>(条件匹配)条件匹配成功，则进入下一个状态; 失败则停留在邻居状态，仅hello包保活。<br>4.exstart(预启动)状态 -— 使用未携带数据的DBD包(为了和之前的邻居关系进行区分)，进行主从关系选举 — 通过比较RID.RID大的为主，可以优先进入下一个状态<br>5.exchange(准交换)状态 —– 使用携带目录信息的DBD包进行目录共享</p>
+<p>6.Loading(加载)状态 —– 查看对端发送的DBD包与本端LSDB数据库中的LSA信息进行对比，基于未知的LSA信息，使用LSR包请求，邻居使用LSU包进行回复.需要ACK确认。<br>7.FULL(转发)状态 —– 交换完成后进入，标志着邻接关系的建立。</p>
+<h5 id="3，0SPF的工作过程"><a href="#3，0SPF的工作过程" class="headerlink" title="3，0SPF的工作过程"></a>3，0SPF的工作过程</h5><p>​		启动配置完成后，OSPF将向本地所有运行协议的接口以组播224.0.0.5发送hello包;hello包，中携带本地的RID及本地己知的邻居的RID。之后，将收集到的邻居关系记录在一张表中 —- <strong>邻居表</strong></p>
+<p>​		邻居表建立完成后进行条件匹配。匹配失败则停留在邻居关系，仅使用hello包进行保活。<br>​		匹配成功，则开始建立邻接关系。首先，使用未携带数据的DBD包，进行主从关系的选举。之后使用携带数据的DBD包共享数据库目录。之后。本地使用LSR&#x2F;LSU&#x2F;LSACK数据包，获取未知的LSA信息。完成本地数据库的建立。生成<strong>数据库表</strong>—- LSDB<br>​		最后， 基于本地的链路状态数据库， 生成有向图及最短路径树，之后计算本地到达未知网段的路由信息，将生成的路由添加到<strong>路由表</strong>中。</p>
+<p>​		收敛完成，hello包依然会10S一次进行周期发送，周期保活。每30Min进行一次周期更新。</p>
+<p><strong>网络结构发生突变∶</strong><br>        1，新增一个网段∶触发更新，直接发送携带LSA信息的LSU包进行更新，需要ACK确认<br>        2，断开一个网段∶触发更新，直接发送携带LSA信息的LSU包，进行更新，需要ACK确认<br>        3，无法沟通 — 40S 死亡时间</p>
+<h5 id="4，0SPF的基本配置"><a href="#4，0SPF的基本配置" class="headerlink" title="4，0SPF的基本配置"></a>4，0SPF的基本配置</h5><p>1，启动0SPF进程<br>[r1]ospf 1 router-id 1.1.1.1 </p>
+<p>r1-ospf-1]</p>
+<p>2，创建区域</p>
+<p>[r1-ospf-1]area 0 </p>
+<p>[r1-ospf-1-area-0.0.0.0]</p>
+<p>3，宣告<br>宣告的目的∶激活接口，发布路由<br>[r1-ospf-1-area-0.0.0.0]network 12.0.0.1 0.0.0.0-—反掩码(0代表不可变，1代表可变)(由连续的0和1组成)</p>
+<p>[r1-ospf-1-area-0.0.0.0]network 1.1.1.1 0.0.0.255</p>
+<p>[r1]display ospf peer—– 查看OSPF的邻居表<br>[r1]display ospf peer brief —- 查看0SPF的邻居表简表</p>
+<p>[r1]display ospf lsdb -— 查看OSPF的链路状态数据库[r1]display ospf lsdb router 2.2.2.2 -— 查看具体LSA信息</p>
+<p>华为设备0SPF协议的默认优先级为10</p>
+<p>0SPF是以带宽作为COST值的评判标准<br>COST &#x3D; 参考带宽&#x2F;真实带宽 —- 华为设备参考带宽的默认值为100Mbps</p>
+<p>[r1-ospf-1]bandwidth-reference 1000 — 修改参考带宽的方法<br>注意∶一台路由器的参考带宽修改了，则所有路由器的参考带宽都需要修改成一样的。</p>
+<h6 id="条件匹配"><a href="#条件匹配" class="headerlink" title="条件匹配"></a>条件匹配</h6><p>指定路由器 —DR </p>
+<p>备份指定路由器 — BDR </p>
+<p>剩余的路由 —– DRother</p>
+<p>DR和BDR虽然叫指定路由器或备份指定路由器，但其实是一个接口的概念。</p>
+<p>条件匹配∶在一个广播域中，如果所有设备都保持邻接关系，可能会出现大量的重复更新;所以需要进行DR&#x2F;BDR的选举;所有非DR和BDR的设备之间仅保持邻居关系。</p>
+<p>DR&#x2F;BDR的选举规则∶<br>1，先比较优先级，优先级大的为DR，次大的为BDR。优先级初始默认都为1。<br>        [r1-GigabitEthernet0&#x2F;0&#x2F;0]ospf dr-priority ?<br>        NTEGER&lt;0-255&gt; Router priority value </p>
+<p>​		优先级的取值范围是0-255<br>​		如果优先级设置为0.则代表该接口放弃DR和BDR的选举。<br>2，当优先级相同时，则比较RID。RID大的路由器所对应的接口为DR，次大的为BDR。<br>​		DR&#x2F;BDR的选举是非抢占模式的 – 即一旦DR和BDR选举完毕后，不会因为新加入的设备而重新选举。选举时间为40S。<br>​		<r3>reset ospf 1 process —- 重启0SPF进程</r3></p>
+<h5 id="5，0SPF的拓展配置"><a href="#5，0SPF的拓展配置" class="headerlink" title="5，0SPF的拓展配置"></a>5，0SPF的拓展配置</h5><p>1，手工认证<br>        [r1-GigabitEthernet0&#x2F;0&#x2F;0]ospf authentication-mode md5 1 cipher 123456</p>
+<p>​		1 —– 代表的是key ID，需要确保两端的keyID相同即可<br>2，手工汇总—0SPF区域之间传递路由信息，可以进行汇总，所以，0SPF的手工汇总实际上是区域汇总。<br>​		[r2-ospf-1-area-0.0.0.0]abr-summary 192.168.0.0</p>
+<p>​		255.255.254.0 </p>
+<p>3，沉默接口<br>        [r1-ospf-1]silent-interface GigabitEthernet 0&#x2F;0&#x2F;1 </p>
+<p>4，加快收敛 — 减少计时器<br>        [r1-GigabitEthernet0&#x2F;0&#x2F;0]ospf timer hello 5<br>        注意∶邻居之间的hello时间必须一致，否则将无法建立邻居关系<br>        hello时间修改之后，死亡时间将自动按照四倍关系进行匹配</p>
+<p>5，缺省路由<br>        [r3-ospf-1]default-route-advertise — 在边界路由器上下发缺省信息（OSPF要求边界路由器自身必须先有缺省才能下发缺省）<br>        [r3-ospf-1]default-route-advertise always — 在边界路由器上没有缺省路由时，可以添加always来强制下发缺省信息</p>
+<h2 id="Day8"><a href="#Day8" class="headerlink" title="Day8"></a>Day8</h2><h3 id="VLAN"><a href="#VLAN" class="headerlink" title="VLAN"></a>VLAN</h3><p> V– 虚拟<br>LAN —– 局域网 – 地理覆盖范围较小的网络 </p>
+<p>MAN — 城域网</p>
+<p>WAN – 广域网</p>
+<p>VLAN中的LAN指的是广播域</p>
+<p>VLAN -— 虚拟局域网 —— 交换机和路由器协同工作后，将原来的一个广播域，逻辑上切分为多个虚拟的广播域。</p>
+<p><strong>第一步∶创建VLAN</strong> </p>
+<p><Huawe i>display vlan</Huawe></p>
+<p>IEEE — 802.10标准 &#x3D; dot1q<br>        VID-— VLAN ID —— 用来区分和标定不同的VLAN。VID由12位二进制构成，取值范围0- 4095。0和4095作为保留，1-4094。</p>
+<p>[Huaweij]vlan 2 -— 创建VLAN </p>
+<p>[Huawe i-v lan2]<br>[Huawei]vlan batch 4 to 100 – 批量创建VLAN </p>
+<p>[Huawei]undo vlan batch 4 to 100 —- 批量删除VLAN</p>
+<p><strong>第二步∶将接口划分到VLAN中</strong><br>VID配置映射到交换机的接口，实现VLAN的划分 ——— 一层VLAN&#x2F;物理VLAN </p>
+<p>VID配置映射MAC地址，来实现VLAN的划分 —— 二层VLAN<br>数据帧中类型字段标识是上层协议类型，和VID进行映射，来区分VLAN范围 —– 三层VLAN </p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/2d58191d/Users\84750\AppData\Roaming\Typora\typora-user-images\image-20211120201511102.png" alt="image-20211120201511102"></p>
+<p>​		交换机的转发原理∶数据通过接口来到交换机，交换机先记录源MAC地址和接口的映射关系，顺便，将接口对应的VID进行记录。之后，看目标MAC地址，若目标MAC地址在MAC地址表中有记录且VID和源MAC对应的VID相同，则进行单播;否则，进行泛洪 ，泛洪范围为VID与源MAC对应的VID相同的接口。<br>​		因为以太网Ⅱ型针没有添加标签的位置，所以，802.1Q规定，在源MAC地址和type字段之间增加4个字节的tag（标签）（一定包含12位的VID）。这样新的帧结构我们称为802.10Q帧或者叫tagged帧。将没有打标签的帧称为untagged帧。<br>​		我们把交换机和计算机之间的链路称为ACCESS链路，ACCESS链路只能通过untagged 的帧，并且，这些帧只能属于某一个特定的VLAN。我们把交换机和交换机之间链路称为trunk链路（trunk干道），trunk干道中运行通过tagged帧，且这些帧可以属于多个VLAN。</p>
+<p>第二步配置<br>[sw1-GigabitEthernet0&#x2F;0&#x2F;1]port link-type access </p>
+<p>[sw1-GigabitEthernet0&#x2F;0&#x2F;1]port default vlan 2<br>[sw1]port-group group-member GigabitEthernet 0&#x2F;0&#x2F;3 to GigabitEthernet 0&#x2F;0&#x2F;4<br>[sw1-port-gr oup] - 创建接口组</p>
+<p><strong>第三步∶配置TRUNK千道（SW - SW，SW - R）</strong></p>
+<p>第三步配置<br>[sw1-GigabitEthernet0&#x2F;0&#x2F;5]port link-type trunk —— 定义链路类型</p>
+<p>[sw1-GigabitEthernet0&#x2F;0&#x2F;5]port trunk allow-pass vlan 2 to 3-— 放通对应VLAN流量<br>[sw2-GigabitEthernet0&#x2F;0&#x2F;1]port trunk allow-pass vlan all —— 放通所有流量</p>
+<p><strong>第四步∶VLAN间路由 —单臂路由</strong><br>路由器的子接口 —— 路由器的虚拟接口 -— 将路由器的一个物理接口逻辑上划分为多个虚拟的子接口<br>[Huawei]int g 0&#x2F;0&#x2F;0.1<br>[Huawei-GigabitEthernet0&#x2F;0&#x2F;0.1]—- 创建子接口</p>
+<p>配置子接口：<br>[Huawei-GigabitEthernet0&#x2F;0&#x2F;0.1]ip address 192.168.1.254 24</p>
+<p> [Huawei-GigabitEthernet0&#x2F;0&#x2F;0.1]—- 给子接口配置IP地址<br>[Huawei-GigabitEthernet0&#x2F;0&#x2F;0.1]dot1q termination vid 2 —- 定义子接口管理的VID<br>[Huawei-GigabitEthernet0&#x2F;0&#x2F;0.1]arp broadcast enable— 开启ARP广播</p>
+<h3 id="NAT"><a href="#NAT" class="headerlink" title="NAT"></a>NAT</h3><p>在IP地址空间中，A，B，C三类地址中各有一部分地址，他们被称为私有地址（私网IP地址），其余的所有地址都称为公有地址（公网IP地址）<br>A∶10.0.0.0-10.255.255.255 — 相当于一个A类的网段</p>
+<p>B∶172.16.0.0- 172.31.255.255 —— 相当于16条B类网段</p>
+<p>C∶192.168.0.0-192.168.255.255 —-相当于256条C类的网段</p>
+<p>私网IP地址 –— 可复用性（仅保持私网内部的唯一性即可） —— 不能再互联网中使用<br>我们将使用私网IP地址搭建的网络称为私网，将使用公网IP地址进行通信的网络称为公网。<br>NAT技术 -— 网络地址转换技术 ——— 他的基本作用就是实现私网IP地址和公网IP地址之间的一个转换。</p>
+<p>华为设备，所有NAT相关的配置，都是在边界路由器的出接口上进行配置的。</p>
+<p>静态NAT </p>
+<p>动态NAT </p>
+<p>NAPT </p>
+<p>端口映射</p>
+<p><strong>静态NAT —一对一的NAT</strong><br>静态NAT就是通过配置，在私网边界路由器上建立维护一张<strong>静态地址映射表</strong>。静态地址映射表中记录的是公网IP地址和私网IP地址之间一一对应的关系。<br>[r2-GigabitEthernet0&#x2F;0&#x2F;2]nat staticglobal <strong>12.0.0.3</strong> inside 192.168.1.2 </p>
+<p>1，必须和公网IP在同一个网段</p>
+<p>2，这个IP地址一定是你花钱问ISP买来的</p>
+<p>​		12.0.0.3这个地址称为漂浮地址</p>
+<p>[r2]di splay nat static —- 查看静态地址映射表</p>
+<p><strong>动态NAT– 多对多的NAT</strong></p>
+<p>1，创建公网IP地址组<br>[r2]nat address-group 1 12.0.0.4 12.0.0.8 </p>
+<p>一定买的是连续的公网IP地址</p>
+<p>2，通过ACL来抓取私网IP流量</p>
+<p>[r2]acl 2000<br>[r2-acl-basic-2000]rule permit source 192.168.0.00.0.255.255 </p>
+<p>3，将公网IP组和ACL抓取的流量绑定<br>[r2-GigabitEthernet0&#x2F;0&#x2F;2]nat outbound 2000 address-group1 no-pat</p>
+<p>动态MAT在同一时间内，依然是一对一的NAT。当上网需求量过大时，延迟会较高。</p>
+<p><strong>NAPT</strong> –— 网络地址端口转换 —– PAT </p>
+<p>一对多的NAPT — EASY IP</p>
+<p> 1，抓取私网流量<br>[r2-acl-basic-2000]rule permit source 192.168.0.0 0.0.255.255 </p>
+<p>2.配置EASY IP<br>[r2-Gi gabitEthernet0&#x2F;0&#x2F;2]nat outbound 2000</p>
+<p>多对多的NAPT </p>
+<p>1，创建公网IP地址组<br>[r2]nat address-group 1 12.0.0.4 12.0.0.8<br>一定买的是连续的公网IP地址</p>
+<p>2，通过ACL来抓取私网IP流量</p>
+<p>[r2]ac I 2000<br>[r2-acl-basic-2000]rule permit source 192.168.0.0 0.0.255.255 </p>
+<p>3，将公网IP组和ACL抓取的流量绑定<br>[r2-GigabitEthernet0&#x2F;0&#x2F;2]nat outbound 2000 address-group 1</p>
+<p><strong>端口映射</strong><br>[r2-GigabitEthernet0&#x2F;0&#x2F;2]nat server protocol tcp global 12.0.0.1 80 inside 192. 168.1.10 80</p>
+<p>[r2-GigabitEthernet0&#x2F;0&#x2F;2]nat server protocol tcp global current-interface 80 inside 192. 168.1.10 80<br>Warning:The port 80 is well-known port.If you continue it may cause function fai lure.<br>Are you sure to cont inue?[Y&#x2F;N]:y</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">陈天在睡觉</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/post/2d58191d.html">http://example.com/post/2d58191d.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">陈天在睡觉</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/%E5%8D%9A%E5%AE%A22.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/69c3279c.html"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/%E5%8D%9A%E5%AE%A210.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Git</div></div></a></div><div class="next-post pull-right"><a href="/post/38c0576c.html"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/%E5%8D%9A%E5%AE%A22.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">RHCSA</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/%E5%A4%B4%E5%83%8F.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">陈天在睡觉</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://blog.csdn.net/qq_52059326" target="_blank" title="CSDN"><i class="iconfont icon-csdn"></i></a><a class="social-icon" href="https://space.bilibili.com/14631623" target="_blank" title="b站"><i class="iconfont icon-bilibili-fill"></i></a><a class="social-icon" href="https://github.com/chentianzaishuijiao" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content"><b><font color="#e66b6d">双</font> <font color="#e66d98">手</font> <font color="#e66cc6">合</font> <font color="#cc6de6">十</font> <font color="#9770e6">成</font> <font color="#6d93e6">为</font> <font color="#6fcde6">自</font> <font color="#72e6b6">己</font> <font color="#72e689">的</font> <font color="#99e670">神</font>, <font color="#cde670">自</font> <font color="#e6df72">己</font> <font color="#e6c073">所</font> <font color="#e6a271">信</font> <font color="#e6796f">念</font> <font color="#e65454">的</font> <font color="#e63333">即</font> <font color="#e62c2c">是</font> <font color="#e60101">信</font> <font color="#e60101">仰</font></b> <p align="center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img-blog.csdnimg.cn/f7384c88956d4378b72e47548e19c9f8.gif" width="50" alt="mao"></p> <p align="center">微信号：a847503688</p> <p align="center">QQ号：847503688</p></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HCIA"><span class="toc-number">1.</span> <span class="toc-text">HCIA</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Day1"><span class="toc-number">1.1.</span> <span class="toc-text">Day1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HCIA%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.1.1.</span> <span class="toc-text">HCIA是什么?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="toc-number">1.1.2.</span> <span class="toc-text">计算机网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%8A%8A%E5%AF%B9%E7%AD%89%E7%BD%91%E6%89%A9%E5%A4%A7%E7%A7%B0%E4%BA%92%E8%81%94%E7%BD%91%EF%BC%9F"><span class="toc-number">1.1.3.</span> <span class="toc-text">如何把对等网扩大称互联网？</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%EF%BC%8C%E5%BB%B6%E9%95%BF%E4%BC%A0%E8%BE%93%E8%B7%9D%E7%A6%BB"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">1，延长传输距离</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%8C%E7%BB%9E%E7%BA%BF"><span class="toc-number">1.1.3.1.1.</span> <span class="toc-text">双绞线</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%89%E7%BA%A4"><span class="toc-number">1.1.3.1.2.</span> <span class="toc-text">光纤</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%EF%BC%8C%E5%A2%9E%E5%8A%A0%E7%BD%91%E7%BB%9C%E8%8A%82%E7%82%B9%E6%95%B0%E9%87%8F"><span class="toc-number">1.1.3.2.</span> <span class="toc-text">2，增加网络节点数量</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.3.2.1.</span> <span class="toc-text">网络拓扑结构</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%9B%86%E7%BA%BF%E5%99%A8%EF%BC%88hub%EF%BC%89-%E2%80%94-%E7%89%A9%E7%90%86%E5%B1%82%E8%AE%BE%E5%A4%87"><span class="toc-number">1.1.3.2.2.</span> <span class="toc-text">集线器（hub） —- 物理层设备</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%A4%E6%8D%A2%E6%9C%BA-%E2%80%94-%E4%BA%8C%E5%B1%82%E8%AE%BE%E5%A4%87"><span class="toc-number">1.1.3.2.3.</span> <span class="toc-text">交换机 — 二层设备</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E5%99%A8"><span class="toc-number">1.1.3.2.4.</span> <span class="toc-text">路由器</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Day2"><span class="toc-number">1.2.</span> <span class="toc-text">Day2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E5%99%A8-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">路由器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IP-%E4%BA%92%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.2.2.</span> <span class="toc-text">IP(互联网协议)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%8E%E5%8D%81%E8%BF%9B%E5%88%B6%E7%9A%84%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">二进制与十进制的转换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E4%BD%8D%E5%92%8C%E4%B8%BB%E6%9C%BA%E4%BD%8D"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">网络位和主机位</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ARP%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.2.3.</span> <span class="toc-text">ARP协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IP%E5%9C%B0%E5%9D%80%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">1.2.4.</span> <span class="toc-text">IP地址的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E6%AE%8AIP%E5%9C%B0%E5%9D%80"><span class="toc-number">1.2.5.</span> <span class="toc-text">特殊IP地址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8EIP%E7%9A%84%E6%8A%80%E6%9C%AF"><span class="toc-number">1.2.6.</span> <span class="toc-text">关于IP的技术</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#VLSM-%E2%80%94-%E5%8F%AF%E5%8F%98%E9%95%BF%E5%AD%90%E7%BD%91%E6%8E%A9%E7%A0%81%EF%BC%88%E5%AD%90%E7%BD%91%E5%88%92%E5%88%86%EF%BC%89"><span class="toc-number">1.2.6.1.</span> <span class="toc-text">VLSM — 可变长子网掩码（子网划分）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CIDR-%E2%80%94-%E6%97%A0%E7%B1%BB%E5%9F%9F%E9%97%B4%E8%B7%AF%E7%94%B1-%E2%80%94-%E6%B1%87%E6%80%BB"><span class="toc-number">1.2.6.2.</span> <span class="toc-text">CIDR — 无类域间路由 — 汇总</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Day3"><span class="toc-number">1.3.</span> <span class="toc-text">Day3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#OSI%E4%B8%83%E5%B1%82%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.3.1.</span> <span class="toc-text">OSI七层参考模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP-x2F-IP%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.3.2.</span> <span class="toc-text">TCP&#x2F;IP模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%81%E8%A3%85%E5%92%8C%E8%A7%A3%E5%B0%81%E8%A3%85"><span class="toc-number">1.3.3.</span> <span class="toc-text">封装和解封装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%B1%82%E7%9A%84%E5%8D%8F%E8%AE%AE-%E6%9C%89%E7%AB%AF%E5%8F%A3%E5%8F%B7%E7%9A%84%E4%B8%80%E5%AE%9A%E6%98%AF%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">应用层的协议 (有端口号的一定是应用层协议)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TCP%E5%92%8CUDP%E5%8D%8F%E8%AE%AE%EF%BC%9A"><span class="toc-number">1.3.3.2.</span> <span class="toc-text">TCP和UDP协议：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#TCP%E5%92%8CUDP%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.3.3.2.1.</span> <span class="toc-text">TCP和UDP的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#TCP"><span class="toc-number">1.3.3.2.2.</span> <span class="toc-text">TCP</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#UDP"><span class="toc-number">1.3.3.2.3.</span> <span class="toc-text">UDP</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IP%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.3.3.3.</span> <span class="toc-text">IP协议</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Day4"><span class="toc-number">1.4.</span> <span class="toc-text">Day4</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.4.1.</span> <span class="toc-text">接口的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE"><span class="toc-number">1.4.2.</span> <span class="toc-text">配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E8%A7%86%E5%9B%BE"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">用户视图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E8%A7%86%E5%9B%BE"><span class="toc-number">1.4.2.2.</span> <span class="toc-text">系统视图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E8%AF%95%E5%9B%BE"><span class="toc-number">1.4.2.3.</span> <span class="toc-text">接口试图</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DNS%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.4.3.</span> <span class="toc-text">DNS协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DHCP%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.4.4.</span> <span class="toc-text">DHCP协议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%A7%8D%E5%9C%BA%E6%99%AF%EF%BC%9APC%E9%A6%96%E6%AC%A1%E8%8E%B7%E5%8F%96IP%E5%9C%B0%E5%9D%80"><span class="toc-number">1.4.4.1.</span> <span class="toc-text">第一种场景：PC首次获取IP地址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%A7%8D%E5%9C%BA%E6%99%AF%EF%BC%9APC%E5%86%8D%E6%AC%A1%E8%8E%B7%E5%8F%96IP%E5%9C%B0%E5%9D%80"><span class="toc-number">1.4.4.2.</span> <span class="toc-text">第二种场景：PC再次获取IP地址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A7%9F%E6%9C%9F-%E2%80%94-24H"><span class="toc-number">1.4.4.3.</span> <span class="toc-text">租期 — 24H</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DHCP%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="toc-number">1.4.4.4.</span> <span class="toc-text">DHCP服务器的配置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E5%99%A8-2"><span class="toc-number">1.4.5.</span> <span class="toc-text">路由器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Day5"><span class="toc-number">1.5.</span> <span class="toc-text">Day5</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E5%99%A8%E8%8E%B7%E5%8F%96%E6%9C%AA%E7%9F%A5%E7%BD%91%E6%AE%B5%E8%B7%AF%E7%94%B1%E6%9D%A1%E7%9B%AE%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-number">1.5.1.</span> <span class="toc-text">路由器获取未知网段路由条目的方法：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E8%B7%AF%E7%94%B1"><span class="toc-number">1.5.1.1.</span> <span class="toc-text">静态路由</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%93%E5%B1%95%E9%85%8D%E7%BD%AE"><span class="toc-number">1.5.2.</span> <span class="toc-text">拓展配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Day6"><span class="toc-number">1.6.</span> <span class="toc-text">Day6</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E8%B7%AF%E7%94%B1-1"><span class="toc-number">1.6.1.</span> <span class="toc-text">静态路由</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1"><span class="toc-number">1.6.2.</span> <span class="toc-text">动态路由</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AS"><span class="toc-number">1.6.3.</span> <span class="toc-text">AS</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#RIP-%E2%80%94%E8%B7%AF%E7%94%B1%E4%BF%A1%E6%81%AF%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.6.3.1.</span> <span class="toc-text">RIP —路由信息协议</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Bellman-Ford%E7%AE%97%E6%B3%95"><span class="toc-number">1.6.3.1.1.</span> <span class="toc-text">Bellman-Ford算法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#RIP%E7%9A%84%E7%89%88%E6%9C%AC"><span class="toc-number">1.6.3.1.2.</span> <span class="toc-text">RIP的版本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#RIP%E7%9A%84%E6%95%B0%E6%8D%AE%E5%8C%85"><span class="toc-number">1.6.3.1.3.</span> <span class="toc-text">RIP的数据包</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#RIP%E7%9A%84%E7%A0%B4%E7%8E%AF%E6%9C%BA%E5%88%B6"><span class="toc-number">1.6.3.1.4.</span> <span class="toc-text">RIP的破环机制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#RIP%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="toc-number">1.6.3.1.5.</span> <span class="toc-text">RIP的配置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#RIP%E7%9A%84%E6%8B%93%E5%B1%95%E9%85%8D%E7%BD%AE"><span class="toc-number">1.6.3.1.6.</span> <span class="toc-text">RIP的拓展配置</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ACL"><span class="toc-number">1.6.4.</span> <span class="toc-text">ACL</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Day7"><span class="toc-number">1.7.</span> <span class="toc-text">Day7</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#OSPF"><span class="toc-number">1.7.1.</span> <span class="toc-text">OSPF</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#RIPV2%E5%92%8C0SPFV2%E7%9A%84%E7%9B%B8%E5%90%8C%E7%82%B9%E5%92%8C%E4%B8%8D%E5%90%8C%E7%82%B9"><span class="toc-number">1.7.1.1.</span> <span class="toc-text">RIPV2和0SPFV2的相同点和不同点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8C%BA%E5%9F%9F%E5%88%92%E5%88%86"><span class="toc-number">1.7.1.2.</span> <span class="toc-text">区域划分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%A8%8B"><span class="toc-number">1.7.1.3.</span> <span class="toc-text">工作过程</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1%EF%BC%8COSPF%E7%9A%84%E6%95%B0%E6%8D%AE%E5%8C%85%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.7.1.3.1.</span> <span class="toc-text">1，OSPF的数据包类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2%EF%BC%8COSPF%E7%9A%84%E7%8A%B6%E6%80%81%E6%9C%BA"><span class="toc-number">1.7.1.3.2.</span> <span class="toc-text">2，OSPF的状态机</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3%EF%BC%8C0SPF%E7%9A%84%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%A8%8B"><span class="toc-number">1.7.1.3.3.</span> <span class="toc-text">3，0SPF的工作过程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4%EF%BC%8C0SPF%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="toc-number">1.7.1.3.4.</span> <span class="toc-text">4，0SPF的基本配置</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E5%8C%B9%E9%85%8D"><span class="toc-number">1.7.1.3.4.1.</span> <span class="toc-text">条件匹配</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5%EF%BC%8C0SPF%E7%9A%84%E6%8B%93%E5%B1%95%E9%85%8D%E7%BD%AE"><span class="toc-number">1.7.1.3.5.</span> <span class="toc-text">5，0SPF的拓展配置</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Day8"><span class="toc-number">1.8.</span> <span class="toc-text">Day8</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#VLAN"><span class="toc-number">1.8.1.</span> <span class="toc-text">VLAN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NAT"><span class="toc-number">1.8.2.</span> <span class="toc-text">NAT</span></a></li></ol></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('/img/%E5%8D%9A%E5%AE%A22.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 陈天在睡觉</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

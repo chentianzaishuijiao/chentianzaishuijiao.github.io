@@ -1,0 +1,1147 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>RHCSA | 陈天在睡觉</title><meta name="author" content="陈天在睡觉"><meta name="copyright" content="陈天在睡觉"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="day011.不要安装安全类的软件 2.确保window   64位   不是教育版 文件系统（磁盘上组织文件的一种方法和数据结构）   ntfs       —-支持的单个文件最大是4TB    fat32 —-支持的最大单个文件是4G 3.开启虚拟机提示VT-X未开启(物理机没有开启虚拟化) 环境部署系统安装： 虚拟平台（vmware-workstation）+创建一台虚拟机+RHEL-ser">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RHCSA">
+<meta property="og:url" content="http://example.com/post/38c0576c.html">
+<meta property="og:site_name" content="陈天在睡觉">
+<meta property="og:description" content="day011.不要安装安全类的软件 2.确保window   64位   不是教育版 文件系统（磁盘上组织文件的一种方法和数据结构）   ntfs       —-支持的单个文件最大是4TB    fat32 —-支持的最大单个文件是4G 3.开启虚拟机提示VT-X未开启(物理机没有开启虚拟化) 环境部署系统安装： 虚拟平台（vmware-workstation）+创建一台虚拟机+RHEL-ser">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/%E5%8D%9A%E5%AE%A22.png">
+<meta property="article:published_time" content="2023-01-14T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-01-15T00:15:04.949Z">
+<meta property="article:author" content="陈天在睡觉">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/%E5%8D%9A%E5%AE%A22.png"><link rel="shortcut icon" href="/img/%E6%9F%BF%E5%AD%90.png"><link rel="canonical" href="http://example.com/post/38c0576c"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 陈天在睡觉","link":"链接: ","source":"来源: 陈天在睡觉","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-right"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'RHCSA',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2023-01-15 08:15:04'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/font.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/%E5%A4%B4%E5%83%8F.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/%E5%8D%9A%E5%AE%A22.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">陈天在睡觉</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">RHCSA</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-01-14T16:00:00.000Z" title="发表于 2023-01-15 00:00:00">2023-01-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-01-15T00:15:04.949Z" title="更新于 2023-01-15 08:15:04">2023-01-15</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">14.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>56分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="RHCSA"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="day01"><a href="#day01" class="headerlink" title="day01"></a>day01</h1><p>1.不要安装安全类的软件</p>
+<p>2.确保window   64位   不是教育版</p>
+<p>文件系统（磁盘上组织文件的一种方法和数据结构）   ntfs       —-支持的单个文件最大是4TB    fat32 —-支持的最大单个文件是4G</p>
+<p>3.开启虚拟机提示VT-X未开启(物理机没有开启虚拟化)</p>
+<p>环境部署系统安装：</p>
+<p>虚拟平台（vmware-workstation）+创建一台虚拟机+RHEL-server-8.5-x86_64.iso</p>
+<p>(网络模式选择-仅主机  nat*   桥接；磁盘类型ide  sata  scsi   nvme*)</p>
+<p>​		面试：</p>
+<p>​       linux必须创建分区：   &#x2F;      swap(虚拟内存)</p>
+<p>​		一般llinux 需要创建哪些分区： &#x2F;    &#x2F;boot   swap</p>
+<p>登陆主通过用户名密码验证</p>
+<p>linux系统管理员 默认root用户—–后期登录主机通过管理员登录</p>
+<p>​                 普通用户     redhat</p>
+<p>判断命令是否成功，第一种执行后没有任何提示返回到下一个命令提示符 第二种有对应命令结果提示</p>
+<p>1.查看主机ip地址</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#ip   a ==ip addr</span><br><span class="line">2: ens160: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP group default qlen 1000</span><br><span class="line">    link/ether 00:0c:29:c3:cf:a9 brd ff:ff:ff:ff:ff:ff</span><br><span class="line">    inet 192.168.220.162/24 brd 192.168.220.255 scope global dynamic ens160</span><br><span class="line">       valid_lft 1710sec preferred_lft 1710sec</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#ifconfig</span><br></pre></td></tr></table></figure>
+
+<p>2.终端（标准的输入输出设备键盘鼠标显示器）</p>
+<p>虚拟终端：ctrl+alt+F3 ~ F6         ctrl +alt+F2       &#x2F;dev&#x2F;tty3   &#x2F;dev&#x2F;tty4   命令行的终端</p>
+<p>​        模拟终端： 图形化模拟的终端窗口</p>
+<p>​	    远程终端： 伪终端   通过远程软件基于远程连接的终端窗口      &#x2F;dev&#x2F;pts&#x2F;0    &#x2F;dev&#x2F;pts&#x2F;1 …</p>
+<p>物理终端</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#tty   查看当前终端的设备文件</span><br></pre></td></tr></table></figure>
+
+<p>3.终端的命令提示符</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# </span><br><span class="line">用户名@主机名   当前路径~标记的是当用户的家目录/root   #标记管理员</span><br><span class="line">注：目录----window 文件夹</span><br><span class="line">[redhat@localhost ~]$ pwd     --print   workdoing  directory   打印当前目录路径    </span><br><span class="line">/home/redhat</span><br><span class="line">redhat  ~标记是  /home/redhat     $标记普通用户</span><br></pre></td></tr></table></figure>
+
+<p>4.命令的标准格式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.#命令      #ifconfig</span><br><span class="line">2.#命令    参数   #ip   a</span><br><span class="line">3.#命令   -选项...   #ls  -l   #ls -a</span><br><span class="line">4.#命令   -选项...   参数    #ls -l   /root</span><br><span class="line">          -l   短选项</span><br><span class="line">          --long 长选项</span><br></pre></td></tr></table></figure>
+
+<p>5.基础命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#ip a   查看ip地址</span><br><span class="line">#ifconfig 查看ip地址</span><br><span class="line">#tty   查看当前终端的设备文件名</span><br><span class="line">#cat /etc/redhat-realse  查看操作系统发行版信息</span><br><span class="line">#uname -r    查看内核版本</span><br><span class="line">#pwd 显示当前目录路径</span><br><span class="line">#hostname 查看当前的完整主机名</span><br><span class="line">#hostname   HOSTNAME   在当前主机运行状态下临时更改主机名。改完后终端提示符设备主机名需要退出重新登录识别</span><br><span class="line">#hostnamectl set-hostname  HOSTNAME  永久更改主机名          vim  /etc/hostname   </span><br><span class="line">#passwd  [USERNAME]   修改或者设置用户的密码</span><br><span class="line">#passwd -d  [USERNAME]  删除用户密码</span><br><span class="line"></span><br><span class="line">注：</span><br><span class="line">管理执行passwd：   可以指定用户名；不要输入之前的密码；可以更改和删除所有用户的密码；密码等级没有严格要求</span><br><span class="line">普通用户执行passwd： 不能至指定用户名只能修改自己的密码；需要输入之前的密码； 密码登记有严格要求</span><br></pre></td></tr></table></figure>
+
+<p>6.系统密码重置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">重启客户机----在启动界面快速将鼠标点进去上下键切换一下（停留在启动界面）+e----找到linux开头的行在行尾添加------rd.break-------   mount   -o   remount,rw    /sysroot   ----chroot   /sysroot     -----passwd root   </span><br><span class="line"></span><br><span class="line">----touch /.autorelabel ---exit   ---exit</span><br></pre></td></tr></table></figure>
+
+<p>1.安装linux操作系统</p>
+<p>2.第一天基础命令整理总结</p>
+<p>3.破解密码</p>
+<h1 id="day02"><a href="#day02" class="headerlink" title="day02"></a>day02</h1><h2 id="cd-切换目录"><a href="#cd-切换目录" class="headerlink" title="cd   切换目录"></a>cd   切换目录</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#cd   chang  directory</span><br><span class="line">相对路径： 相对于当前所在的路径开始查找       cd   home</span><br><span class="line"></span><br><span class="line">/     根目录            cd   /</span><br><span class="line">~    当前用户的家目录</span><br><span class="line">.    当前目录    </span><br><span class="line">..   上层目录        cd  ../../..</span><br><span class="line">-     上一次所切换的路径</span><br></pre></td></tr></table></figure>
+
+<h2 id="su-用户切换"><a href="#su-用户切换" class="headerlink" title="su   用户切换"></a>su   用户切换</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">su    USERNAME     切换到指定用户，当前路径没有更改</span><br><span class="line">su     切换到root用户</span><br><span class="line">su  -l   USERNAME   ==   su   -   redhat</span><br><span class="line">切换到指定用户，更改当前路径返回到当前用户的家目录</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>快捷键</p>
+<p>ctrl+c   终止当前名令执行</p>
+<p>ctrl+l   清屏      &#x3D;&#x3D; clear</p>
+<h2 id="ls-列出命令（查看目录下的所有文件）"><a href="#ls-列出命令（查看目录下的所有文件）" class="headerlink" title="ls     列出命令（查看目录下的所有文件）"></a>ls     列出命令（查看目录下的所有文件）</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-l    长格式显示文件以及文件的属性   ls  -l     ==  ll  </span><br><span class="line">-d  查看指定目录的属性     ll -d /root  列出的是/root目录的属性信息    ll -d  显示当前目录属性     </span><br><span class="line">-a   显示指定目录下所有文件包含隐藏文件和.  .. 当前目录和上一级目录  ls -l  -a   == ls -la == ll -a</span><br><span class="line">-A  显示指定目录下所有文件包含隐藏文件</span><br><span class="line">-h   文件大小转化</span><br><span class="line">-i    显示文件inode节点号</span><br><span class="line">-R  递归显示当前目录以及嵌套目录中所有的文件</span><br></pre></td></tr></table></figure>
+
+<h2 id="linux基本思想一切皆文件—–7种文件类型"><a href="#linux基本思想一切皆文件—–7种文件类型" class="headerlink" title="linux基本思想一切皆文件—–7种文件类型"></a>linux基本思想一切皆文件—–7种文件类型</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">-普通文本文件   </span><br><span class="line"></span><br><span class="line">d 目录文件  </span><br><span class="line"></span><br><span class="line">l 软链接文件（快捷方式）</span><br><span class="line"></span><br><span class="line"> b 块设备文件 </span><br><span class="line"></span><br><span class="line"> c字符设备文件</span><br><span class="line"></span><br><span class="line"> p管道文件</span><br><span class="line"></span><br><span class="line"> s socket套接字文件 </span><br><span class="line"></span><br><span class="line">2-11字符   标记的是权限标识符</span><br><span class="line">第二列： 硬链接次数</span><br><span class="line">第三列： 所属用户</span><br><span class="line">第四列： 所属组</span><br><span class="line">第五列： 文件大小</span><br><span class="line">第六列：文件创建时间或修改时间</span><br><span class="line">第七列：文件名</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>&#x2F;</th>
+<th>Linux文件系统的最上层根目录,其他所有目录均是该目录的子目录</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&#x2F;bin</td>
+<td>Binary的缩写,存放普通用户可执行的程序或命令</td>
+</tr>
+<tr>
+<td>&#x2F;boot</td>
+<td>存放系统启动时所需的文件,这些文件若损坏常会导致系统无法启动,一般不要改动</td>
+</tr>
+<tr>
+<td>&#x2F;dev</td>
+<td>dev 是设备（device）的英文缩写。包含所有的设备文件</td>
+</tr>
+<tr>
+<td>&#x2F;etc</td>
+<td>存放了系统管理时要用到的各种配置文件和子目录</td>
+</tr>
+<tr>
+<td>&#x2F;home</td>
+<td>存放一般用户的个人目录</td>
+</tr>
+<tr>
+<td>&#x2F;lib</td>
+<td>是库（library）英文缩写，存放系统的各种库文件</td>
+</tr>
+<tr>
+<td>&#x2F;lib64</td>
+<td>存放系统本身需要用到64位程序的共享函数库(library)</td>
+</tr>
+<tr>
+<td>&#x2F;mnt   &#x2F;media</td>
+<td>可以临时将别的文件系统挂在这个目录下，即为其他的文件系统提供安装点</td>
+</tr>
+<tr>
+<td>&#x2F;opt</td>
+<td>该目录通常提供给较大型的第三方应用程序使用,例如Sun Staroffice、Corel WordPerfect,这可避免将文件分散至整个文件系统</td>
+</tr>
+<tr>
+<td>&#x2F;proc</td>
+<td>可以在这个目录下获取系统信息。这些信息是在内存中由系统自己产生的（内核）</td>
+</tr>
+<tr>
+<td>&#x2F;root</td>
+<td>超级用户的个人目录，普通用户没有权限访问</td>
+</tr>
+<tr>
+<td>&#x2F;run</td>
+<td>保存自系统启动以来描述系统信息的文件（应用层的进程信息）</td>
+</tr>
+<tr>
+<td>&#x2F;sbin</td>
+<td>和&#x2F;bin类似，这些文件往往用来进行系统管理,只有root可使用</td>
+</tr>
+<tr>
+<td>&#x2F;srv</td>
+<td>srv 是服务(server)的简写,服务启动之后需要访问的数据目录</td>
+</tr>
+<tr>
+<td>&#x2F;sys</td>
+<td>本目录是将内核的一些信息映射文件,以供应用程序所用    系统文件</td>
+</tr>
+<tr>
+<td>&#x2F;tmp</td>
+<td>用来存放不同程序执行时产生的临时文件。</td>
+</tr>
+<tr>
+<td>&#x2F;home</td>
+<td>存放一般用户的个人目录</td>
+</tr>
+<tr>
+<td>&#x2F;usr</td>
+<td>一般用户程序安装所在的目录,用于安装各种应用程序</td>
+</tr>
+<tr>
+<td>&#x2F;var</td>
+<td>通常各种系统日志文件放在这里   动态变化的数据文件</td>
+</tr>
+</tbody></table>
+<h2 id="面试—–软链接和硬链接区别"><a href="#面试—–软链接和硬链接区别" class="headerlink" title="面试—–软链接和硬链接区别"></a>面试—–软链接和硬链接区别</h2><p>在linux的文件系统中，保存在磁盘分区中的文件不管是什么类型都给它分配一个编号，称为索引节点号inode。</p>
+<p>（1）符号链接又叫软链接，和原文件不是一个文件。例如Windows的快捷方式，</p>
+<p>作用特点：在指定路径查找某个文件访问快速便捷，删除源文件快捷方式不能访问</p>
+<p>创建对象：文本文件目录文件都可以创建,并且可以跨文件系统</p>
+<p>创建链接文件：ln -s 原文件 链接文件</p>
+<p>如何判断是否是链接文件： l</p>
+<p>（2）硬链接，</p>
+<p>概念：多个文件名指向同一个Inode</p>
+<p>作用特点：防止用户误删除，备份（仅对文件名备份）</p>
+<p>创建对象：对目录文件不能创建,并且不可以跨文件系统</p>
+<p>创建硬链接： ln 原文件  新文件  </p>
+<p>多个文件名是否指向同一个节点号，以及硬链接次数是否改变</p>
+<p>touch   FILENAME   创建文件</p>
+<p>mkdir    DIRNAME   创建目录</p>
+<p>rm   FILENAME    删除文件</p>
+<p>rm -r  DIRNAME  删除目录文件</p>
+<p>cat   FILENAME   查看文件</p>
+<p>nano   FILENAME   编辑文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[root@www ~]#touch   aaa  在当前路径创建了aaa文件</span><br><span class="line">[root@www ~]#ln  -s  aaa   a.lnk  对aaa文件创建快捷文件叫a.lnk</span><br><span class="line">[root@www ~]#nano   aaa   编辑文件内容   ctrl-x -- y - enter</span><br><span class="line">[root@www ~]#cat   aaa      查看aaa文件的内容</span><br><span class="line">[root@www ~]#cat   a.lnk</span><br><span class="line">[root@www ~]#rm  aaa      删除aaa文件</span><br><span class="line">[root@www ~]#rm a.lnk</span><br><span class="line">[root@www ~]#mkdir   dir1   创建目录</span><br><span class="line">[root@www ~]#ln -s dir1  dir1.lnk</span><br><span class="line">[root@www ~]#rm -r dir1</span><br><span class="line">L</span><br><span class="line">注:</span><br><span class="line">[root@www ~]#ln -s  /root/dir   /dir1.lnk     将/root下的dir目录创建快捷文件在/目录下</span><br><span class="line"></span><br><span class="line">[root@www ~]#ln -s    dir    /dir2.lnk     有问题（将/dir目录创建快捷文件在/目录下）</span><br><span class="line">[root@www ~]# ll /</span><br><span class="line">lrwxrwxrwx.   1 root root    3 Feb 11 01:08 dir2.lnk -&gt; dir</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">创建硬链接只对文本件可以</span><br><span class="line">[root@www ~]# touch   b</span><br><span class="line">[root@www ~]# ln b  bbb</span><br><span class="line">[root@www ~]# ll -i</span><br><span class="line">33951783 -rw-r--r--. 2 root root    0 Feb 11 01:14 b</span><br><span class="line">33951783 -rw-r--r--. 2 root root    0 Feb 11 01:14 bbb</span><br></pre></td></tr></table></figure>
+
+<p>***文件系统层级结构FHS</p>
+<h2 id="date"><a href="#date" class="headerlink" title="date"></a>date</h2><p>date命令用于显示或设置系统的时间与日期，语法格式为：“ date [+指定的格式]”。</p>
+<p>用户只需在强大的date命令后输入以“+”号开头的参数，即可按照指定格式来输出系统的时间或日期，这样在日常工作时便可以把备份数据的命令与指定格式输出的时间信息结合到一起。例如，把打包后的文件自动按照“年-月-日”的格式打包成“backup-2020-9-1.tar.gz”，用户只需要看一眼文件名称就能大概了解到每个文件的备份时间了。date命令中常见的参数格式及作用如表2-4所示。</p>
+<p>表2-4                       date命令中的参数以及作用</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%S</td>
+<td>秒（00～59）</td>
+</tr>
+<tr>
+<td>%M</td>
+<td>分钟（00～59）</td>
+</tr>
+<tr>
+<td>%H</td>
+<td>小时（00～23）</td>
+</tr>
+<tr>
+<td>%I</td>
+<td>小时（00～12）</td>
+</tr>
+<tr>
+<td>%m</td>
+<td>月份（1~12）</td>
+</tr>
+<tr>
+<td>%p</td>
+<td>显示出AM或PM</td>
+</tr>
+<tr>
+<td>%a</td>
+<td>缩写的工作日名称（例如：Sun）</td>
+</tr>
+<tr>
+<td>%A</td>
+<td>完整的工作日名称（例如：Sunday）</td>
+</tr>
+<tr>
+<td>%b</td>
+<td>缩写的月份名称（例如：Jan）</td>
+</tr>
+<tr>
+<td>%B</td>
+<td>完整的月份名称（例如：January）</td>
+</tr>
+<tr>
+<td>%q</td>
+<td>季度（1~4）</td>
+</tr>
+<tr>
+<td>%y</td>
+<td>简写年份（例如：20）</td>
+</tr>
+<tr>
+<td>%Y</td>
+<td>完整年份（例如：2020）</td>
+</tr>
+<tr>
+<td>%d</td>
+<td>本月中的第几天</td>
+</tr>
+<tr>
+<td>%j</td>
+<td>今年中的第几天</td>
+</tr>
+<tr>
+<td>%n</td>
+<td>换行符（相当于按下回车键）</td>
+</tr>
+<tr>
+<td>%t</td>
+<td>跳格（相当于按下Tab键）</td>
+</tr>
+</tbody></table>
+<p>按照默认格式查看当前系统时间的date命令如下所示：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@kongd ~]# date</span><br><span class="line">Sat Sep 5 09:13:45 CST 2020</span><br></pre></td></tr></table></figure>
+
+<p>按照“年-月-日 小时:分钟:秒”的格式查看当前系统时间的date命令如下所示：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@kongd ~]# date &quot;+%Y-%m-%d %H:%M:%S&quot;</span><br><span class="line">2020-09-05 09:14:35</span><br></pre></td></tr></table></figure>
+
+<p>将系统的当前时间设置为2020年11月1日8点30分的date命令如下所示：  </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@A /]# #date    月日时分年点秒</span><br><span class="line">[root@A /]# date   121210102021.10</span><br><span class="line">[root@kongd ~]# date -s &quot;20201101 8:30:00&quot;</span><br><span class="line">Sun Nov 1 08:30:00 CST 2020</span><br></pre></td></tr></table></figure>
+
+<p>再次使用date命令并按照默认的格式查看当前的系统时间，如下所示：（月日时分年点秒）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@kongd ~]# date</span><br><span class="line">Sun Nov 1 08:30:08 CST 2020</span><br></pre></td></tr></table></figure>
+
+<p>date命令中的参数%j可用来查看今天是当年中的第几天。这个参数能够很好地区分备份时间的新旧，即数字越大，越靠近当前时间。该参数的使用方式以及显示结果如下所示：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@kongd ~]# date &quot;+%j&quot;</span><br><span class="line">306</span><br></pre></td></tr></table></figure>
+
+<h2 id="clock"><a href="#clock" class="headerlink" title="clock"></a>clock</h2><p>显示计算机的时间和日期 </p>
+<h2 id="hwclock-s-系统时间向硬件时间同步"><a href="#hwclock-s-系统时间向硬件时间同步" class="headerlink" title="hwclock   -s   系统时间向硬件时间同步"></a>hwclock   -s   系统时间向硬件时间同步</h2><p>hwclock -w  硬件时间向系统时间同步</p>
+<h2 id="timedatectl-status"><a href="#timedatectl-status" class="headerlink" title="timedatectl        status"></a>timedatectl        status</h2><p>timedatectl命令用于设置系统的时间，英文全称为：“time date control”，语法格式为：“ timedatectl [参数]”。</p>
+<p>发现电脑时间跟实际不符？如果只差几分钟的话，我们可以直接调整，但如果差几个小时，那么除了调整当前的时间，还有必要检查下时区了，timedatectl命令中的参数以及作用：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>status</td>
+<td>显示状态信息</td>
+</tr>
+<tr>
+<td>list-timezones</td>
+<td>列出已知时区</td>
+</tr>
+<tr>
+<td>set-time</td>
+<td>设置系统时间</td>
+</tr>
+<tr>
+<td>set-timezone</td>
+<td>设置生效时区</td>
+</tr>
+</tbody></table>
+<p>查看系统时间与时区：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@kongd ~]# timedatectl status</span><br><span class="line">               Local time: Sun 2020-09-06 19:51:22 CST</span><br><span class="line">           Universal time: Sun 2020-09-06 11:51:22 UTC</span><br><span class="line">                 RTC time: Sun 2020-09-06 19:51:21</span><br><span class="line">                Time zone: Asia/Shanghai (CST, +0800)</span><br><span class="line">System clock synchronized: no</span><br><span class="line">              NTP service: inactive</span><br><span class="line">          RTC in local TZ: no</span><br></pre></td></tr></table></figure>
+
+<p>如果您查到的时区不是上海（Asia&#x2F;Shanghai），可以手动进行设置：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@kongd ~]# timedatectl set-timezone Asia/Shanghai</span><br><span class="line">[root@kongd ~]# timedatectl get-timezone </span><br></pre></td></tr></table></figure>
+
+<p>如果时间还是不正确，我们可以手动的修改系统日期：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@kongd ~]# timedatectl set-time 2021-05-18</span><br></pre></td></tr></table></figure>
+
+<p>而如果想修改时间的话，也很简单：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@kongd ~]# timedatectl set-time 9:30</span><br><span class="line">[root@kongd ~]# date </span><br><span class="line">Tue May 18 09:30:01 CST 2021</span><br></pre></td></tr></table></figure>
+
+<p>[root@localhost ~]# localectl set-locale LANG&#x3D;en_US</p>
+<h2 id="文件管理命令"><a href="#文件管理命令" class="headerlink" title="文件管理命令"></a>文件管理命令</h2><h3 id="touch-创建文本文件"><a href="#touch-创建文本文件" class="headerlink" title="touch    创建文本文件"></a>touch    创建文本文件</h3><p>stat   FILENAME  查看文件详细属性</p>
+<p>touch   [-option…]   FILENAME…</p>
+<p>touch FILE1  FILE2   FILE3</p>
+<p>touch &#x2F;{FILE1,FILE2,FILE3}</p>
+<p>touch {a..c}{1..3}     a1 a2 a3  b1 b2 b3 c1 c2 c3</p>
+<h3 id="mkdir-创建目录"><a href="#mkdir-创建目录" class="headerlink" title="mkdir    创建目录"></a>mkdir    创建目录</h3><p>mkdir [-options..]   DIRNAME </p>
+<p>​            -p    parents   指定父目录创建（从左向右依次创建多级目录）</p>
+<p>​            -v   verbose   详细信息   显示创建的详细结果</p>
+<p>创建多级目录   mkdir   -pv     &#x2F;1&#x2F;2&#x2F;3&#x2F;4&#x2F;5</p>
+<p>tree   树状显示目录结构</p>
+<h3 id="rm-删除文件"><a href="#rm-删除文件" class="headerlink" title="rm 删除文件"></a>rm 删除文件</h3><p>rm    [-options]   FILENMAE&#x2F;DIRNAME…</p>
+<p>​        -f    force  强制</p>
+<p>​         -r   递归，递归删除目录文件</p>
+<p>rm   FILE1   FILE2      </p>
+<p>rm  f*    删除以f开头的所有文件</p>
+<p>rm   *.txt</p>
+<p>rm   *     删除当前目录下所有文本文件</p>
+<p>rm -f</p>
+<p>rm -r  d1</p>
+<p>rm -rf   dd1</p>
+<h3 id="du-查看系统文件占用磁盘大小-KB"><a href="#du-查看系统文件占用磁盘大小-KB" class="headerlink" title="du  查看系统文件占用磁盘大小   KB"></a>du  查看系统文件占用磁盘大小   KB</h3><p>-a    查看指定目录下所有文件占用的总大小，以及该目录下每个文件占用磁盘空间的大小</p>
+<p>-s   只显示指定目录下所有文件占用磁盘的大小，不显示子目录</p>
+<p>-h   显示大小可以进行单位转换</p>
+<h3 id="mv-移动文件"><a href="#mv-移动文件" class="headerlink" title="mv   移动文件"></a>mv   移动文件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">mv  [-options]   源文件名...     目标路径</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# touch a</span><br><span class="line">[root@localhost ~]# ll</span><br><span class="line">-rw-r--r--. 1 root root    0 Feb 11 03:33 a</span><br><span class="line">[root@localhost ~]# mv a  /</span><br><span class="line">[root@localhost ~]# ll /</span><br><span class="line">total 28</span><br><span class="line">-rw-r--r--.   1 root root    0 Feb 11 03:33 a</span><br><span class="line">移动并改名</span><br><span class="line">[root@localhost ~]# mv f  /file   将f文件移动到/目录并改名为file （file文件在/目录下是不存在）</span><br><span class="line">文件重命名</span><br><span class="line">[root@localhost test]# mv a aaa</span><br></pre></td></tr></table></figure>
+
+<h3 id="cp-复制文件"><a href="#cp-复制文件" class="headerlink" title="cp   复制文件"></a>cp   复制文件</h3><p>cp   [-options]   源文件名…     目标路径</p>
+<p>​       -r    递归复制目录文件</p>
+<p>​       -p   复制文件保持文件原属性</p>
+<p>​      -a&#x3D;&#x3D;  -rp   复制目录保持目录文件的原属性</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost test]# cp -p  /test/a  /pub    复制/test/a文件到 /pub目录，复制保持文件原属性</span><br><span class="line">[root@localhost test]# ll /pub</span><br><span class="line">total 4</span><br><span class="line">-rw-r--r--. 1 root root 10 Feb 11 03:25 a</span><br><span class="line">[root@localhost test]# cp -rp /test/d1  /pub   </span><br><span class="line"></span><br><span class="line">[root@localhost test]# cp /test/a   /pub/a.txt      复制/test/a文件到 /pub目录并改名为a.txt</span><br><span class="line">[root@localhost test]# cp -r /test/d1  /pub/dir1</span><br></pre></td></tr></table></figure>
+
+<h3 id="wget-下载文件"><a href="#wget-下载文件" class="headerlink" title="wget  下载文件"></a>wget  下载文件</h3><p>wget [-option…]    URL </p>
+<p>​          -P   指定下载文件到指定路径    </p>
+<p>​          -b   将下载进程放在后台运行</p>
+<p>​		  -c  断点续传</p>
+<p>​          -t   指定下载尝试次数</p>
+<p>​          -r   下载目录文件</p>
+<p>​          -o</p>
+<p>​          -O</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root@localhost test]# wget http://mirrors.163.com/centos/8/infra/x86_64/infra-common/Packages/a/awscli-1.18.156-1.el8.noarch.rpm     ---把awscli-1.18.156-1.el8.noarch.rpm 下载到当前路径</span><br><span class="line"></span><br><span class="line">root@localhost test]# wget http://mirrors.163.com/centos/8/infra/x86_64/infra-common/Packages/a/awscli-1.18.156-1.el8.noarch.rpm    -P   /pub 把awscli-1.18.156-1.el8.noarch.rpm 下载到/pub目录</span><br></pre></td></tr></table></figure>
+
+<h1 id="day03"><a href="#day03" class="headerlink" title="day03"></a>day03</h1><h2 id="查看目录文件：-ls"><a href="#查看目录文件：-ls" class="headerlink" title="查看目录文件： ls"></a>查看目录文件： ls</h2><h2 id="查看文本文件内容"><a href="#查看文本文件内容" class="headerlink" title="查看文本文件内容"></a>查看文本文件内容</h2><p>cat   将文件内容输出到终端，查看文件内容（正序）</p>
+<p>​       -n   查看文件内容显示标号</p>
+<p>tac  将文件内容输出到终端，查看文件内容（逆序显示）</p>
+<p>more   一般对于大文件查看通过终端窗口可以分页显示，最后所有内容输出到终端查看显示</p>
+<p>less   打开阅读，分页显示，退出需要通过q </p>
+<p>​         ？关键字   或者  &#x2F;关键字</p>
+<p>​            n 向上匹配关键字</p>
+<p>​	        N 向下匹配关键字</p>
+<p>head    查看文件的前十行信息</p>
+<p>​      -n 指定显示的行数   </p>
+<p>​       -n   3</p>
+<p>tail   查看文件的后十行信息</p>
+<p>​     -n   3</p>
+<p>​     -f  follow  追加显示文件内容   ctrl+c</p>
+<p>tail -f   &#x2F;var&#x2F;log&#x2F;messages   </p>
+<h2 id="文本编辑"><a href="#文本编辑" class="headerlink" title="文本编辑"></a>文本编辑</h2><h3 id="1-nano"><a href="#1-nano" class="headerlink" title="1.nano"></a>1.nano</h3><h3 id="2-vi-x2F-vim-文本编辑器"><a href="#2-vi-x2F-vim-文本编辑器" class="headerlink" title="2.vi &#x2F; vim  *** 文本编辑器"></a>2.vi &#x2F; vim  *** 文本编辑器</h3><p>终端最后一行</p>
+<p>  显示新文件或者文件名几行几个字符或者没有任何信息   （执行便捷命令）</p>
+<p>   –insert—   (编辑文件内容)</p>
+<p> ：末行模式</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img-blog.csdnimg.cn/89c5b52568b541499f839af49c85bb50.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5ZCD5Lq66ZmIIw==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==" alt="点击并拖拽以移动"></p>
+<p> 命令模式：</p>
+<p>dd  删除光标所在行</p>
+<p>d+enter 删除光标所在行和光标的下一行</p>
+<p>dG   删除光标所在行以及文档尾的所有行</p>
+<p>dgg   删除光标所在行以及文档首的所有行</p>
+<p>d^    删除光标到行首的内容，不包含光标字符</p>
+<p>d$   删除光标到行尾，包含的光标所在字符</p>
+<p>x 删除光标所在字符</p>
+<p>G 跳转到文档尾</p>
+<p>gg  跳转到文档首</p>
+<p>4G  跳转到第四行  </p>
+<p>^    行首</p>
+<p>$   行尾</p>
+<p>yy  复制</p>
+<p>4yy  复制从光标开始一共四行内容</p>
+<p>cc 剪切</p>
+<p>4cc   剪切从光标开始一共四行内容</p>
+<p>p    粘贴（粘贴在光标所在的下一行）</p>
+<p>u      向左撤销（返回上一次的编辑状态） </p>
+<p>ctrl+r   重做（向右撤销，返回到近期编辑的状态）</p>
+<p>插入模式：</p>
+<p>a      在光标后插入内容</p>
+<p>A     光标所在行的行尾</p>
+<p>i       在光标前插入内容</p>
+<p>I      光标所在行的行首</p>
+<p>o      进入插入模式，在光标的下一行添加内容</p>
+<p>O      进入插入模式，在光标的上一行添加内容</p>
+<p>s     删除光标所在字符，进入插入模式</p>
+<p>S   删除光标所在行，进入插入模式 </p>
+<p>末行模式：</p>
+<p>:q       退出</p>
+<p>:q!     强制退出</p>
+<p>:w      保存</p>
+<p>:wq    保存退出 &#x3D;&#x3D; ZZ 命令模式</p>
+<p>:wq!    强制保存退出</p>
+<p>:10   跳转到第十行</p>
+<p>:r    FILENMAE   将指定文件的内容读取到光标所在下一行</p>
+<p>:%s   %匹配符，表示匹配所有行 s 替换命令   &#x2F;要替换的字符&#x2F;替换后的字符&#x2F;     替换的是每一行第一次匹配到的关键字     g 替换匹配到的所有关键字     %s &#x2F;0&#x2F;1&#x2F;g</p>
+<p>:set nu    显示行号</p>
+<p>:set nonu   取消行号</p>
+<p>&#x2F;关键字   快速匹配关键字所在行的内容</p>
+<p>:noh        取消高亮标记</p>
+<p>vim  -o    &#x2F;etc&#x2F;passwd &#x2F;etc&#x2F;shadow    多个文件水平分割显示内容</p>
+<p>​        -O   &#x2F;etc&#x2F;passwd   &#x2F;etc&#x2F;shadow    左右分屏显示文件内容</p>
+<p>​              ctrl+w+w</p>
+<p>vim +  &#x2F;etc&#x2F;passwd   打开该文件进入文档尾</p>
+<h3 id="3-”-gt-”或“-gt-gt-”实现文件编辑"><a href="#3-”-gt-”或“-gt-gt-”实现文件编辑" class="headerlink" title="3.”&gt;”或“&gt;&gt;”实现文件编辑"></a>3.”&gt;”或“&gt;&gt;”实现文件编辑</h3><h4 id="echo-打印命令"><a href="#echo-打印命令" class="headerlink" title="echo   打印命令"></a>echo   打印命令</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#echo  this is test    (标准输入输出命令)</span><br><span class="line">this is test   </span><br></pre></td></tr></table></figure>
+
+<h5 id="引用变量"><a href="#引用变量" class="headerlink" title="$引用变量"></a>$引用变量</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#name=zhangsan</span><br><span class="line">#echo $name</span><br><span class="line">zhangsan</span><br><span class="line">$&#123;&#125;</span><br><span class="line">#echo  $&#123;name&#125;</span><br><span class="line">zhangsan</span><br></pre></td></tr></table></figure>
+
+<h5 id="显示上一条命令的退出码-0成功-1-255错误状态"><a href="#显示上一条命令的退出码-0成功-1-255错误状态" class="headerlink" title="$?显示上一条命令的退出码   0成功  1-255错误状态"></a>$?显示上一条命令的退出码   0成功  1-255错误状态</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# echo $&#123;name&#125;</span><br><span class="line">zhangsan</span><br><span class="line">[root@localhost ~]# echo $?</span><br><span class="line">0</span><br><span class="line">[root@localhost ~]# haha</span><br><span class="line">bash: haha: command not found...</span><br><span class="line">Failed to search for file: Cannot update read-only repo</span><br><span class="line">[root@localhost ~]# echo $?</span><br><span class="line">127</span><br></pre></td></tr></table></figure>
+
+<h5 id="管道符（将前面命令的标准输出作为后面命令的标准输入）—无名管道"><a href="#管道符（将前面命令的标准输出作为后面命令的标准输入）—无名管道" class="headerlink" title="|  管道符（将前面命令的标准输出作为后面命令的标准输入）—无名管道"></a>|  管道符（将前面命令的标准输出作为后面命令的标准输入）—无名管道</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">显示一个文件的第十行</span><br><span class="line">#head /etc/passwd | tail -1   </span><br><span class="line">eg:显示/etc/passwd文件20-25行的内容</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>**p 标识的管道文件（命名管道）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">开启两个终端</span><br><span class="line">1终端：</span><br><span class="line">#mkfifo /p1</span><br><span class="line">#echo 123 &gt; /p1</span><br><span class="line">2终端：</span><br><span class="line">#cat /p1</span><br><span class="line">123</span><br></pre></td></tr></table></figure>
+
+<h4 id="三种引号区别"><a href="#三种引号区别" class="headerlink" title="三种引号区别"></a>三种引号区别</h4><p>‘ 单引号’    强引用，不识别引号中特殊字符的特殊含义   echo ‘$PS1’   </p>
+<p>“ 双引号”   弱引用，识别特殊含义的字符， echo “$PS1”   —如果是变量单引和双引有区别</p>
+<p>`反引号&#96;  命令替换符 &#x3D;&#x3D; $()</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost /]# echo &quot;根目录下所有的文件\`ls`&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="“-gt-”-输出重定向符-将前面命令的输出结果写入指定文件"><a href="#“-gt-”-输出重定向符-将前面命令的输出结果写入指定文件" class="headerlink" title="“&gt;”   输出重定向符 (将前面命令的输出结果写入指定文件)"></a>“&gt;”   输出重定向符 (将前面命令的输出结果写入指定文件)</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo   helloworld &gt; FILE      将helloworld输出结果通过输出重定向符写入指定文件，当文件不存在会创建该文件</span><br></pre></td></tr></table></figure>
+
+<h4 id="“-gt-gt-”-追加重定向符"><a href="#“-gt-gt-”-追加重定向符" class="headerlink" title="“&gt;&gt;” 追加重定向符"></a>“&gt;&gt;” 追加重定向符</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo this is test &gt;&gt; FILENAME </span><br></pre></td></tr></table></figure>
+
+<h4 id="lt-输入重定向符"><a href="#lt-输入重定向符" class="headerlink" title="&lt;    输入重定向符"></a>&lt;    输入重定向符</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat   &lt;  /etc/passwd</span><br><span class="line">head  &lt; /etc/passwd</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-文件编辑-lt-lt-终止结束符"><a href="#4-文件编辑-lt-lt-终止结束符" class="headerlink" title="4.文件编辑&lt;&lt;   终止结束符"></a>4.文件编辑&lt;&lt;   终止结束符</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost /]# cat &lt;&lt; EOF       查看内容，匹配终止结束符结束输入</span><br><span class="line">&gt; this is test                       --标准输入</span><br><span class="line">&gt; EOF                                --匹配到终止结束符，结束标准输入</span><br><span class="line">this is test                         --将前面标准输入的内容标准输出</span><br><span class="line"></span><br><span class="line">---------------------------</span><br><span class="line">[root@localhost /]# cat &lt;&lt; EOF &gt;  file2</span><br><span class="line">&gt; this is 1</span><br><span class="line">&gt; this is 2</span><br><span class="line">&gt; this is 3</span><br><span class="line">&gt; EOF</span><br><span class="line">[root@localhost /]# cat file2</span><br><span class="line">this is 1</span><br><span class="line">this is 2</span><br><span class="line">this is 3</span><br></pre></td></tr></table></figure>
+
+<h4 id="文件描述符：0-文件标准输入符1标准（正确）输出描述符-2错误输出描述符"><a href="#文件描述符：0-文件标准输入符1标准（正确）输出描述符-2错误输出描述符" class="headerlink" title="文件描述符：0 文件标准输入符1标准（正确）输出描述符  2错误输出描述符"></a>文件描述符：0 文件标准输入符1标准（正确）输出描述符  2错误输出描述符</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cat 0&lt; /etc/passwd</span><br><span class="line">cat fff  1&gt; file      ==  cat fff &gt; file</span><br><span class="line">cat fff   2&gt; file</span><br><span class="line">cat fff &amp;&gt; file == cat fff  1&gt; file 2&gt; file  == cat fff 1&gt; file 2&gt;&amp;1</span><br><span class="line">cat fff 1&gt; file 2&gt; /dev/null</span><br></pre></td></tr></table></figure>
+
+<h2 id="文件内容处理相关命令—-行"><a href="#文件内容处理相关命令—-行" class="headerlink" title="文件内容处理相关命令—(行)"></a>文件内容处理相关命令—(行)</h2><h3 id="grep-文本过滤显示命令"><a href="#grep-文本过滤显示命令" class="headerlink" title="grep 文本过滤显示命令"></a>grep 文本过滤显示命令</h3><p>命令格式：   grep   [-options…]  关键字   文件名…</p>
+<p>#grep    root   &#x2F;etc&#x2F;passwd     将&#x2F;etc&#x2F;passwd 文件中有root关键字的行打印显示</p>
+<p>​             -v  反过滤，把没有关键字的行打印显示</p>
+<p>​             -o   只显示匹配到的关键字</p>
+<p>​            -c   显示匹配关键字的行数</p>
+<p>​            -i   忽略大小写</p>
+<p>​            -n  过滤显示行号</p>
+<p>​            -w  按照单词过滤</p>
+<p>​            -A 2   显示关键字以及下两行信息</p>
+<p>​           -B 2   显示关键字以及上两行信息</p>
+<p>​           -C 3   显示关键字以及上下三行信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">过滤指定文件/etc/passwd将文件中有nologin关键字的行写入login文件，并按照原文件的顺序写入。           </span><br><span class="line">[root@localhost /]# grep nologin /etc/passwd  &gt; login</span><br><span class="line">只显示一个配合文件的关键信息</span><br><span class="line">[root@localhost /]# grep -v ^# /etc/login.defs  | grep -v ^$</span><br><span class="line">判断/usr/bin是否存在passwd可执行文件</span><br><span class="line">[root@localhost /]# ll /usr/bin | grep -w passwd</span><br><span class="line">-rwsr-xr-x. 1 root root       34512 Aug 12  2018 passwd</span><br></pre></td></tr></table></figure>
+
+<p>^   以什么开头    ^q     ^#</p>
+<p>$  以什么结尾     a$   </p>
+<p>^$   空白行</p>
+<p>[]  定义取值范围，该范围内的任意单个字符   [1-9]   grep ^[0-9]   FILENAME  开头是0-9任意一个数字的行显示</p>
+<p>[^]  ^取反    ^[^0-9]     ^[!0-9]</p>
+<h3 id="cut-文本内容剪切命令"><a href="#cut-文本内容剪切命令" class="headerlink" title="cut 文本内容剪切命令"></a>cut 文本内容剪切命令</h3><p>​      -d   指定文件内容的分割符</p>
+<p>​     -f    指定截取的字段      </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#cut -d : -f 1  /etc/passwd</span><br><span class="line">[root@localhost /]# date |cut -d &quot; &quot; -f 6</span><br><span class="line">2022</span><br></pre></td></tr></table></figure>
+
+<p>​     -c   指定字符截取    cut -c 1-3  &#x2F;etc&#x2F;passwd</p>
+<h3 id="wc-文本统计命令-行-单词书-字节数-文件名"><a href="#wc-文本统计命令-行-单词书-字节数-文件名" class="headerlink" title="wc   文本统计命令  行 单词书   字节数  文件名"></a>wc   文本统计命令  行 单词书   字节数  文件名</h3><p>-l   只统计行数</p>
+<p>-w 只统计单词数</p>
+<p>-c  统计字节数</p>
+<p>-m  统计字符数</p>
+<p>  当前系统共有多少用户</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost /]# echo 当前系统共有用户\`wc -l /etc/passwd | cut -d &quot; &quot;  -f 1`个 &gt; file</span><br><span class="line"> 当前系统共有用户44个</span><br></pre></td></tr></table></figure>
+
+<h3 id="sort-文本排序-默认按照字符排序"><a href="#sort-文本排序-默认按照字符排序" class="headerlink" title="sort  文本排序  默认按照字符排序"></a>sort  文本排序  默认按照字符排序</h3><p>​    -n  按照数值大小升序显示</p>
+<p>​    -r逆序显示</p>
+<p>​    -t 指定分隔符</p>
+<p>   -k 指定字段</p>
+<p>   -u  unique  去重   &#x3D;&#x3D;sort a.txt | uniq</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost /]# sort -t : -k 3  -n /etc/passwd</span><br><span class="line">将/etc/passwd 文件内容通过：分割将第三个字段进行排序升序显示每一行内容</span><br></pre></td></tr></table></figure>
+
+<h3 id="uniq-去重命令-重复行相邻"><a href="#uniq-去重命令-重复行相邻" class="headerlink" title="uniq   去重命令(重复行相邻)"></a>uniq   去重命令(重复行相邻)</h3><p>​	-c   显示每一行重复的次数</p>
+<p>   -d   只显示重复出现的行  </p>
+<p>   -D 显示重复出现的所有行</p>
+<h3 id="tr-字符替换"><a href="#tr-字符替换" class="headerlink" title="tr    字符替换"></a>tr    字符替换</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">echo abcde | tr  -t   a   1</span><br><span class="line">-c  反选定</span><br><span class="line">echo abcde | tr -c abc  0   把处理abc之外的字符替换为0字符</span><br><span class="line">   abc00</span><br><span class="line">-s    将连续重复的字符替换为单个字符</span><br><span class="line">echo   aaaaabcd | tr -s a 1   将连续的多个a字符替换为一个1字符</span><br><span class="line">-d  删除选定字符</span><br><span class="line">echo abcdef | tr -d abc</span><br></pre></td></tr></table></figure>
+
+<h1 id="day04"><a href="#day04" class="headerlink" title="day04"></a>day04</h1><h2 id="文件查找4种方式"><a href="#文件查找4种方式" class="headerlink" title="文件查找4种方式"></a>文件查找4种方式</h2><p>whereis   查询范围通过系统环境变量路径搜索文件$PATH,所有的文件</p>
+<p>which     查询范围通过系统环境变量路径搜索文件$PATH,找的是可执行文件（查找命令文件）</p>
+<p>locate     全局搜索，但是需要在搜素前将系统文件导入数据库updatedb;查找速度快</p>
+<p>*find       全局搜索文件。</p>
+<p>注意事项：<br> 1）-prune 必须和 -path，-o 一起使用<br> 2）-prune -o 的顺序不 能调换<br> 3）-name等必须放在-prune -o后面才能使用</p>
+<p>！  -a  -o</p>
+<p> eg: <code>find . -path ./tmp -prune -o -name &quot;*.txt&quot;</code></p>
+<p>[root@localhost test]# find . ! -name “out*” -a -name “*.txt”</p>
+<p>find &#x2F; -name FILENAME  -type f</p>
+<p>find   -name FILENAME</p>
+<p>find ..&#x2F;..  -name FILENAME</p>
+<p>-exec    -ok</p>
+<p>#-exec   -ok   find 查找文件的结果通过 可以将前面命令的结果默认通过换 行识别为多个文件参数通过后面命令进行处理</p>
+<p>find  &#x2F; -type  f -exec cp -p {}  &#x2F;test  ;</p>
+<p>find  &#x2F; -type  f -ok cp -p {}  &#x2F;test  ;</p>
+<p>[root@localhost test]# find . -type f  |xargs -I {}  cp {} &#x2F;test      </p>
+<p>-I  将xargs的每项名称，一般是一行一行赋值给 {}，可以用 {} 代替。</p>
+<h3 id="find"><a href="#find" class="headerlink" title="find"></a>find</h3><h4 id="find命令格式："><a href="#find命令格式：" class="headerlink" title="find命令格式："></a>find命令格式：</h4><blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find   path  -option  【 -print 】  【 -exec   -ok   |xargs  |grep  】 【  command  &#123;&#125; \;  】</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="find命令的参数："><a href="#find命令的参数：" class="headerlink" title="find命令的参数："></a>find命令的参数：</h4><p>1）path：要查找的目录路径。 </p>
+<pre><code>  ~ 表示$HOME目录
+   . 表示当前目录
+   / 表示根目录 
+</code></pre>
+<p>2）print：表示将结果输出到标准输出。 </p>
+<p>3）exec：对匹配的文件执行该参数所给出的shell命令。<br>      形式为command {} ;，注意{}与;之间有空格 </p>
+<p>4）ok：与exec作用相同，<br>      区别在于，在执行命令之前，都会给出提示，让用户确认是否执行 </p>
+<p>5）|xargs  与exec作用相同 ，起承接作用</p>
+<p>区别在于 |xargs 主要用于承接删除操作 ，而 -exec 都可用 如复制、移动、重命名等</p>
+<p>6）options ：表示查找方式</p>
+<p>options常用的有下选项：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">-name   filename               #查找名为filename的文件</span><br><span class="line">-perm                                #按执行权限来查找</span><br><span class="line">-user    username             #按文件属主来查找</span><br><span class="line">-group groupname            #按组来查找</span><br><span class="line">-mtime   -n +n                   #按文件更改时间来查找文件，-n指n天以内，+n指n天以前</span><br><span class="line">-atime    -n +n                   #按文件访问时间来查找文件，-n指n天以内，+n指n天以前</span><br><span class="line">-ctime    -n +n                  #按文件创建时间来查找文件，-n指n天以内，+n指n天以前</span><br><span class="line">-nogroup                          #查无有效属组的文件，即文件的属组在/etc/groups中不存在</span><br><span class="line">-nouser                            #查无有效属主的文件，即文件的属主在/etc/passwd中不存</span><br><span class="line">-type    b/d/c/p/l/f             #查是块设备、目录、字符设备、管道、符号链接、普通文件</span><br><span class="line">-size      n[c]                    #查长度为n块[或n字节]的文件</span><br><span class="line">-mount                            #查文件时不跨越文件系统mount点</span><br><span class="line">-follow                            #如果遇到符号链接文件，就跟踪链接所指的文件</span><br><span class="line">-prune                            #忽略某个目录</span><br></pre></td></tr></table></figure>
+
+<h4 id="下面通过一些简单的例子来介绍下find的常规用法："><a href="#下面通过一些简单的例子来介绍下find的常规用法：" class="headerlink" title="下面通过一些简单的例子来介绍下find的常规用法："></a>下面通过一些简单的例子来介绍下find的常规用法：</h4><p>1、按名字查找 </p>
+<pre><code>  在当前目录及子目录中，查找大写字母开头的txt文件 
+   $ find . -name &#39;[A-Z]*.txt&#39; -print 　　
+
+  在/etc及其子目录中，查找host开头的文件 
+  $ find /etc -name &#39;host*&#39; -print 　　
+
+  在$HOME目录及其子目录中，查找所有文件 　　
+  $ find ~ -name &#39;*&#39; -print 
+
+  在当前目录及子目录中，查找不是out开头的txt文件 　　
+  $ find . -name &quot;out*&quot; -prune -o -name &quot;*.txt&quot; -print 
+</code></pre>
+<p>2、按目录查找 　　</p>
+<pre><code>  在当前目录除aa之外的子目录内搜索 txt文件 　　
+  $ find . -path &quot;./aa&quot; -prune -o -name &quot;*.txt&quot; -print 　　
+
+  在当前目录及除aa和bb之外的子目录中查找txt文件 　　
+  $ find . −path′./dir0′−o−path′./dir1′−path′./dir0′−o−path′./dir1′ -a -prune -o -name &#39;*.txt&#39; -print
+</code></pre>
+<p>注意：在1、2处都需要加空格，否则会出现如图所示的报错</p>
+<pre><code>       在3处加不加 -a都可以
+
+  在当前目录，不再子目录中，查找txt文件 
+  $ find . ! -name &quot;.&quot; -type d -prune -o -type f -name &quot;*.txt&quot; -print 
+
+ 或者   find . -name *.txt -type f -print
+</code></pre>
+<p>3、按权限查找 　　</p>
+<pre><code>  在当前目录及子目录中，查找属主具有读写执行，其他具有读执行权限的文件 　　
+  $ find . -perm 755 -print 
+
+  查找用户有写权限或者组用户有写权限的文件或目录
+  find ./ -perm /220
+  find ./ -perm /u+w,g+w
+  find ./ -perm /u=w,g=w
+</code></pre>
+<p>4、按类型查找 　（b&#x2F;d&#x2F;c&#x2F;p&#x2F;l&#x2F;f ）　</p>
+<pre><code>  在当前目录及子目录下，查找符号链接文件 　　
+  $ find . -type l -print 
+</code></pre>
+<p>5、按属主及属组 　　</p>
+<pre><code>  查找属主是www的文件 　　
+  $ find / -user www -type f -print 　　
+
+  查找属主被删除的文件 
+  $ find / -nouser -type f -print 　　
+
+  查找属组 mysql 的文件 
+  $ find / -group mysql -type f -print 　　
+
+  查找用户组被删掉的文件 
+  $ find / -nogroup -type f -print 
+</code></pre>
+<p>6、按时间查找 　　</p>
+<pre><code>  查找2天内被更改过的文件 
+   $ find . -mtime -2 -type f -print 　　
+
+  查找2天前被更改过的文件 
+  $ find . -mtime +2 -type f -print 　　
+
+  查找一天内被访问的文件 
+  $ find . -atime -1 -type f -print 　　
+
+  查找一天前被访问的文件 
+  $ find . -atime +1 -type f -print 　　
+
+  查找一天内状态被改变的文件 
+  $ find . -ctime -1 -type f -print 　　
+
+  查找一天前状态被改变的文件 
+  $ find . -ctime +1 -type f -print 　　
+
+  查找10分钟以前状态被改变的文件 
+  $ find . -cmin +10 -type f -print 
+</code></pre>
+<p>7、按文件新旧 　　</p>
+<pre><code>  查找比 aa.txt 新的文件 
+  $ find . -newer &quot;aa.txt&quot; -type f -print 　　
+
+  查找比 aa.txt 旧的文件 
+  $ find . ! -newer &quot;aa.txt&quot; -type f -print 　　
+
+  查找比aa.txt新，比bb.txt旧的文件 
+  $ find . -newer &#39;aa.txt&#39; ! -newer &#39;bb.txt&#39; -type f -print 
+</code></pre>
+<p>8、按大小查找 　　</p>
+<pre><code>  查找超过1M的文件 
+  $ find / -size +1M -type f -print 　　
+
+  查找等于6字节的文件 
+  $ find . -size 6c -print 　　
+
+  查找小于32k的文件 
+  $ find . -size -32k -print 
+</code></pre>
+<p>9、执行命令 　　</p>
+<pre><code>  1）查找 del.txt 并删除，删除前提示确认 
+  $ find . -name &#39;del.txt&#39; -ok rm &#123;&#125; \; 　　
+
+ 2） 查找 aa.txt 并备份为aa.txt.bak 
+  $ find . -name &#39;aa.txt&#39; -exec cp &#123;&#125; &#123;&#125;.bak \;
+
+ 3）查当前目录下的所有普通文件
+
+# find . -type f -exec ls -l &#123;&#125; \; 
+</code></pre>
+<p>   -rw-r–r–    1 root      root         34928 2003-02-25   .&#x2F;conf&#x2F;httpd.conf<br>   -rw-r–r–    1 root      root         12959 2003-02-25   .&#x2F;conf&#x2F;magic<br>   -rw-r–r–    1 root      root          180 2003-02-25   .&#x2F;conf.d&#x2F;README </p>
+<p>   查当前目录下的所有普通文件，并在 - exec 选项中使用 ls -l 命令将它们列出</p>
+<p>   4）在 &#x2F;logs 目录中查找更改时间在5日以前的文件并删除它们<br>   $ find logs -type f -mtime +5 -exec   -ok   rm {} ;</p>
+<p>   5）查询当天修改过的文件</p>
+<p>  # find  .&#x2F;  -mtime  -1  -type f  -exec  ls -l  {} ;</p>
+<p>   6）查询文件并询问是否要显示</p>
+<pre><code># find   ./   -mtime   -1   -type f   -ok   ls -l   &#123;&#125; \;  
+&lt; ls … ./classDB.inc.php &gt; ? y
+-rw-r–r–    1 cnscn    cnscn       13709   1月 12 12:22 ./classDB.inc.php
+# find   ./   -mtime   -1   -type f   -ok   ls -l   &#123;&#125; \;  
+&lt; ls … ./classDB.inc.php &gt; ? n
+</code></pre>
+<h2 id="文件压缩解压缩"><a href="#文件压缩解压缩" class="headerlink" title="文件压缩解压缩"></a>文件压缩解压缩</h2><p>tar</p>
+<p>-c</p>
+<p>-x</p>
+<p>-t</p>
+<p>-v</p>
+<p>-f</p>
+<p>-j</p>
+<p>-J</p>
+<p>-z</p>
+<p>-C</p>
+<p>文件传输：</p>
+<p>window –linux     xftp实现文件传送   </p>
+<p>​                      rz FILENAME 接收      sz   传送       —lrzsz包</p>
+<p>linux–linux </p>
+<p>文件发送：  scp  mima  <a href="mailto:&#x72;&#111;&#111;&#x74;&#x40;&#49;&#x39;&#x32;&#x2e;&#x31;&#54;&#56;&#x2e;&#50;&#x32;&#x30;&#46;&#49;&#x35;&#52;">&#x72;&#111;&#111;&#x74;&#x40;&#49;&#x39;&#x32;&#x2e;&#x31;&#54;&#56;&#x2e;&#50;&#x32;&#x30;&#46;&#49;&#x35;&#52;</a>:&#x2F;root</p>
+<p>文件接收：  scp    <a href="mailto:&#114;&#111;&#111;&#x74;&#x40;&#49;&#57;&#50;&#x2e;&#49;&#x36;&#x38;&#46;&#50;&#50;&#48;&#46;&#x31;&#x35;&#52;">&#114;&#111;&#111;&#x74;&#x40;&#49;&#57;&#50;&#x2e;&#49;&#x36;&#x38;&#46;&#50;&#50;&#48;&#46;&#x31;&#x35;&#52;</a>:&#x2F;root&#x2F;mima   &#x2F;passwd</p>
+<p>​                     scp  -r</p>
+<p>​                 [root@162 ~]#    sftp  192.168.220.154  发起sftp的远程连接</p>
+<p>​                             sftp&gt;        put file</p>
+<p>​                              sftp&gt;        get  filename</p>
+<p>​             </p>
+<p>文件管理名</p>
+<p>touch  &gt;  &gt;&gt;   vi&#x2F;vim   nano</p>
+<p>mkdir </p>
+<p>rm -rf</p>
+<p>cp </p>
+<p>mv</p>
+<p>wget </p>
+<p>cat   tac  more  less  head tail   (vim nano) grep </p>
+<p>vim****   nano  &gt; &gt;&gt;   </p>
+<p>echo this is test &gt; a.txt</p>
+<p>cat &lt;<EOF> file</EOF></p>
+<p>grep    wc   cut   sort  uniq  tr</p>
+<p>whereis   </p>
+<p>which</p>
+<p>locate</p>
+<p>find****</p>
+<p>tar </p>
+<p>bash 特性</p>
+<h3 id="1-bzip-and-bzip2"><a href="#1-bzip-and-bzip2" class="headerlink" title="1.bzip and bzip2"></a>1.bzip and bzip2</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/38c0576c/Users\84750\AppData\Roaming\Typora\typora-user-images\image-20220215174723597.png" alt="image-20220215174723597"></p>
+<p><strong>用途：</strong><br>制作压缩文件、解开压缩文件</p>
+<p><strong>命令格式：</strong></p>
+<p><strong>gzip [-9] 文件名…<br>bzip2 [-9] 文件名…<br>gzip -d .gz格式的压缩文件<br>bzip2 -d *.bz2格式的压缩文件</strong></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/38c0576c/Users\84750\AppData\Roaming\Typora\typora-user-images\image-20220215174739146.png" alt="image-20220215174739146"></p>
+<p><strong>常用命令选项：</strong><br>-9：表示高压缩比，多在创建压缩包时用<br>-d：用于解开已经压缩过的文件</p>
+<h3 id="2-tar"><a href="#2-tar" class="headerlink" title="2.tar"></a>2.tar</h3><p><strong>用途：</strong><br>制作归档文件、释放归档文件<br><strong>格式：</strong></p>
+<p><strong>tar [选项]… 归档文件名 源文件或目录<br>tar [选项]… 归档文件名 [-C 目标目录]</strong></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/38c0576c/Users\84750\AppData\Roaming\Typora\typora-user-images\image-20220215174831834.png" alt="image-20220215174831834"></p>
+<h2 id="alias-定义命令别名"><a href="#alias-定义命令别名" class="headerlink" title="alias  定义命令别名"></a>alias  定义命令别名</h2><p>alias 别名&#x3D;”命令本身”</p>
+<p> l临时别名，仅在当前终端运行状态下生效</p>
+<p>vim &#x2F;etc&#x2F;bashrc          1–exit    2–bash  3–source   &#x2F;etc&#x2F;bashrc</p>
+<p>永久别名对系统所有用户都生效</p>
+<p>vim ~&#x2F;.bashrc</p>
+<p>永久别名仅对当前用生效</p>
+<p><strong>定义别名</strong><br>定义别名的方法很简单，格式如下所示：</p>
+<p>alias [name[&#x3D;value]]</p>
+<p>这里需要注意的是：</p>
+<p>等号（&#x3D;）前后不能有空格，否则就会出现语法错误了。<br>如果value中有空格或tab，则value一定要使用引号（单、双引号都行）括起来。</p>
+<p>了解了别名的基础知识之后，我们来看一个定义别名的例子：</p>
+<p>[roc@roclinux ~]$ alias vi&#x3D;’vim’<br>这个例子定义了一个 vim 命令的别名，以后，当我们执行 vi 命令时，其实真正执行的是 vim 命令。</p>
+<p><strong>如何查看别名</strong><br>如果太热衷于设置别名，那么你就会面临着要记住很多别名的困扰，因此，学会查看所有已设置的别名，就显得尤为重要了。</p>
+<p>查看别名的方法也很简单，直接输入 alias 命令，不加任何选项和参数即可：<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/38c0576c/Users\84750\AppData\Roaming\Typora\typora-user-images\image-20220215174945311.png" alt="image-20220215174945311"></p>
+<h2 id="命令缓存"><a href="#命令缓存" class="headerlink" title="命令缓存"></a>命令缓存</h2><p>1.建立命令缓存</p>
+<p>执行命令自动在缓存建立</p>
+<p>hash -p  &#x2F;usr&#x2F;bin&#x2F;touch    touch </p>
+<p>hash -p  &#x2F;usr&#x2F;bin&#x2F;touch    chuangjian</p>
+<p>2.删除缓存</p>
+<p>hash  -d    chuangjian</p>
+<p>hash -r   清空所有缓存</p>
+<p>exit终端</p>
+<p>缓存特点：    命令缓存—alias–名令文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">[root@162 ~]# hash</span><br><span class="line">hits	command</span><br><span class="line">   3	/usr/bin/vim</span><br><span class="line">   1	/usr/bin/cat</span><br><span class="line">   1	/usr/sbin/pidof</span><br><span class="line">   2	/usr/bin/su</span><br><span class="line">[root@162 ~]# echo $PATH</span><br><span class="line">/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin</span><br><span class="line">[root@162 ~]# which touch</span><br><span class="line">/usr/bin/touch</span><br><span class="line">[root@162 ~]# touch a</span><br><span class="line">[root@162 ~]# hash</span><br><span class="line">hits	command</span><br><span class="line">   3	/usr/bin/vim</span><br><span class="line">   1	/usr/bin/cat</span><br><span class="line">   1	/usr/bin/touch</span><br><span class="line">   1	/usr/sbin/pidof</span><br><span class="line">   2	/usr/bin/su</span><br><span class="line">[root@162 ~]# touch /usr/bin/touch     ---=优先通过缓存匹配</span><br><span class="line">[root@162 ~]# hash</span><br><span class="line">hits	command</span><br><span class="line">   3	/usr/bin/vim</span><br><span class="line">   1	/usr/bin/cat</span><br><span class="line">   2	/usr/bin/touch</span><br><span class="line">   1	/usr/sbin/pidof</span><br><span class="line">   2	/usr/bin/su</span><br><span class="line"></span><br><span class="line">[root@162 ~]# mv /usr/bin/touch /usr/local/bin</span><br><span class="line">[root@162 ~]# touch b</span><br><span class="line">bash: /usr/bin/touch: No such file or directory</span><br><span class="line">[root@162 ~]# hash -d touch </span><br><span class="line">[root@162 ~]# hash</span><br><span class="line">hits	command</span><br><span class="line">   3	/usr/bin/vim</span><br><span class="line">   1	/usr/bin/cat</span><br><span class="line">   1	/usr/sbin/pidof</span><br><span class="line">   3	/usr/bin/mv</span><br><span class="line">   2	/usr/bin/su</span><br><span class="line">[root@162 ~]# touch b     ----不存在缓存以及别名执行环境变量路径下的命令文件</span><br><span class="line">[root@162 ~]# hash -p /usr/bin/tac chakan    --别名</span><br></pre></td></tr></table></figure>
+
+<h2 id="history"><a href="#history" class="headerlink" title="history"></a>history</h2><p>展示数行之前的历史命令。命令编号前面前缀上感叹号可以再次执行这个命令。如果我们需要编辑历史列表中的命令，我们可以按下 Ctrl + r 并输入与命令相关的第一个字符。我们可以看到的命令会自动补全，可以根据我们目前的需要来编辑它：</p>
+<p>命令列表会保存在一个叫 .bash_history 的文件里。history 命令是一个非常有用的用于减少输入次数的工具，特别是进行命令行编辑的时候。默认情况下，bash 保留最后输入的500个命令，不过可以通过修改 HISTSIZE 环境变量来增加:<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/post/38c0576c/Users\84750\AppData\Roaming\Typora\typora-user-images\image-20220215174529724.png" alt="image-20220215174529724"></p>
+<p>Linux history 命令</p>
+<p>但上述变化，在我们的下一次启动不会保留。为了保持 HISTSIZE 变量的变化，我们需要通过手工修改文件编辑：</p>
+<ol>
+<li>#要设置 history 长度，请看bash(1)文档中的 HISTSIZE 和 HISTFILESIZE</li>
+<li>HISTSIZE&#x3D;1000</li>
+</ol>
+<p>重要： 我们的更改不会立刻生效，除非我们重启了 shell 。</p>
+<h1 id="day05"><a href="#day05" class="headerlink" title="day05"></a>day05</h1><h2 id="用户组"><a href="#用户组" class="headerlink" title="用户组"></a>用户组</h2><p>AAA</p>
+<h3 id="用户类别"><a href="#用户类别" class="headerlink" title="用户类别"></a>用户类别</h3><p>管理员    只有一个UID&#x3D;0</p>
+<p>普通用户    1-65535   </p>
+<p>​      系统用户   1-999</p>
+<p>​             系统管理账号：1-200</p>
+<p>​              系统普通账号 ：  201-999</p>
+<p>​       一般用户   1000-</p>
+<p>公有模式      users        ** 私有模式  用户在自己的组当中（创建用户会创建一个和用户同名的组）</p>
+<h5 id="1-用户创建"><a href="#1-用户创建" class="headerlink" title="1.用户创建"></a>1.用户创建</h5><p>useradd &#x3D;&#x3D; adduser   添加用户或者更新添加用户的基本信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#useradd    USERNAME</span><br><span class="line">#useradd -u 1111 -g 1000 -d  /test/user2 -s /sbin/nologin   user2  </span><br><span class="line"> 创建用户命令          （选项）                                要创建的用户名</span><br><span class="line">-c     更改描述名称</span><br><span class="line">-u    指定UID</span><br><span class="line">-g   指定用户的基本组（主组）</span><br><span class="line">-G   指定用户的附加组</span><br><span class="line">-d   指定家目录</span><br><span class="line">-s  指定shell字段</span><br><span class="line">-r    指定系统用户</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-查看系统中用户信息"><a href="#2-查看系统中用户信息" class="headerlink" title="2.查看系统中用户信息"></a>2.查看系统中用户信息</h5><p>1)用户的配置文件（&#x2F;etc&#x2F;passwd）</p>
+<p>用户名:密码占位符： 用户唯一id值：基本组的组id：描述字段（注释）：家目录：shell</p>
+<p>2)id 判断系统某一个用户是否存在</p>
+<p>3)grep ^USERNAME   &#x2F;etc&#x2F;passwd</p>
+<h5 id="3-用户修改"><a href="#3-用户修改" class="headerlink" title="3.用户修改"></a>3.用户修改</h5><p>usermod  [options]  LOGIN</p>
+<p>-c   修改描述名称</p>
+<p>-d 指定家目录</p>
+<p>-g  修改基本组</p>
+<p>-G  修改附属组    会将用户以指定的附属组进行修改</p>
+<p>-l  修改登录名称</p>
+<p>-L  锁定用户</p>
+<p>-s  修改shell</p>
+<p>-u  修改UID</p>
+<p>-U 解锁</p>
+<h5 id="4-删除用户"><a href="#4-删除用户" class="headerlink" title="4.删除用户"></a>4.删除用户</h5><p>userdel -r  USERNAME  完整删除一个用户相关的所有信息</p>
+<p>注： 也会删除用户的基本组，但是如果基本组当中存在的其他的用户通过userdel -r 不能删除该基本组</p>
+<p>userdel USERNAME 只删除用户配置文件相关信息，如果要完整删除用户需要手动删除用户的家目录&#x2F;home&#x2F;USERNAME和邮件文件&#x2F;var&#x2F;spool&#x2F;mail&#x2F;USERNAME</p>
+<h4 id="组类别"><a href="#组类别" class="headerlink" title="组类别"></a>组类别</h4><p>管理组     只有一个</p>
+<p>普通组       1-65535</p>
+<p>​         基本组（默认组、主组）   一个用户只有一个基本组</p>
+<p>​          附属组     一个用户可以有多</p>
+<h5 id="1-创建组"><a href="#1-创建组" class="headerlink" title="1.创建组"></a>1.创建组</h5><p>groupadd  GROUPNAME</p>
+<p>​       -g   指定gid</p>
+<p>​      -r    指定为系统组（1-999）</p>
+<p>groupadd  -g 456   -r  GROUPNAME</p>
+<h5 id="2-查看组信息"><a href="#2-查看组信息" class="headerlink" title="2.查看组信息"></a>2.查看组信息</h5><p>1）查看组配置文件&#x2F;etc&#x2F;group</p>
+<p> 组名:组密码占位符:组id:组中的用户名（把当前组作为附属组的用户名）</p>
+<p>2）grep ^USERNAME  &#x2F;etc&#x2F;group</p>
+<h5 id="3）组修改"><a href="#3）组修改" class="headerlink" title="3）组修改"></a>3）组修改</h5><p>groupmod   修改组信息</p>
+<p>-g  修改组id</p>
+<p>-n 修改组名</p>
+<p>groupmod -n grp1  g1       将g1组名改为grp1</p>
+<h5 id="4）删除组"><a href="#4）删除组" class="headerlink" title="4）删除组"></a>4）删除组</h5><p>groupdel  GROUPNAME</p>
+<p>只能删除附属组组当中有用户也可以删除，不能删除基本组</p>
+<h4 id="用户密码管理"><a href="#用户密码管理" class="headerlink" title="用户密码管理"></a>用户密码管理</h4><h5 id="1-设置密码"><a href="#1-设置密码" class="headerlink" title="1.设置密码"></a>1.设置密码</h5><p>passwd    USERNAME   用户密码修改，设置用户密码</p>
+<p>passwd   &#x2F; chage更改密码参数</p>
+<p>​     -l   锁定用户密码</p>
+<p>​     -u  解锁用户</p>
+<p>​    -x</p>
+<p>​    -n</p>
+<p>​    -w</p>
+<p>​    -d</p>
+<p>[root@162 ~]# echo mima | passwd –stdin root<br>Changing password for user root.<br>passwd: all authentication tokens updated successfully.</p>
+<p>chpasswd   批量更改</p>
+<p>echo root:mima | chpasswd</p>
+<p>vim file</p>
+<p>root：mima1</p>
+<p>zhangsan:mima2</p>
+<p>cat file | chpasswd </p>
+<p>chpasswd &lt;  file</p>
+<h5 id="2-查看密码信息-x2F-etc-x2F-shadow"><a href="#2-查看密码信息-x2F-etc-x2F-shadow" class="headerlink" title="2.查看密码信息   &#x2F;etc&#x2F;shadow"></a>2.查看密码信息   &#x2F;etc&#x2F;shadow</h5><p>用户名：密码：最后一次设置密码的时间（1970.1.1开始统计到设置密码的天数）：密码最短时间：最长：警告时间：宽限时间：过期精确时间（1970.1.1开始统计到密码失效的天数）</p>
+<h4 id="组密码管理"><a href="#组密码管理" class="headerlink" title="组密码管理"></a>组密码管理</h4><h5 id="1）设置组密码"><a href="#1）设置组密码" class="headerlink" title="1）设置组密码"></a>1）设置组密码</h5><p>gpasswd  GROUPNAME</p>
+<p>-a  将指定用户拉到某一个组</p>
+<p>-d  从组中移除用户</p>
+<p>-M  设置组成员列表</p>
+<p>-r  删除组密码</p>
+<p>-R 锁定组密码（解锁–重置组密码）</p>
+<p>-A  设置组长（可以将添加，删除组中用户）</p>
+<p>newgrp  切换新组</p>
+<p>注：作为管理员切换组不需要组密码，如果是组成员也不需要验证组密码</p>
+<h5 id="2）查看组密码-x2F-etc-x2F-gshadow"><a href="#2）查看组密码-x2F-etc-x2F-gshadow" class="headerlink" title="2）查看组密码&#x2F;etc&#x2F;gshadow"></a>2）查看组密码&#x2F;etc&#x2F;gshadow</h5><p>组名：组密码：组长：组成员</p>
+<h5 id="补充："><a href="#补充：" class="headerlink" title="补充："></a>补充：</h5><p>useradd  haha   &#x2F;etc&#x2F;passwd   &#x2F;etc&#x2F;shadow &#x2F;etc&#x2F;group  &#x2F;etc&#x2F;gshadow  </p>
+<p>​                             &#x2F;home&#x2F;USERNAME  家目录</p>
+<p>​                            &#x2F;var&#x2F;spool&#x2F;mail&#x2F;USERNAME  邮件文件</p>
+<p>默认定义用户添加的相关参数值：&#x2F;etc&#x2F;login.defs   &#x2F;etc&#x2F;default&#x2F;useradd</p>
+<p>实验：创建学习组1，学习组2 ；他们的组gid分别为1111,2222，添加成员并将uid为1088，</p>
+<p>和uid为1066的成员为两组的组长，其中一组组长有一个‘外号’laoda。</p>
+<p>不同学习组进入需要密码才能进入（设置密码）；即使密码泄露也不希望组之外的成员进入。</p>
+<p>groupadd -g 1111 g1</p>
+<p>groupadd g2</p>
+<p>groupmod -g 2222 g2</p>
+<p>useradd u1</p>
+<p>usermod -u 1088 u1</p>
+<p>useradd u2</p>
+<p>usermod -u 1066 u2</p>
+<p>gpasswd -a u1 g1</p>
+<p>gpasswd -a u2 g2</p>
+<p>gpasswd -A u1 g1</p>
+<p>gpasswd -A u2 g2</p>
+<p>usermod -c laoda u1</p>
+<p>gpasswd g1</p>
+<p>gpasswd g2</p>
+<p>gpasswd -R g1</p>
+<p>gpasswd -R g2</p>
+<p>kali</p>
+<h4 id="sudo用户授权"><a href="#sudo用户授权" class="headerlink" title="sudo用户授权"></a>sudo用户授权</h4><p>通过管理员给普通用户下发执行命令的特权</p>
+<p>vim  &#x2F;etc&#x2F;sudoers</p>
+<p>redhat  ALL&#x3D;(ALL)  NOPASSWD: &#x2F;usr&#x2F;sbin&#x2F;useradd</p>
+<p>提权用户     提权用户所在的主机名&#x3D;（授权用户）  提权不需要密码验证:  提取可执行的命令</p>
+<p>$sudo  useradd u1</p>
+<p><strong>su</strong></p>
+<p>su  redhat   </p>
+<p>su - redhat </p>
+<p><strong>w | who | users查看系统通过哪些用户基于终端登录</strong></p>
+<p><strong>last 查看当前主机近期时间里通过哪些用户验证登录当前主机</strong></p>
+<p><strong>whoami  查看当前终端通过哪一个用户身份登录</strong></p>
+<h2 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h2><p>[root@162 ~]# ll<br>total 40<br>-rw-r–r–. 1 root root    0 Feb 13 21:15 111</p>
+<h3 id="系统权限在文件中标识"><a href="#系统权限在文件中标识" class="headerlink" title="系统权限在文件中标识"></a>系统权限在文件中标识</h3><p>2-11</p>
+<p>2-10   9个字符标识一般权限r  w  x</p>
+<p>​	9个字符每三个字符一组标记权限      所属用户    所属组     其他用户</p>
+<p>​	用户如何匹配对应文件的权限</p>
+<p>​    111该文件所属用户是root用户，对于root用户对111文件现在拥有rw-</p>
+<p>11 扩展权限标识符    .没有扩展权限   +有扩展权限</p>
+<h3 id="系统当中权限的描述方式："><a href="#系统当中权限的描述方式：" class="headerlink" title="系统当中权限的描述方式："></a>系统当中权限的描述方式：</h3><p>字符形式：  rwx  （系统权限的标识）</p>
+<p>数值形式：  4&#x3D;r 2&#x3D;w  1&#x3D;x       对于111文件所属用户root他的权限6    所属组的权限4   其他用户的权限4</p>
+<p>（用户方便描述权限）</p>
+<h3 id="系统中文件默认的权限值"><a href="#系统中文件默认的权限值" class="headerlink" title="系统中文件默认的权限值"></a>系统中文件默认的权限值</h3><p>**权限掩码：（权限过滤符）  umask   &#x3D; 022       033</p>
+<p>目录最高权限：777                              755          744</p>
+<p>文本文件的权限： 666                          644          644</p>
+<p>6		6		6</p>
+<p>rw-   rw-   rw-</p>
+<p>0		3		3                  0    4   4           0		 5 	5</p>
+<p>—    -wx   -wx                                       	        r-x    r-x</p>
+<p>rw-   r–     r– </p>
+<p>6   	4		4</p>
+<h3 id="权限修改：chmod"><a href="#权限修改：chmod" class="headerlink" title="权限修改：chmod"></a>权限修改：chmod</h3><p>chmod    权限     FILENAME（管理员可以更改所有用户创建文件的权限；但是普通用户只能更改自己创建的文件（文件的所属用户是当前用户））</p>
+<p>字符形式: chmod   u&#x3D;rwx,g+wx,o-x  a       chmod ugo&#x3D;rw  FILENAME    &#x3D;&#x3D; chmod a&#x3D;rw FILENAME</p>
+<p>数值形式:   chmod 644 FILENAME              chmod 66   FILENAME    066</p>
+<p>chown  更改文件所属用户    chown   所属用户名   FILENAME      chown  u1  a     chown u2:u2  a   chown :u4  a</p>
+<p>chgrp    更改文件的所属组   chgrp   所属组（组名）   FIELNAME</p>
+<h3 id="权限匹配规则：（没有扩展权限时）"><a href="#权限匹配规则：（没有扩展权限时）" class="headerlink" title="权限匹配规则：（没有扩展权限时）"></a>权限匹配规则：（没有扩展权限时）</h3><p>标准定义： 安全上下文</p>
+<p>通过发起者用户执行一个可执行文件（命令），匹配一个目标文件时，判断执行文件的发起者身份是否是目标文件的的所属用户，如果是直接匹配所属用户权限，如果不是开始匹配是否是文件所组的用户如果是直接匹配所属组权限，不是则直接匹配其他用户的权限。</p>
+<p>（首先判断发起用户，是否是文件的所属用户，如果是直接匹配所属用户权限，如果不是开始匹配是否是文件所组的用户如果是直接匹配所属组权限，不是则直接匹配其他用户的权限。）</p>
+<p>文件权限字符含义</p>
+<p>d目录:    r    查看（列出）目录下的文件信息      ls</p>
+<p>​              w    能够在指定目录中创建文件   touch   &gt; &gt;&gt; vim nano    mkdir   mv  cp    （对于普通用户如果没有写权限，则不能删除该目录下的文件）</p>
+<p>​			  x     打开该目录     cd</p>
+<p>-文本文件:  r    查看该文件的内容</p>
+<p>​					w    编辑文件内容</p>
+<p>​					x     运行文本内容（命令文件）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[redhat@162 ~]$ cd /root</span><br><span class="line">-bash: cd: /root: Permission denied</span><br><span class="line">作为redhat对于/root目录没有执行权限</span><br><span class="line"></span><br><span class="line">[root@162 /]# ll /root  -d        redhat用户对于/root是其他用户，需要其他用户位加上执行权限</span><br><span class="line">dr-xr-x---. 18 root root 4096 Feb 16 21:35 /root</span><br><span class="line">[root@162 /]# chmod o+x /root</span><br><span class="line">[root@162 /]# su - redhat</span><br><span class="line"></span><br><span class="line">[redhat@162 ~]$ cd /root</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[root@162 /]# touch file</span><br><span class="line">[root@162 /]# ll</span><br><span class="line">-rw-r--r--.   1 root root    0 Feb 16 22:03 file</span><br><span class="line">[redhat@162 /]$ cat file</span><br><span class="line"></span><br><span class="line">[redhat@162 /]$ echo this is red1  &gt;file</span><br><span class="line">-bash: file: Permission denied</span><br><span class="line">[root@162 /]# chmod o+w file</span><br><span class="line">[redhat@162 /]$ echo this is red1 &gt; file</span><br><span class="line">[redhat@162 /]$ cat file</span><br><span class="line">this is red1</span><br><span class="line"></span><br><span class="line">[redhat@162 /]$ ./file</span><br><span class="line">-bash: ./file: Permission denied</span><br><span class="line">[root@162 /]# chmod o+x file</span><br><span class="line">[redhat@162 /]$ ./file</span><br><span class="line">./file: line 1: this: command not found</span><br></pre></td></tr></table></figure>
+
+<h3 id="特殊权限"><a href="#特殊权限" class="headerlink" title="特殊权限"></a>特殊权限</h3><p>chmod  u+s,o+s,o+t   FILENAME   是在文件对应的执行位显示，如果文件默认没有执行权限特殊权限大写标识，如果有特殊权限特殊权限字符小写标识。</p>
+<p>chmod    7644  FILENAME   特殊权限是7(u+s&#x3D;4,g+s&#x3D;2.o+t&#x3D;1) 644标准权限</p>
+<p>u+s    &#x3D;4     所属用户的强制位（对于可执行文件的所属用户禁锢）  —1.对可执行文件设置有意义</p>
+<p>g+s    &#x3D;2     所属组的强制位（对于可执行文件的所属组禁锢）（对目录文件设置–目录文件的所属组禁锢；表示任何用户创建文件的所属组都是当前目录的所属组）</p>
+<p>o+t     &#x3D;1     sticky冒险位（对一个目录文件存在冒险位，用户只能删除自己文件不能删除别人的文件）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">[root@162 /]# ll /usr/bin/touch </span><br><span class="line">-rwxr-xr-x. 1 root root 109776 Feb 14 03:07 /urs/bin/touch</span><br><span class="line"></span><br><span class="line">[redhat@162 ~]$ touch red1    // 通过当前用户redhat，执行可执行文件touch,所以touch进程文件的所属用户就是当前用户，根据当前进程创建目标文件，所以目标文件的所属用户以及所属组和进程文件的所属用户和所属组一样。</span><br><span class="line">[redhat@162 ~]$ ll red1</span><br><span class="line">-rw-rw-r--. 1 redhat redhat 0 Feb 16 22:40 red1</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">root@162 /]# chmod u+s /usr/bin/touch </span><br><span class="line">[root@162 /]# ll /usr/bin/touch                    对可执行文件设置u+s</span><br><span class="line">-rwsr-xr-x. 1 root root 109776 Feb 14 03:07 /usr/bin/touch</span><br><span class="line"></span><br><span class="line">[redhat@162 ~]$ touch red2                  //通过当前用户redhat执行可执行文件touch，touch进程文件的所属用户取决于文件自身的用户root，所属组取决于发起者身份redhat的基本组,所以目标文件的所属用户是root：redhat</span><br><span class="line">[redhat@162 ~]$ ll red2</span><br><span class="line">-rw-rw-r--. 1 root redhat 0 Feb 16 22:46 red2</span><br><span class="line"></span><br><span class="line">root@162 /]# chmod g+s /usr/bin/touch </span><br><span class="line">[root@162 /]# ll /usr/bin/touch                    对可执行文件设置u+s,g+s</span><br><span class="line">-rwsr-sr-x. 1 root root 109776 Feb 14 03:07 /usr/bin/touch</span><br><span class="line"></span><br><span class="line">[redhat@162 ~]$ touch red3                  //通过当前用户redhat执行可执行文件touch，touch进程文件的所属用户取决于文件自身的用户root，所属组取决于文件自身的所属组root，所以目标文件的所属用户是root：root</span><br><span class="line">[redhat@162 ~]$ ll red3</span><br><span class="line">-rw-rw-r--. 1 root redhat 0 Feb 16 22:46 red2</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">实际案例：</span><br><span class="line">[root@162 /]# ll  /etc/shadow</span><br><span class="line">----------. 1 root root 1812 Feb 16 03:21 /etc/shadow</span><br><span class="line"></span><br><span class="line">为什么用户能够通过passwd修改密码命令对密码文件有写权限</span><br><span class="line"></span><br><span class="line">[root@162 /]# ll /usr/bin/passwd</span><br><span class="line">-rwsr-xr-x. 1 root root 34512 Aug 12  2018 /usr/bin/passwd</span><br><span class="line"></span><br><span class="line">[redhat@162 ~]$ passwd       通过发起者身份redhat，运行passwd可执行文件，可执行文件进程的所属用户取决于文件自身用户root，通过root用户对密码文件进行操作。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">g+s  对目录设置</span><br><span class="line">[root@162 /]# chmod o+w /pub</span><br><span class="line"></span><br><span class="line">[redhat@162 pub]$ touch aa</span><br><span class="line">[redhat@162 pub]$ ll</span><br><span class="line">total 0</span><br><span class="line">-rw-rw-r--. 1 redhat redhat 0 Feb 17 01:12 aa</span><br><span class="line"></span><br><span class="line">[root@162 /]# chmod g+s /pub     -目录所属组禁锢</span><br><span class="line">[root@162 /]# ll -d /pub</span><br><span class="line">drwxr-srwx. 2 root root 16 Feb 17 01:12 /pub</span><br><span class="line"></span><br><span class="line">[redhat@162 pub]$ touch bb          --任何用户在该目录下创建的任意文件的所属组都和目录的所属组一样</span><br><span class="line">[redhat@162 pub]$ ll</span><br><span class="line">total 0</span><br><span class="line">-rw-rw-r--. 1 redhat redhat 0 Feb 17 01:12 aa</span><br><span class="line">-rw-rw-r--. 1 redhat root   0 Feb 17 01:13 bb</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">目录o+t </span><br><span class="line">[root@162 /]# mkdir /test </span><br><span class="line">[root@162 /]# ll -d /test</span><br><span class="line">drwxr-xr-x. 2 root root 6 Feb 17 01:21 /test</span><br><span class="line">[root@162 /]# chmod o+w /test</span><br><span class="line"></span><br><span class="line">[u1@162 zuoye]$ cd /test</span><br><span class="line">[u1@162 test]$ touch u1</span><br><span class="line">[u1@162 test]$ touch u2</span><br><span class="line">[u1@162 test]$ touch u3</span><br><span class="line"></span><br><span class="line">[redhat@162 ~]$ cd /test</span><br><span class="line">[redhat@162 test]$ touch red1</span><br><span class="line">[redhat@162 test]$ touch red2</span><br><span class="line">[redhat@162 test]$ touch red3</span><br><span class="line"></span><br><span class="line">[root@162 test]# touch root1</span><br><span class="line">[root@162 test]# touch root2</span><br><span class="line">[root@162 test]# touch root3</span><br><span class="line"></span><br><span class="line">[redhat@162 test]$ rm root1             ---对于当前目录没有特殊权限，但对当用户拥有写权限，所以用户可以删除任意用户创建的文件</span><br><span class="line">rm: remove write-protected regular empty file &#x27;root1&#x27;? y</span><br><span class="line"></span><br><span class="line">[root@162 test]# chmod o+t  /test      --设置特殊权限</span><br><span class="line">[root@162 test]# ll -d /test</span><br><span class="line">drwxr-xrwt. 2 root root 98 Feb 17 01:25 /test</span><br><span class="line"></span><br><span class="line">[redhat@162 test]$ rm red1</span><br><span class="line"></span><br><span class="line">redhat@162 test]$ rm root2</span><br><span class="line">rm: remove write-protected regular empty file &#x27;root2&#x27;? y</span><br><span class="line">rm: cannot remove &#x27;root2&#x27;: Operation not permitted      ---用户只能删除自己文件不能删除别人的文件</span><br><span class="line">注：对于管理员，目录文件有特殊权限该用户也可以删除任何用户创建的文件</span><br></pre></td></tr></table></figure>
+
+<h4 id="扩展权限："><a href="#扩展权限：" class="headerlink" title="扩展权限："></a>扩展权限：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">getfacl   FILENAME   查看文件的权限列表</span><br><span class="line"></span><br><span class="line">setfacl -m u:USERNAME:prem   FILENAME</span><br><span class="line">                   g:GROUPNAME:prem  FILENAME</span><br><span class="line"></span><br><span class="line">setfacl -x   u:USERNAME:   FILENAME    删除文件的一条扩展权限</span><br><span class="line"></span><br><span class="line">setfacl -b   FILENAME  清空指定文件的扩展权限</span><br><span class="line"></span><br><span class="line">应用场景（对于系统中的文件，只要求对某一个或者某一些用户对文件由不同的权限可以通过扩展权限来实现）</span><br></pre></td></tr></table></figure>
+
+<h1 id="day06"><a href="#day06" class="headerlink" title="day06"></a>day06</h1><h2 id="网络管理"><a href="#网络管理" class="headerlink" title="网络管理"></a>网络管理</h2><p>三种网络模式</p>
+<p>仅主机：   虚拟机都为仅主机模式，多台虚拟可以互ping；   物理机    –ping —-&gt;虚拟机</p>
+<p>nat： 虚拟机都为nat模式，多台虚拟可以互ping； 物理机 &lt;—–ping —-&gt;虚拟机    只要物理能访问外网虚拟机就能上网</p>
+<p>桥接： 虚拟机都为桥接模式，多台虚拟可以互ping；物理机 &lt;—–ping —-&gt;虚拟机 （同一网段的地址）；可以访问外网（当前主机的地址能不能访问外网）</p>
+<p>网卡动态和静态地址配置</p>
+<p>1.虚拟图形界面</p>
+<p>2.nmtui  连接图形化界面进行配置（键盘）</p>
+<p>3.nm-connection-editor  鼠标控制</p>
+<p>4.网卡配置文件  </p>
+<p>[root@162 ~]# cat &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;ifcfg-ens160<br>TYPE&#x3D;Ethernet                       网卡类型 Ethernet真实网卡<br>PROXY_METHOD&#x3D;none<br>BROWSER_ONLY&#x3D;no<br>BOOTPROTO&#x3D;dhcp                   网卡模式dhcp动态模式    none  静态模式<br>DEFROUTE&#x3D;yes<br>IPV4_FAILURE_FATAL&#x3D;no<br>IPV6INIT&#x3D;yes<br>IPV6_AUTOCONF&#x3D;yes<br>IPV6_DEFROUTE&#x3D;yes<br>IPV6_FAILURE_FATAL&#x3D;no<br>IPV6_ADDR_GEN_MODE&#x3D;stable-privacy<br>NAME&#x3D;ens160                              网卡配置文件名<br>UUID&#x3D;29a02f09-4754-4f2f-a91b-b0fd3cbf7987<br>DEVICE&#x3D;ens160                            网卡设备名<br>ONBOOT&#x3D;no                              网卡开机后是否自动连接<br>IPV6_PRIVACY&#x3D;no</p>
+<p>注:RHEL7-    一个网卡设备可以对应多个网卡配置文件，但是当前网卡默认只能连接一个网卡配置</p>
+<p>*****5.nmcli  网络管理工具</p>
+<p>nmcli   device    show           显示主机所有网络设备详细信息</p>
+<p>​                             status        显示主机设备和会话（网卡配置文件）</p>
+<p>​                            connect       将设备和指定会话文件链接</p>
+<p>nmcli   connection    show</p>
+<p>​									 modify</p>
+<p>​                                     edit</p>
+<p>​                                     add</p>
+<p>​                                     delete</p>
+<p>​                                       up</p>
+<p>​                                        down</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">nmcli配置静态ip地址</span><br><span class="line"></span><br><span class="line">[root@162 ~]# nmcli connection modify ens160 ipv4.method  manual  ipv4.addresses 192.168.220.111/24 ipv4.dns 114.114.114.114  ipv4.gateway 192.168.220.2 connection.autoconnect yes    </span><br><span class="line">--修改ens160会话文件参数   网络模式=manual  ipv4.地址=   connection.autoconnect yes  设置网卡开机自动连接</span><br><span class="line">[root@162 ~]# nmcli connection up ens160         ---激活ens160网卡配置</span><br><span class="line"></span><br><span class="line">[root@162 ~]# cat /etc/sysconfig/network-scripts/ifcfg-ens160 </span><br><span class="line">TYPE=Ethernet</span><br><span class="line">PROXY_METHOD=none</span><br><span class="line">BROWSER_ONLY=no</span><br><span class="line">BOOTPROTO=none</span><br><span class="line">DEFROUTE=yes</span><br><span class="line">IPV4_FAILURE_FATAL=no</span><br><span class="line">IPV6INIT=yes</span><br><span class="line">IPV6_AUTOCONF=yes</span><br><span class="line">IPV6_DEFROUTE=yes</span><br><span class="line">IPV6_FAILURE_FATAL=no</span><br><span class="line">IPV6_ADDR_GEN_MODE=stable-privacy</span><br><span class="line">NAME=ens160</span><br><span class="line">UUID=29a02f09-4754-4f2f-a91b-b0fd3cbf7987</span><br><span class="line">DEVICE=ens160</span><br><span class="line">ONBOOT=yes</span><br><span class="line">DNS1=114.114.114.114</span><br><span class="line">IPV6_PRIVACY=no</span><br><span class="line">IPADDR=192.168.220.111</span><br><span class="line">PREFIX=24</span><br><span class="line">GATEWAY=192.168.220.2</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">[root@162 ~]# nmcli connection edit ens160     --进入编辑网卡配置文件</span><br><span class="line"></span><br><span class="line">===| nmcli interactive connection editor |===</span><br><span class="line"></span><br><span class="line">Editing existing &#x27;802-3-ethernet&#x27; connection: &#x27;ens160&#x27;</span><br><span class="line"></span><br><span class="line">Type &#x27;help&#x27; or &#x27;?&#x27; for available commands.</span><br><span class="line">Type &#x27;print&#x27; to show all the connection properties.</span><br><span class="line">Type &#x27;describe [&lt;setting&gt;.&lt;prop&gt;]&#x27; for detailed property description.</span><br><span class="line"></span><br><span class="line">You may edit the following settings: connection, 802-3-ethernet (ethernet), 802-1x, dcb, sriov, ethtool, match, ipv4, ipv6, tc, proxy</span><br><span class="line">nmcli&gt;                          tab</span><br><span class="line">activate  describe  help      print     remove    set       </span><br><span class="line">back      goto      nmcli     quit      save      verify    </span><br><span class="line">nmcli&gt; goto ipv4               进入iPv4模式</span><br><span class="line">You may edit the following properties: method, dns, dns-search, dns-options, dns-priority, addresses, gateway, routes, route-metric, route-table, routing-rules, ignore-auto-routes, ignore-auto-dns, dhcp-client-id, dhcp-timeout, dhcp-send-hostname, dhcp-hostname, dhcp-fqdn, never-default, may-fail, dad-timeout</span><br><span class="line">nmcli ipv4&gt; </span><br><span class="line">activate  describe  help      print     remove    set       </span><br><span class="line">back      goto      nmcli     quit      save      verify    </span><br><span class="line">nmcli ipv4&gt; set  method </span><br><span class="line">auto        disabled    link-local  manual      shared      </span><br><span class="line">nmcli ipv4&gt; set  method auto    将网络模式改为自动模式</span><br><span class="line">Do you also want to clear &#x27;ipv4.addresses&#x27;? [yes]: yes</span><br><span class="line">nmcli ipv4&gt; save</span><br><span class="line">Error: connection verification failed: ipv4.gateway: gateway cannot be set if there are no addresses configured</span><br><span class="line">You may try running &#x27;verify fix&#x27; to fix errors.</span><br><span class="line">nmcli ipv4&gt; remove </span><br><span class="line">addresses           dhcp-send-hostname  dns-search          method              routing-rules</span><br><span class="line">dad-timeout         dhcp-timeout        gateway             never-default       </span><br><span class="line">dhcp-client-id      dns                 ignore-auto-dns     route-metric        </span><br><span class="line">dhcp-fqdn           dns-options         ignore-auto-routes  routes              </span><br><span class="line">dhcp-hostname       dns-priority        may-fail            route-table         </span><br><span class="line">nmcli ipv4&gt; remove ipv4.gateway  </span><br><span class="line">nmcli ipv4&gt; remove ipv4.dns</span><br><span class="line">nmcli ipv4&gt; save</span><br><span class="line">Connection &#x27;ens160&#x27; (29a02f09-4754-4f2f-a91b-b0fd3cbf7987) successfully updated.</span><br><span class="line">nmcli ipv4&gt; quit</span><br><span class="line">[root@162 ~]# nmcli connection up ens160 </span><br><span class="line"></span><br><span class="line">[root@162 ~]# cat /etc/sysconfig/network-scripts/ifcfg-ens160 </span><br><span class="line">TYPE=Ethernet</span><br><span class="line">PROXY_METHOD=none</span><br><span class="line">BROWSER_ONLY=no</span><br><span class="line">BOOTPROTO=dhcp</span><br><span class="line">DEFROUTE=yes</span><br><span class="line">IPV4_FAILURE_FATAL=no</span><br><span class="line">IPV6INIT=yes</span><br><span class="line">IPV6_AUTOCONF=yes</span><br><span class="line">IPV6_DEFROUTE=yes</span><br><span class="line">IPV6_FAILURE_FATAL=no</span><br><span class="line">IPV6_ADDR_GEN_MODE=stable-privacy</span><br><span class="line">NAME=ens160</span><br><span class="line">UUID=29a02f09-4754-4f2f-a91b-b0fd3cbf7987</span><br><span class="line">DEVICE=ens160</span><br><span class="line">ONBOOT=yes</span><br><span class="line">IPV6_PRIVACY=no</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">[root@162 ~]# nmcli connection add type ethernet ifname ens160 con-name work</span><br><span class="line">Connection &#x27;work&#x27; (dcab47ad-1250-458f-ad64-7471f4bb41e0) successfully added.</span><br><span class="line">[root@162 ~]# vim /etc/sysconfig/network-scripts/ifcfg-work </span><br><span class="line"></span><br><span class="line">TYPE=Ethernet</span><br><span class="line">PROXY_METHOD=none</span><br><span class="line">BROWSER_ONLY=no</span><br><span class="line">BOOTPROTO=dhcp</span><br><span class="line">DEFROUTE=yes</span><br><span class="line">IPV4_FAILURE_FATAL=no</span><br><span class="line">IPV6INIT=yes</span><br><span class="line">IPV6_AUTOCONF=yes</span><br><span class="line">IPV6_DEFROUTE=yes</span><br><span class="line">IPV6_FAILURE_FATAL=no</span><br><span class="line">IPV6_ADDR_GEN_MODE=stable-privacy</span><br><span class="line">NAME=work</span><br><span class="line">UUID=dcab47ad-1250-458f-ad64-7471f4bb41e0</span><br><span class="line">DEVICE=ens160</span><br><span class="line">ONBOOT=yes</span><br><span class="line">[root@162 ~]# nmcli connection modify work ipv4.method  manual  ipv4.addresses 192.168.220.111/24 ipv4.dns 114.114.114.114  ipv4.gateway 192.168.220.2 </span><br><span class="line">[root@162 ~]# nmcli connection up work</span><br><span class="line">root@162 ~]# nmcli connection delete work</span><br></pre></td></tr></table></figure>
+
+<h1 id="day07"><a href="#day07" class="headerlink" title="day07"></a>day07</h1><h2 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h2><p>1.获取软件 包</p>
+<p>（1）本地获取</p>
+<p>本地光盘存储介质获取</p>
+<p>默认路径：&#x2F;run&#x2F;media&#x2F;root&#x2F;RHEL-8-1-0-BaseOS-x86_64 </p>
+<p>手动挂载： mkdir &#x2F;sr0</p>
+<p>​                   mount  &#x2F;dev&#x2F;sr0    &#x2F;sr0    （临时生效）</p>
+<p>​                  挂载命令    设备名称     挂载点目录</p>
+<p>​				  取消挂载： 注意不能再挂载点目录中取消</p>
+<pre><code>                                 umount   设备名
+</code></pre>
+<p>​                                     umount   挂载点</p>
+<p>（2）网络（上网）</p>
+<p>网易开源镜像站</p>
+<p>阿里开源镜像站</p>
+<p>清华大学</p>
+<p>2.安装软包RHEL8</p>
+<p>&#x2F;mnt&#x2F;AppStream&#x2F;Packages</p>
+<p>&#x2F;mnt&#x2F;BaseOS&#x2F;Packages</p>
+<p>#cd  &#x2F;mnt&#x2F;AppStream&#x2F;Packages</p>
+<p>rpm -ivh   zsh-html-5.5.1-6.el8.noarch.rpm </p>
+<p>​		 -qpi    包名   查看一个软件包的详细信息</p>
+<p>​       </p>
+<p>​        -evh      卸载软件包</p>
+<p>​        -qa        查询已安装的所有软件包    rpm -qa | grep 软件名</p>
+<p>​       -ql          查看指定软件的文件列表</p>
+<p>​		-qf         查看某个文件是由哪一个包提供</p>
+<p>​       -Uvh     更新软件包</p>
+<p>​       -qd       查询软件的事例文档</p>
+<p>[root@localhost ~]# rpm -ivh <a target="_blank" rel="noopener" href="https://down.qq.com/qqweb/LinuxQQ/linuxqq_2.0.0-b2-1089_x86_64.rpm">https://down.qq.com/qqweb/LinuxQQ/linuxqq_2.0.0-b2-1089_x86_64.rpm</a>     </p>
+<p>dnf&#x2F;yum</p>
+<p>能够自动解决依赖关系（自动识别依赖包并且下载对应依赖包，一次性安装无需手动指定）</p>
+<p>1.获取软件包</p>
+<p>（1）本地安装</p>
+<p>mount  &#x2F;dev&#x2F;sr0 &#x2F;mnt</p>
+<p>（2）网络安装</p>
+<p>2.安装软件包</p>
+<p>配置yum配置文件—-&#x2F;etc&#x2F;yum.repos.d&#x2F;*.repo</p>
+<p>vim  &#x2F;etc&#x2F;yum.repos.d&#x2F;base.repo   </p>
+<p>[AppStream]      源标示名称（名称自定义）</p>
+<p>name&#x3D;App         源名称</p>
+<p>baseurl&#x3D;file:&#x2F;&#x2F;&#x2F;mnt&#x2F;AppStream</p>
+<p>gpgcheck&#x3D;0</p>
+<p>[BaseOS]</p>
+<p>name&#x3D;base</p>
+<p>baseurl&#x3D;file:&#x2F;&#x2F;&#x2F;mnt&#x2F;BaseOS</p>
+<p>gpgcheck&#x3D;0</p>
+<p>#dnf   install    httpd    -y</p>
+<p>​           repolist    显示仓库状态</p>
+<p>​          remove    移除，卸载软件</p>
+<p>​          update</p>
+<p>源码安装</p>
+<p> 解包 —— tar<br>解包、释放出源代码文件<br>配置 —— .&#x2F;configure<br>针对当前系统、软件环境，配置好安装参数<br>编译 —— make<br>将源代码文件变为二进制的可执行程序<br>安装 —— make install<br>将编译好的程序文件复制到系统中       </p>
+<p>mkdir &#x2F;test<br>rm -rf &#x2F;test&#x2F;*<br>mv tar-1.29.tar.gz &#x2F;test</p>
+<p> cd &#x2F;test<br>  ll<br>  tar -zxvf  tar-1.29.tar.gz<br>  ll<br>  dnf remove tar -y<br> touch 1<br> tar -cvzf 1.tar.gz  1             –系统默认的tar工具移除<br>  ll<br>  cd tar-1.29&#x2F;<br>  yum install gcc* -y           –安装编译器</p>
+<p> .&#x2F;configure                      —不能通过管理员运行<br>  su redhat</p>
+<p>rm -rf   config.log</p>
+<p>.&#x2F;configure                      –通过普通用户进行配置、</p>
+<p>exit</p>
+<p>  make<br>   make install<br>   ll<br>  tree<br> which tar<br> cd ..<br>  ll<br>  tar -zcvf 1.tar.gz 1<br>  hash<br> hash -d tar<br> tar -zcvf 1.tar.gz 1<br> ll<br> history </p>
+<p>ps    pstree  top     kill    PID    killall  进程名称     &amp;    ctrl-z   jobs      fg   bg   nohup</p>
+<p>top ***</p>
+<h2 id="磁盘管理"><a href="#磁盘管理" class="headerlink" title="磁盘管理"></a>磁盘管理</h2><p>1.磁盘设备基本单位 扇区&#x3D;512    数据层  1块 &#x3D; 4KB</p>
+<p>2.主机启动顺序</p>
+<p>主机加电开机+bios硬件自检+mbr+grub2+启动内核+initrams+加载系统系统文件</p>
+<p>3.mbr   默认只记录四个分区表项，但是可以把其中一个主分区作为扩展分区在扩展分区中可以分多个逻辑分区</p>
+<p>​			3主分区+1扩展分区（n逻辑分区）</p>
+<p>​                              主分区</p>
+<p>为什么创建多个分区：通过不同分区可以管理不同类型的数据文件；通过多个分区设置不同的文件系统类型，来存放不同数据类型的文件。</p>
+<p>如何创建分区</p>
+<p>1.条件</p>
+<p>至少需要一块硬盘；有剩余空间</p>
+<p>lsblk   可以显示系统所有块设备</p>
+<p>2.磁盘管理工具创建分区</p>
+<p>fdisk     &#x2F;dev&#x2F;nvme0n2</p>
+<p>n      创建新的分区   d删除分区    p打印分区列表   w  保存退   q退出不存</p>
+<p>3.设置文件系统类型（格式化）</p>
+<p>[root@localhost ~]# mkfs.xfs  &#x2F;dev&#x2F;nvme0n2p2</p>
+<p>4.使用分区</p>
+<p>临时挂载</p>
+<p>mkdir &#x2F;p1</p>
+<p>mount   &#x2F;dev&#x2F;nvme0n2p1    &#x2F;p1</p>
+<p>umount    &#x2F;p1</p>
+<p>永久挂载</p>
+<p>vim  &#x2F;etc&#x2F;fstab</p>
+<p>设备名（UUID）      挂载点目录      文件系统类型     参数      开机备份    开机检查</p>
+<p>mount -a  在当前主机运行状态下挂载所有加载&#x2F;etc&#x2F;fstab 文件设备新添加设信息</p>
+<p>reboot 重启加载文件 </p>
+<p>blkid   查看设备id (设备的文件系统类型)</p>
+<p>注： 一个文件系统可以同时挂载到多个挂点目录；多个文件系统挂载到一个挂载点目录，但是通过挂载点查看的是最后一次连接文件系统信息。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">陈天在睡觉</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/post/38c0576c.html">http://example.com/post/38c0576c.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">陈天在睡觉</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/%E5%8D%9A%E5%AE%A22.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/2d58191d.html"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/%E5%8D%9A%E5%AE%A22.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">HCIA</div></div></a></div><div class="next-post pull-right"><a href="/post/c24675b4.html"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/%E5%8D%9A%E5%AE%A26.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">MySQL</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/%E5%A4%B4%E5%83%8F.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">陈天在睡觉</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://blog.csdn.net/qq_52059326" target="_blank" title="CSDN"><i class="iconfont icon-csdn"></i></a><a class="social-icon" href="https://space.bilibili.com/14631623" target="_blank" title="b站"><i class="iconfont icon-bilibili-fill"></i></a><a class="social-icon" href="https://github.com/chentianzaishuijiao" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content"><b><font color="#e66b6d">双</font> <font color="#e66d98">手</font> <font color="#e66cc6">合</font> <font color="#cc6de6">十</font> <font color="#9770e6">成</font> <font color="#6d93e6">为</font> <font color="#6fcde6">自</font> <font color="#72e6b6">己</font> <font color="#72e689">的</font> <font color="#99e670">神</font>, <font color="#cde670">自</font> <font color="#e6df72">己</font> <font color="#e6c073">所</font> <font color="#e6a271">信</font> <font color="#e6796f">念</font> <font color="#e65454">的</font> <font color="#e63333">即</font> <font color="#e62c2c">是</font> <font color="#e60101">信</font> <font color="#e60101">仰</font></b> <p align="center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img-blog.csdnimg.cn/f7384c88956d4378b72e47548e19c9f8.gif" width="50" alt="mao"></p> <p align="center">微信号：a847503688</p> <p align="center">QQ号：847503688</p></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#day01"><span class="toc-number">1.</span> <span class="toc-text">day01</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day02"><span class="toc-number">2.</span> <span class="toc-text">day02</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#cd-%E5%88%87%E6%8D%A2%E7%9B%AE%E5%BD%95"><span class="toc-number">2.1.</span> <span class="toc-text">cd   切换目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#su-%E7%94%A8%E6%88%B7%E5%88%87%E6%8D%A2"><span class="toc-number">2.2.</span> <span class="toc-text">su   用户切换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ls-%E5%88%97%E5%87%BA%E5%91%BD%E4%BB%A4%EF%BC%88%E6%9F%A5%E7%9C%8B%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6%EF%BC%89"><span class="toc-number">2.3.</span> <span class="toc-text">ls     列出命令（查看目录下的所有文件）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3%E4%B8%80%E5%88%87%E7%9A%86%E6%96%87%E4%BB%B6%E2%80%94%E2%80%937%E7%A7%8D%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.4.</span> <span class="toc-text">linux基本思想一切皆文件—–7种文件类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E2%80%94%E2%80%93%E8%BD%AF%E9%93%BE%E6%8E%A5%E5%92%8C%E7%A1%AC%E9%93%BE%E6%8E%A5%E5%8C%BA%E5%88%AB"><span class="toc-number">2.5.</span> <span class="toc-text">面试—–软链接和硬链接区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#date"><span class="toc-number">2.6.</span> <span class="toc-text">date</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#clock"><span class="toc-number">2.7.</span> <span class="toc-text">clock</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hwclock-s-%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E5%90%91%E7%A1%AC%E4%BB%B6%E6%97%B6%E9%97%B4%E5%90%8C%E6%AD%A5"><span class="toc-number">2.8.</span> <span class="toc-text">hwclock   -s   系统时间向硬件时间同步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#timedatectl-status"><span class="toc-number">2.9.</span> <span class="toc-text">timedatectl        status</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%91%BD%E4%BB%A4"><span class="toc-number">2.10.</span> <span class="toc-text">文件管理命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#touch-%E5%88%9B%E5%BB%BA%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6"><span class="toc-number">2.10.1.</span> <span class="toc-text">touch    创建文本文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mkdir-%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95"><span class="toc-number">2.10.2.</span> <span class="toc-text">mkdir    创建目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rm-%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6"><span class="toc-number">2.10.3.</span> <span class="toc-text">rm 删除文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#du-%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E6%96%87%E4%BB%B6%E5%8D%A0%E7%94%A8%E7%A3%81%E7%9B%98%E5%A4%A7%E5%B0%8F-KB"><span class="toc-number">2.10.4.</span> <span class="toc-text">du  查看系统文件占用磁盘大小   KB</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mv-%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6"><span class="toc-number">2.10.5.</span> <span class="toc-text">mv   移动文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cp-%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6"><span class="toc-number">2.10.6.</span> <span class="toc-text">cp   复制文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wget-%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6"><span class="toc-number">2.10.7.</span> <span class="toc-text">wget  下载文件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day03"><span class="toc-number">3.</span> <span class="toc-text">day03</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E7%9B%AE%E5%BD%95%E6%96%87%E4%BB%B6%EF%BC%9A-ls"><span class="toc-number">3.1.</span> <span class="toc-text">查看目录文件： ls</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="toc-number">3.2.</span> <span class="toc-text">查看文本文件内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91"><span class="toc-number">3.3.</span> <span class="toc-text">文本编辑</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-nano"><span class="toc-number">3.3.1.</span> <span class="toc-text">1.nano</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-vi-x2F-vim-%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-number">3.3.2.</span> <span class="toc-text">2.vi &#x2F; vim  *** 文本编辑器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E2%80%9D-gt-%E2%80%9D%E6%88%96%E2%80%9C-gt-gt-%E2%80%9D%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E7%BC%96%E8%BE%91"><span class="toc-number">3.3.3.</span> <span class="toc-text">3.”&gt;”或“&gt;&gt;”实现文件编辑</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#echo-%E6%89%93%E5%8D%B0%E5%91%BD%E4%BB%A4"><span class="toc-number">3.3.3.1.</span> <span class="toc-text">echo   打印命令</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E5%8F%98%E9%87%8F"><span class="toc-number">3.3.3.1.1.</span> <span class="toc-text">$引用变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E4%B8%8A%E4%B8%80%E6%9D%A1%E5%91%BD%E4%BB%A4%E7%9A%84%E9%80%80%E5%87%BA%E7%A0%81-0%E6%88%90%E5%8A%9F-1-255%E9%94%99%E8%AF%AF%E7%8A%B6%E6%80%81"><span class="toc-number">3.3.3.1.2.</span> <span class="toc-text">$?显示上一条命令的退出码   0成功  1-255错误状态</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AE%A1%E9%81%93%E7%AC%A6%EF%BC%88%E5%B0%86%E5%89%8D%E9%9D%A2%E5%91%BD%E4%BB%A4%E7%9A%84%E6%A0%87%E5%87%86%E8%BE%93%E5%87%BA%E4%BD%9C%E4%B8%BA%E5%90%8E%E9%9D%A2%E5%91%BD%E4%BB%A4%E7%9A%84%E6%A0%87%E5%87%86%E8%BE%93%E5%85%A5%EF%BC%89%E2%80%94%E6%97%A0%E5%90%8D%E7%AE%A1%E9%81%93"><span class="toc-number">3.3.3.1.3.</span> <span class="toc-text">|  管道符（将前面命令的标准输出作为后面命令的标准输入）—无名管道</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E7%A7%8D%E5%BC%95%E5%8F%B7%E5%8C%BA%E5%88%AB"><span class="toc-number">3.3.3.2.</span> <span class="toc-text">三种引号区别</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%80%9C-gt-%E2%80%9D-%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91%E7%AC%A6-%E5%B0%86%E5%89%8D%E9%9D%A2%E5%91%BD%E4%BB%A4%E7%9A%84%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C%E5%86%99%E5%85%A5%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6"><span class="toc-number">3.3.4.</span> <span class="toc-text">“&gt;”   输出重定向符 (将前面命令的输出结果写入指定文件)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%80%9C-gt-gt-%E2%80%9D-%E8%BF%BD%E5%8A%A0%E9%87%8D%E5%AE%9A%E5%90%91%E7%AC%A6"><span class="toc-number">3.3.4.1.</span> <span class="toc-text">“&gt;&gt;” 追加重定向符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#lt-%E8%BE%93%E5%85%A5%E9%87%8D%E5%AE%9A%E5%90%91%E7%AC%A6"><span class="toc-number">3.3.4.2.</span> <span class="toc-text">&lt;    输入重定向符</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%96%87%E4%BB%B6%E7%BC%96%E8%BE%91-lt-lt-%E7%BB%88%E6%AD%A2%E7%BB%93%E6%9D%9F%E7%AC%A6"><span class="toc-number">3.3.5.</span> <span class="toc-text">4.文件编辑&lt;&lt;   终止结束符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6%EF%BC%9A0-%E6%96%87%E4%BB%B6%E6%A0%87%E5%87%86%E8%BE%93%E5%85%A5%E7%AC%A61%E6%A0%87%E5%87%86%EF%BC%88%E6%AD%A3%E7%A1%AE%EF%BC%89%E8%BE%93%E5%87%BA%E6%8F%8F%E8%BF%B0%E7%AC%A6-2%E9%94%99%E8%AF%AF%E8%BE%93%E5%87%BA%E6%8F%8F%E8%BF%B0%E7%AC%A6"><span class="toc-number">3.3.5.1.</span> <span class="toc-text">文件描述符：0 文件标准输入符1标准（正确）输出描述符  2错误输出描述符</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4%E2%80%94-%E8%A1%8C"><span class="toc-number">3.4.</span> <span class="toc-text">文件内容处理相关命令—(行)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#grep-%E6%96%87%E6%9C%AC%E8%BF%87%E6%BB%A4%E6%98%BE%E7%A4%BA%E5%91%BD%E4%BB%A4"><span class="toc-number">3.4.1.</span> <span class="toc-text">grep 文本过滤显示命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cut-%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9%E5%89%AA%E5%88%87%E5%91%BD%E4%BB%A4"><span class="toc-number">3.4.2.</span> <span class="toc-text">cut 文本内容剪切命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wc-%E6%96%87%E6%9C%AC%E7%BB%9F%E8%AE%A1%E5%91%BD%E4%BB%A4-%E8%A1%8C-%E5%8D%95%E8%AF%8D%E4%B9%A6-%E5%AD%97%E8%8A%82%E6%95%B0-%E6%96%87%E4%BB%B6%E5%90%8D"><span class="toc-number">3.4.3.</span> <span class="toc-text">wc   文本统计命令  行 单词书   字节数  文件名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sort-%E6%96%87%E6%9C%AC%E6%8E%92%E5%BA%8F-%E9%BB%98%E8%AE%A4%E6%8C%89%E7%85%A7%E5%AD%97%E7%AC%A6%E6%8E%92%E5%BA%8F"><span class="toc-number">3.4.4.</span> <span class="toc-text">sort  文本排序  默认按照字符排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#uniq-%E5%8E%BB%E9%87%8D%E5%91%BD%E4%BB%A4-%E9%87%8D%E5%A4%8D%E8%A1%8C%E7%9B%B8%E9%82%BB"><span class="toc-number">3.4.5.</span> <span class="toc-text">uniq   去重命令(重复行相邻)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tr-%E5%AD%97%E7%AC%A6%E6%9B%BF%E6%8D%A2"><span class="toc-number">3.4.6.</span> <span class="toc-text">tr    字符替换</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day04"><span class="toc-number">4.</span> <span class="toc-text">day04</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%9F%A5%E6%89%BE4%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="toc-number">4.1.</span> <span class="toc-text">文件查找4种方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#find"><span class="toc-number">4.1.1.</span> <span class="toc-text">find</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#find%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F%EF%BC%9A"><span class="toc-number">4.1.1.1.</span> <span class="toc-text">find命令格式：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#find%E5%91%BD%E4%BB%A4%E7%9A%84%E5%8F%82%E6%95%B0%EF%BC%9A"><span class="toc-number">4.1.1.2.</span> <span class="toc-text">find命令的参数：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E9%9D%A2%E9%80%9A%E8%BF%87%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E7%9A%84%E4%BE%8B%E5%AD%90%E6%9D%A5%E4%BB%8B%E7%BB%8D%E4%B8%8Bfind%E7%9A%84%E5%B8%B8%E8%A7%84%E7%94%A8%E6%B3%95%EF%BC%9A"><span class="toc-number">4.1.1.3.</span> <span class="toc-text">下面通过一些简单的例子来介绍下find的常规用法：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%8E%8B%E7%BC%A9%E8%A7%A3%E5%8E%8B%E7%BC%A9"><span class="toc-number">4.2.</span> <span class="toc-text">文件压缩解压缩</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-bzip-and-bzip2"><span class="toc-number">4.2.1.</span> <span class="toc-text">1.bzip and bzip2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-tar"><span class="toc-number">4.2.2.</span> <span class="toc-text">2.tar</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#alias-%E5%AE%9A%E4%B9%89%E5%91%BD%E4%BB%A4%E5%88%AB%E5%90%8D"><span class="toc-number">4.3.</span> <span class="toc-text">alias  定义命令别名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E7%BC%93%E5%AD%98"><span class="toc-number">4.4.</span> <span class="toc-text">命令缓存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#history"><span class="toc-number">4.5.</span> <span class="toc-text">history</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day05"><span class="toc-number">5.</span> <span class="toc-text">day05</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%BB%84"><span class="toc-number">5.1.</span> <span class="toc-text">用户组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E7%B1%BB%E5%88%AB"><span class="toc-number">5.1.1.</span> <span class="toc-text">用户类别</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E7%94%A8%E6%88%B7%E5%88%9B%E5%BB%BA"><span class="toc-number">5.1.1.0.1.</span> <span class="toc-text">1.用户创建</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF"><span class="toc-number">5.1.1.0.2.</span> <span class="toc-text">2.查看系统中用户信息</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E7%94%A8%E6%88%B7%E4%BF%AE%E6%94%B9"><span class="toc-number">5.1.1.0.3.</span> <span class="toc-text">3.用户修改</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-%E5%88%A0%E9%99%A4%E7%94%A8%E6%88%B7"><span class="toc-number">5.1.1.0.4.</span> <span class="toc-text">4.删除用户</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%84%E7%B1%BB%E5%88%AB"><span class="toc-number">5.1.1.1.</span> <span class="toc-text">组类别</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E5%88%9B%E5%BB%BA%E7%BB%84"><span class="toc-number">5.1.1.1.1.</span> <span class="toc-text">1.创建组</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E6%9F%A5%E7%9C%8B%E7%BB%84%E4%BF%A1%E6%81%AF"><span class="toc-number">5.1.1.1.2.</span> <span class="toc-text">2.查看组信息</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3%EF%BC%89%E7%BB%84%E4%BF%AE%E6%94%B9"><span class="toc-number">5.1.1.1.3.</span> <span class="toc-text">3）组修改</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4%EF%BC%89%E5%88%A0%E9%99%A4%E7%BB%84"><span class="toc-number">5.1.1.1.4.</span> <span class="toc-text">4）删除组</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86"><span class="toc-number">5.1.1.2.</span> <span class="toc-text">用户密码管理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E8%AE%BE%E7%BD%AE%E5%AF%86%E7%A0%81"><span class="toc-number">5.1.1.2.1.</span> <span class="toc-text">1.设置密码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E6%9F%A5%E7%9C%8B%E5%AF%86%E7%A0%81%E4%BF%A1%E6%81%AF-x2F-etc-x2F-shadow"><span class="toc-number">5.1.1.2.2.</span> <span class="toc-text">2.查看密码信息   &#x2F;etc&#x2F;shadow</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%84%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86"><span class="toc-number">5.1.1.3.</span> <span class="toc-text">组密码管理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1%EF%BC%89%E8%AE%BE%E7%BD%AE%E7%BB%84%E5%AF%86%E7%A0%81"><span class="toc-number">5.1.1.3.1.</span> <span class="toc-text">1）设置组密码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2%EF%BC%89%E6%9F%A5%E7%9C%8B%E7%BB%84%E5%AF%86%E7%A0%81-x2F-etc-x2F-gshadow"><span class="toc-number">5.1.1.3.2.</span> <span class="toc-text">2）查看组密码&#x2F;etc&#x2F;gshadow</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%EF%BC%9A"><span class="toc-number">5.1.1.3.3.</span> <span class="toc-text">补充：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sudo%E7%94%A8%E6%88%B7%E6%8E%88%E6%9D%83"><span class="toc-number">5.1.1.4.</span> <span class="toc-text">sudo用户授权</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%83%E9%99%90"><span class="toc-number">5.2.</span> <span class="toc-text">权限</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E6%9D%83%E9%99%90%E5%9C%A8%E6%96%87%E4%BB%B6%E4%B8%AD%E6%A0%87%E8%AF%86"><span class="toc-number">5.2.1.</span> <span class="toc-text">系统权限在文件中标识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E5%BD%93%E4%B8%AD%E6%9D%83%E9%99%90%E7%9A%84%E6%8F%8F%E8%BF%B0%E6%96%B9%E5%BC%8F%EF%BC%9A"><span class="toc-number">5.2.2.</span> <span class="toc-text">系统当中权限的描述方式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E4%B8%AD%E6%96%87%E4%BB%B6%E9%BB%98%E8%AE%A4%E7%9A%84%E6%9D%83%E9%99%90%E5%80%BC"><span class="toc-number">5.2.3.</span> <span class="toc-text">系统中文件默认的权限值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E4%BF%AE%E6%94%B9%EF%BC%9Achmod"><span class="toc-number">5.2.4.</span> <span class="toc-text">权限修改：chmod</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E5%8C%B9%E9%85%8D%E8%A7%84%E5%88%99%EF%BC%9A%EF%BC%88%E6%B2%A1%E6%9C%89%E6%89%A9%E5%B1%95%E6%9D%83%E9%99%90%E6%97%B6%EF%BC%89"><span class="toc-number">5.2.5.</span> <span class="toc-text">权限匹配规则：（没有扩展权限时）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E6%9D%83%E9%99%90"><span class="toc-number">5.2.6.</span> <span class="toc-text">特殊权限</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%A9%E5%B1%95%E6%9D%83%E9%99%90%EF%BC%9A"><span class="toc-number">5.2.6.1.</span> <span class="toc-text">扩展权限：</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day06"><span class="toc-number">6.</span> <span class="toc-text">day06</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86"><span class="toc-number">6.1.</span> <span class="toc-text">网络管理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#day07"><span class="toc-number">7.</span> <span class="toc-text">day07</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="toc-number">7.1.</span> <span class="toc-text">软件安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86"><span class="toc-number">7.2.</span> <span class="toc-text">磁盘管理</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background-image: url('/img/%E5%8D%9A%E5%AE%A22.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 陈天在睡觉</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
